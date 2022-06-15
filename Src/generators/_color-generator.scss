@@ -36,26 +36,46 @@
             .#{$prefix}#{$className}#{$name} {
                 #{$prop2}: unit(xxx-small) solid;
                 #{$prop1}: color($name);
+
+                &--none {
+                    border: none;
+                }
             }
 
             .#{$prefix}#{$className}top-#{$name} {
                 #{$prop2}-top: unit(xxx-small) solid;
                 #{$prop1}: color($name);
+
+                &--none {
+                    #{$prop2}-top: none;
+                }
             }
 
             .#{$prefix}#{$className}right-#{$name} {
                 #{$prop2}-right: unit(xxx-small) solid;
                 #{$prop1}: color($name);
+
+                &--none {
+                    #{$prop2}-right: none;
+                }
             }
 
             .#{$prefix}#{$className}bottom-#{$name} {
                 #{$prop2}-bottom: unit(xxx-small) solid;
                 #{$prop1}: color($name);
+
+                &--none {
+                    #{$prop2}-bottom: none;
+                }
             }
 
             .#{$prefix}#{$className}left-#{$name} {
                 #{$prop2}-left: unit(xxx-small) solid;
                 #{$prop1}: color($name);
+
+                &--none {
+                    #{$prop2}-left: none;
+                }
             }
 
             .#{$prefix}#{$className}left-#{$name}.state,
@@ -166,26 +186,46 @@
                 .#{$prefix}#{$className}#{$name}-#{$mod} {
                     #{$prop2}: unit(xxx-small) solid;
                     #{$prop1}: color($name, -#{$mod});
+
+                    &--none {
+                        #{$prop2}: none;
+                    }
                 }
 
                 .#{$prefix}#{$className}top-#{$name}-#{$mod} {
                     #{$prop2}-top: unit(xxx-small) solid;
                     #{$prop1}: color($name, -#{$mod});
+
+                    &--none {
+                        #{$prop2}-top: none;
+                    }
                 }
 
                 .#{$prefix}#{$className}right-#{$name}-#{$mod} {
                     #{$prop2}-right: unit(xxx-small) solid;
                     #{$prop1}: color($name, -#{$mod});
+
+                    &--none {
+                        #{$prop2}-right: none;
+                    }
                 }
 
                 .#{$prefix}#{$className}bottom-#{$name}-#{$mod} {
                     #{$prop2}-bottom: unit(xxx-small) solid;
                     #{$prop1}: color($name, -#{$mod});
+
+                    &--none {
+                        #{$prop2}-bottom: none;
+                    }
                 }
 
                 .#{$prefix}#{$className}left-#{$name}-#{$mod} {
                     #{$prop2}-left: unit(xxx-small) solid;
                     #{$prop1}: color($name, -#{$mod});
+
+                    &--none {
+                        #{$prop2}-left: none;
+                    }
                 }
             }
             @else {

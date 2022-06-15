@@ -1,0 +1,15 @@
+﻿@mixin border($prefix: '', $mods: [top, right, bottom, left]) {
+    .#{$prefix}border {
+        &--none {
+            border: none;
+        }
+
+        @each $mod in $mods {
+            &-#{$mod} {
+                &--none {
+                    border: none;
+                }
+            }
+        }
+    }
+}

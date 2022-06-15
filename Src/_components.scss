@@ -18,6 +18,7 @@
 @import "components/overflow";
 @import "components/user-select";
 @import "components/cursor";
+@import "components/border";
 
 
 @mixin components($prefix: '') {
@@ -37,6 +38,7 @@
     @include overflow($prefix);
     @include user-select($prefix);
     @include cursor($prefix);
+    @include border($prefix);
 
     @include unit-generator(border-radius, shape, $prefix, medium) {
         &--round {
