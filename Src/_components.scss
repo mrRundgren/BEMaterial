@@ -1,4 +1,5 @@
 ﻿@import "system/breakpoint-system";
+@import "colors";
 @import "generators/typography-generator";
 @import "generators/unit-generator";
 @import "generators/align-generator";
@@ -14,7 +15,10 @@
 @import "components/position";
 @import "components/animation";
 @import "components/input";
-@import "colors";
+@import "components/overflow";
+@import "components/user-select";
+@import "components/cursor";
+
 
 @mixin components($prefix: '') {
     @content;
@@ -30,6 +34,9 @@
     @include position($prefix);
     @include animation($prefix);
     @include input($prefix);
+    @include overflow($prefix);
+    @include user-select($prefix);
+    @include cursor($prefix);
 
     @include unit-generator(border-radius, shape, $prefix, medium) {
         &--round {

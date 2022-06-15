@@ -1,5 +1,18 @@
 ﻿@mixin overflow($prefix: '', $mods: [auto, clip, hidden, revert, scroll, visible]) {
+
     .#{$prefix}overflow {
-        overflow: 
+        @each $mod in $mods {
+            &--#{$mod} {
+                overflow: #{$mod};
+            }
+
+            &-x--#{$mod} {
+                overflow-x: #{$mod};
+            }
+
+            &-y--#{$mod} {
+                overflow-y: #{$mod};
+            }
+        }
     }
 }

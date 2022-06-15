@@ -1,0 +1,9 @@
+﻿@mixin cursor($prefix: '', $mods: [default, pointer, not-allowed]) {
+    .#{$prefix}cursor {
+        @each $mod in $mods {
+            &--#{$mod} {
+                cursor: #{$mod};
+            }
+        }
+    }
+}
