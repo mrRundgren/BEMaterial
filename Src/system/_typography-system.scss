@@ -1,0 +1,18 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import "unit-system";
+$system-typography: ( "display" 1.5rem "x-large" 500, "headline-large" 1.25rem "large" 500, "headline-medium" 1rem "medium" 500, "headline-small" 0.75rem "small" 500, "title" 0.75rem "x-small" 600, "body" 0rem "medium" 400, "body-small" 0.125rem "small" 400, "body-x-small" 0.5rem "x-small" 400);
+$system-fonts: ( "font-family": '"Roboto", opens-sans', "icon-font-family": "Material Symbols Outlined", "source-font-family": '"Source Code Pro", consolas', "line-height": "1.5" );
+
+@mixin typography-variables() {
+    @each $name, $val in $system-fonts {
+        --#{$name}: #{$val};
+    }
+    @each $name, $factor, $unit, $weight in $system-typography {
+        $font-size: map-get($system-units, $unit) + $factor;
+        --typography-#{$name}: #{$font-size};
+        --typography-#{$name}-weight: #{$weight};
+    }
+    @content;
+}

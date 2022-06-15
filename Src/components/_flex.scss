@@ -1,0 +1,20 @@
+﻿@mixin flex($prefix: '') {
+    .#{$prefix}flex {
+        display: flex;
+        flex-direction: row;
+
+        &-row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        &-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &--fill {
+            flex: 1;
+        }
+    }
+}

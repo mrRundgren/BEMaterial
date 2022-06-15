@@ -1,0 +1,19 @@
+﻿@inherits LayoutComponentBase
+@inject IJSRuntime JSRuntime
+<div class="flex-column background flex--fill">
+	<header @onclick="@(async () => await JSRuntime.InvokeVoidAsync("history.back"))" class="position-sticky--top neutral-10 grid gap--x-small align-items--center padding--x-small">
+		<nav class="span--3">
+			<button class="button icon shape--round neutral-10 state--hover state--active">arrow_back</button>
+		</nav>
+        <h1 class="span--6 text-align--center typography--title" tabindex="-1">Spotify UI Kit example</h1>
+	</header>
+	<main class="neutral-10 flex--fill padding-bottom--x-large">
+		@Body
+	</main>
+</div>
+<AnchorNavigation />
+
+@code {
+	
+}
+	

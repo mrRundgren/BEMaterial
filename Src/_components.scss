@@ -1,0 +1,152 @@
+﻿@import "system/breakpoint-system";
+@import "generators/typography-generator";
+@import "generators/unit-generator";
+@import "generators/align-generator";
+@import "generators/size-generator";
+@import "components/elevation";
+@import "components/grid";
+@import "components/button";
+@import "components/icon";
+@import "components/image";
+@import "components/flex";
+@import "components/container";
+@import "components/visibility";
+@import "components/position";
+@import "components/animation";
+@import "components/input";
+@import "colors";
+
+@mixin components($prefix: '') {
+    @content;
+    @include typography-generator($prefix);
+    @include elevation($prefix);
+    @include grid($prefix);
+    @include button($prefix);
+    @include icon($prefix);
+    @include image($prefix);
+    @include flex($prefix);
+    @include flex(#{$prefix}-inline-);
+    @include visibility($prefix);
+    @include position($prefix);
+    @include animation($prefix);
+    @include input($prefix);
+
+    @include unit-generator(border-radius, shape, $prefix, medium) {
+        &--round {
+            border-radius: 50%;
+        }
+    }
+
+    @include unit-generator(padding, padding, $prefix, medium, [top, right, bottom, left]) {
+        &-horizontal {
+            padding-left: unit(medium);
+            padding-right: unit(medium);
+
+            @each $name, $unit in $system-units {
+                &--#{$name} {
+                    padding-left: unit($name);
+                    padding-right: unit($name);
+                }
+            }
+
+            &--none {
+                padding-left: unit(none);
+                padding-right: unit(none);
+            }
+        }
+
+        &-vertical {
+            padding-top: unit(medium);
+            padding-bottom: unit(medium);
+
+            @each $name, $unit in $system-units {
+                &--#{$name} {
+                    padding-top: unit($name);
+                    padding-bottom: unit($name);
+                }
+            }
+
+            &--none {
+                padding-left: unit(none);
+                padding-right: unit(none);
+            }
+        }
+    }
+
+    @include unit-generator(margin, margin, $prefix, medium, [top, right, bottom, left]) {
+        &-horizontal {
+            margin-left: unit(medium);
+            margin-right: unit(medium);
+
+            @each $name, $unit in $system-units {
+                &--#{$name} {
+                    margin-left: unit($name);
+                    margin-right: unit($name);
+                }
+            }
+
+            &--none {
+                margin-left: unit(none);
+                margin-right: unit(none);
+            }
+        }
+
+        &-vertical {
+            margin-top: unit(medium);
+            margin-bottom: unit(medium);
+
+            @each $name, $unit in $system-units {
+                &--#{$name} {
+                    margin-top: unit($name);
+                    margin-bottom: unit($name);
+                }
+            }
+
+            &--none {
+                margin-left: unit(none);
+                margin-right: unit(none);
+            }
+        }
+    }
+
+    @include unit-generator(gap, gap, $prefix, medium);
+    @include unit-generator(row-gap, row-gap, $prefix, medium);
+    @include unit-generator(column-gap, column-gap, $prefix, medium);
+
+    @include align-generator(text-align, text-align, $prefix, left, [left, center, right]);
+    @include align-generator(align-items, align-items, $prefix, baseline, [baseline, start, center, end, revert, stretch]);
+    @include align-generator(align-content, align-content, $prefix, baseline, [baseline, start, center, end, revert, stretch, space-between, space-around, space-evenly]);
+    @include align-generator(justify-items, justify-items, $prefix, baseline, [baseline, start, center, end, revert, stretch]);
+    @include align-generator(justify-content, justify-content, $prefix, baseline, [baseline, start, center, end, revert, stretch, space-between, space-around, space-evenly]);
+    @include align-generator(grid-auto-rows, auto-rows, $prefix, max-content, [auto, max-content, min-content, revert]);
+    @include align-generator(grid-auto-columns, auto-columns, $prefix, max-content, [auto, max-content, min-content, revert]);
+
+    @include size-generator(min-height, min-height, $prefix, vh);
+    @include size-generator(max-height, max-height, $prefix, vh);
+    @include size-generator(min-width, min-width, $prefix, vw);
+    @include size-generator(max-width, max-width, $prefix, vw);
+    @include size-generator(width, width, $prefix, px, [100, 150, 200, 250, 300]);
+    @include size-generator(min-width, min-width, $prefix, px, [100, 150, 200, 250, 300]);
+    @include size-generator(height, height, $prefix, px, [100, 150, 200, 250, 300]);
+}
+
+@include components() {
+    @include container();
+    @include colors();
+
+    @each $breakpoint, $value in $system-breakpoints {
+        @include container(#{$breakpoint}-);
+    }
+}
+
+@each $breakpoint, $value in $system-breakpoints {
+    @media screen and (min-width: #{$value}) {
+        @if $breakpoint == mobile-landscape {
+            html {
+                font-size: 16px;
+            }
+        }
+
+        @include components(#{$breakpoint}-);
+    }
+}

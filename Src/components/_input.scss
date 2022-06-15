@@ -1,0 +1,27 @@
+﻿@mixin input($prefix: '') {
+    .#{$prefix}input {
+        all: unset;
+        appearance: none;
+        background-color: transparent;
+        color: inherit;
+        font-size: inherit;
+        border: none;
+        width: 100%;
+
+        &::placeholder {
+            color: inherit;
+            opacity: 0.75;
+        }
+
+        &::-webkit-search-cancel-button {
+            display: none;
+        }
+
+        &:placeholder-shown {
+            & + .button,
+            & + .button--small {
+                display: none;
+            }
+        }
+    }
+}

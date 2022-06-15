@@ -1,0 +1,13 @@
+﻿$system-breakpoints: ("mobile-portrait": 512px, "mobile-landscape": 768px, "tablet": 1024px, "desktop": 1280px, "large-desktop": 1440px, "fullhd": 1920px );
+
+@function breakpoint($name) {
+    @return var(--breakpoint-#{$name});
+}
+
+@mixin breakpoint-variables() {
+    @each $name, $unit in $system-breakpoints {
+        --breakpoint-#{$name}: #{$unit};
+    }
+
+    @content;
+}

@@ -1,0 +1,37 @@
+﻿@mixin position($prefix: '') {
+    .#{$prefix}position {
+        &-fixed {
+            position: fixed;
+
+            &--top {
+                position: fixed;
+                top: 0;
+            }
+
+            &--bottom {
+                position: fixed;
+                bottom: 0;
+            }
+        }
+
+        &-sticky {
+            position: sticky;
+
+            &--top {
+                position: sticky;
+                top: 0;
+            }
+
+            &--bottom {
+                position: sticky;
+                bottom: 0;
+            }
+        }
+
+        &-relative {
+            position: relative;
+            top: unset;
+            bottom: unset;
+        }
+    }
+}

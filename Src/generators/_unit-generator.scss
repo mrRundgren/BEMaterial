@@ -1,0 +1,27 @@
+﻿@import "../system/unit-system";
+
+@mixin unit-generator($prop1, $className: '', $prefix: '', $default: medium, $modifiers: []) {
+    .#{$prefix}#{$className} {
+        #{$prop1}: unit($default);
+
+        @each $name, $unit in $system-units {
+            &--#{$name} {
+                #{$prop1}: unit($name);
+            }
+        }
+
+        @each $mod in $modifiers {
+            &-#{$mod} {
+                #{$prop1}-#{$mod}: unit($default);
+
+                @each $name, $unit in $system-units {
+                    &--#{$name} {
+                        #{$prop1}-#{$mod}: unit($name);
+                    }
+                }
+            }
+        }
+
+        @content;
+    }
+}

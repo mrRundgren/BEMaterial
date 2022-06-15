@@ -1,0 +1,306 @@
+﻿@page "/color-system"
+@using System.Globalization
+<PageTitle>Color</PageTitle>
+<div class="animation-opacity--from-opaque">
+    <section class="desktop-container padding desktop-margin-top--large typography-block">
+        <h2>Color</h2>
+	    <p>
+            The color system handles the variability of dynamically changing color schemes that arise as user inputs change. The logic of tonal relationships and shifts in hue and chroma provide a foundation for flexible color application. Color schemes can be considered a cohesive group of relative tones, rather than a fixed group of constant values.
+        </p>
+    </section>
+    <section class="desktop-container padding-horizontal margin-vertical typography-block">
+        <h3 class="margin--none">Key colors</h3>
+    </section>
+    <section class="desktop-container mobile-landscape-padding-horizontal margin-bottom--x-large">
+        <div class="grid gap neutral-95 padding mobile-landscape-padding--x-large mobile-landscape-shape">
+            <div class="grid gap align-items--center">
+                <div class="tablet-span--3">
+                    <strong class="tablet-typography--body-small tablet-padding--small tablet-padding-horizontal--large tablet-shape--x-large tablet-on-background">Accent colors</strong>
+                </div>
+                <div class="flex-row align-items--center padding--x-small gap mobile-portrait-span--4 tablet-span--3">
+                    <i class="icon primary state--hover state--active padding--x-small shape--round">&nbsp;</i>
+                    <small class="typography--truncate">Primary key color</small>
+                </div>
+                <div class="flex-row align-items--center padding--x-small gap mobile-portrait-span--4 tablet-span--3">
+                    <i class="icon secondary state--hover state--active padding--x-small shape--round">&nbsp;</i>
+                    <small class="typography--truncate">Secondary key color</small>
+                </div>
+                <div class="flex-row align-items--center padding--x-small gap mobile-portrait-span--4 tablet-span--3">
+                    <i class="icon tertiary state--hover state--active padding--x-small shape--round">&nbsp;</i>
+                    <small class="typography--truncate">Tertiary key color</small>
+                </div>
+            </div>
+            <div class="grid gap align-items--center">
+                <div class="tablet-span--3">
+                    <strong class="tablet-typography--body-small tablet-padding--small tablet-padding-horizontal--large tablet-shape--x-large tablet-on-background">Neutral colors</strong>
+                </div>
+                <div class="flex-row align-items--center padding--x-small gap mobile-portrait-span--4 tablet-span--3">
+                    <i class="icon neutral state--hover state--active padding--x-small shape--round">&nbsp;</i>
+                    <small class="typography--truncate">Neutral key color</small>
+                </div>
+                <div class="flex-row align-items--center padding--x-small gap mobile-portrait-span--4 tablet-span--3">
+                    <i class="icon neutral-variant state--hover state--active padding--x-small shape--round">&nbsp;</i>
+                    <small class="typography--truncate">Neutral Variant key color</small>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="desktop-container padding-horizontal margin-vertical typography-block">
+        <p>
+            The foundation of a color scheme is the set of five key colors that individually relate to separate tonal palettes with 13 tones. Specific tones from each tonal palette are assigned to color roles across a UI.
+        </p>
+        <p>
+            Key colors are the foundation for creating any dynamic color scheme. With key colors established, Material’s algorithm specifies the full spectrum of colors needed for expressing interaction states, errors, and accessible contrast.  
+        </p>
+    </section>
+    <section class="desktop-container padding-horizontal margin-vertical typography-block">
+        <h4>Key colors: Accent & Neutral</h4>
+        <h5>Accent colors</h5>
+        <p>
+            The primary key color is used to derive roles for key components across the UI, such as the FAB, prominent buttons, active states, as well as the tint of elevated surfaces.
+        </p>
+        <p>
+            The secondary key color is used for less prominent components in the UI such as filter chips, while expanding the opportunity for color expression.
+        </p>
+        <p>
+            The tertiary key color is used to derive the roles of contrasting accents that can be used to balance primary and secondary colors or bring heightened attention to an element. The tertiary color role is left for teams to use at their discretion and is intended to support broader color expression in products.
+        </p>
+    </section>
+    <section class="desktop-container mobile-landscape-padding-horizontal margin-vertical--x-large">
+         <div class="grid gap neutral-95 padding mobile-landscape-padding--x-large mobile-landscape-shape">
+            <div class="grid gap align-items--center">
+                <div class="grid">
+                    <div class="flex-row align-items--center padding-vertical tablet-padding-horizontal gap tablet-span--4">
+                        <i class="icon primary padding--x-small shape--round">&nbsp;</i>
+                        <small class="typography--truncate">Primary key color</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--12 tablet-span--2 flex-column gap primary state--hover state--active">
+                        <small class="padding typography--truncate">Primary</small>
+                        <small class="padding typography--truncate text-align--right">.primary</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column gap on-primary state--hover state--active">
+                        <small class="padding typography--truncate">On primary</small>
+                        <small class="padding typography--truncate text-align--right">.on-primary</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column gap primary-container state--hover state--active">
+                        <small class="padding typography--truncate">Primary container</small>
+                        <small class="padding typography--truncate text-align--right">.primary-container</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column gap on-primary-container state--hover state--active">
+                        <small class="padding typography--truncate">On primary container</small>
+                        <small class="padding typography--truncate text-align--right">.on-primary-container</small>
+                    </div>
+                </div>
+            </div>
+            <div class="grid gap align-items--center">
+                <div class="grid">
+                    <div class="flex-row align-items--center padding-vertical tablet-padding-horizontal gap tablet-span--4">
+                        <i class="icon secondary padding--x-small shape--round">&nbsp;</i>
+                        <small class="typography--truncate">Secondary key color</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--12 tablet-span--2 flex-column gap secondary state--hover state--active">
+                        <small class="padding typography--truncate">Secondary</small>
+                        <small class="padding typography--truncate text-align--right">.secondary</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column gap on-secondary state--hover state--active">
+                        <small class="padding typography--truncate">On secondary</small>
+                        <small class="padding typography--truncate text-align--right">.on-secondary</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column gap secondary-container state--hover state--active">
+                        <small class="padding typography--truncate">Secondary container</small>
+                        <small class="padding typography--truncate text-align--right">.secondary-container</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column gap on-secondary-container state--hover state--active">
+                        <small class="padding typography--truncate">On secondary container</small>
+                        <small class="padding typography--truncate text-align--right">.on-secondary-container</small>
+                    </div>
+                </div>
+            </div>
+            <div class="grid gap align-items--center">
+                <div class="grid">
+                    <div class="flex-row align-items--center padding-vertical tablet-padding-horizontal gap tablet-span--4">
+                        <i class="icon tertiary padding--x-small shape--round">&nbsp;</i>
+                        <small class="typography--truncate">Tertiary key color</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--12 tablet-span--2 flex-column gap tertiary state--hover state--active">
+                        <small class="padding typography--truncate">Tertiary</small>
+                        <small class="padding typography--truncate text-align--right">.tertiary</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column gap on-tertiary state--hover state--active">
+                        <small class="padding typography--truncate">On tertiary</small>
+                        <small class="padding typography--truncate text-align--right">.on-tertiary</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column gap tertiary-container state--hover state--active">
+                        <small class="padding typography--truncate">Tertiary container</small>
+                        <small class="padding typography--truncate text-align--right">.secondary-container</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column gap on-tertiary-container state--hover state--active">
+                        <small class="padding typography--truncate">On tertiary container</small>
+                        <small class="padding typography--truncate text-align--right">.on-tertiary-container</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="desktop-container padding-horizontal margin-vertical typography-block">
+        <h5>Neutral colors</h5>
+        <p>
+            The neutral key color is used to derive the roles of surface and background, as well as high emphasis text and icons.
+        </p>
+        <p>
+            The neutral variant key color is used to derive medium emphasis text and icons, surface variants, and component outlines. 
+        </p>
+    </section>
+    <section class="desktop-container mobile-landscape-padding-horizontal margin-vertical--x-large">
+        <div class="grid gap neutral-95 padding mobile-landscape-padding--x-large mobile-landscape-shape">
+            <div class="grid gap align-items--center">
+                <div class="grid">
+                    <div class="flex-row align-items--center padding-vertical tablet-padding-horizontal gap tablet-span--4">
+                        <i class="icon neutral padding--x-small shape--round">&nbsp;</i>
+                        <small class="typography--truncate">Neutral key color</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--12 tablet-span--2 flex-column gap background state--hover state--active">
+                        <small class="padding typography--truncate">Background</small>
+                        <small class="padding typography--truncate text-align--right">.background</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column gap on-background state--hover state--active">
+                        <small class="padding typography--truncate">On background</small>
+                        <small class="padding typography--truncate text-align--right">.on-background</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column gap surface state--hover state--active">
+                        <small class="padding typography--truncate">Surface</small>
+                        <small class="padding typography--truncate text-align--right">.surface</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column gap on-surface state--hover state--active">
+                        <small class="padding typography--truncate">On surface</small>
+                        <small class="padding typography--truncate text-align--right">.on-surface</small>
+                    </div>
+                </div>
+            </div>
+            <div class="grid gap align-items--center">
+                <div class="grid">
+                    <div class="flex-row align-items--center padding-vertical tablet-padding-horizontal gap tablet-span--4">
+                        <i class="icon neutral-variant padding--x-small shape--round">&nbsp;</i>
+                        <small class="typography--truncate">Neutral Variant key color</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--12 tablet-span--2 flex-column gap surface-variant state--hover state--active">
+                        <small class="padding typography--truncate">Surface variant</small>
+                        <small class="padding typography--truncate text-align--right">.surface-variant</small>
+                    </div>
+                    <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column gap on-surface-variant state--hover state--active">
+                        <small class="padding typography--truncate">On surface variant</small>
+                        <small class="padding typography--truncate text-align--right">.on-surface-variant</small>
+                    </div>
+                    <div class="mobile-portrait-span--8 tablet-span--4 flex-column gap outline state--hover state--active">
+                        <small class="padding typography--truncate">outline</small>
+                        <small class="padding typography--truncate text-align--right">.outline</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="desktop-container grid margin-vertical--x-large">
+        <h4 class="margin--none padding-horizontal">Additional colors</h4>
+        <div class="typography-block margin-vertical padding-horizontal tablet-span--4 desktop-container">
+            <h5>Error colors</h5>
+            <p>
+                In addition to the accent and neutral key color, the color system includes a semantic color role for error, again in the form of the error role itself, plus an on-error, error container, and on-error container role. 
+            </p>
+        </div>
+        <div class="tablet-span--8 mobile-landscape-padding-horizontal">
+            <div class="grid gap neutral-95 padding mobile-landscape-padding--x-large mobile-landscape-shape">
+            <div class="grid align-items--center">
+                <div class="flex-row align-items--center padding-vertical tablet-padding-horizontal gap tablet-span--3">
+                    <i class="icon error padding--x-small shape--round">&nbsp;</i>
+                    <small class="typography--truncate">Error</small>
+                </div>
+                <div class="grid tablet-span--9">
+                    <div class="span--6 tablet-span--3 flex-column gap error state--hover state--active">
+                        <small class="padding typography--truncate">Error</small>
+                        <small class="padding typography--truncate text-align--right">.error</small>
+                    </div>
+                    <div class="span--6 tablet-span--3 flex-column gap on-error state--hover state--active">
+                        <small class="padding typography--truncate">On error</small>
+                        <small class="padding typography--truncate text-align--right">.on-error</small>
+                    </div>
+                    <div class="span--6 tablet-span--3 flex-column gap error-container state--hover state--active">
+                        <small class="padding typography--truncate">Error container</small>
+                        <small class="padding typography--truncate text-align--right">.error-container</small>
+                    </div>
+                    <div class="span--6 tablet-span--3 flex-column gap on-error-container state--hover state--active">
+                        <small class="padding typography--truncate">On error container</small>
+                        <small class="padding typography--truncate text-align--right">.on-error-container</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="desktop-container padding padding-bottom--none typography-block">
+        <h2 class="margin--none">Tonal palettes</h2>
+    </section>
+    <section class="desktop-container mobile-landscape-padding-horizontal margin-vertical--x-large">
+        <div class="grid gap neutral-95 padding mobile-landscape-padding--x-large mobile-landscape-shape">
+            <div class="primary-0--gradient padding shape--x-large">&nbsp;</div>
+        </div>
+    </section>
+    <section class="desktop-container padding-horizontal margin-vertical typography-block">
+        <p>
+            The 100 tone is always 100% white, the lightest tone in the range; the 0 tone is 100% black, the darkest tone in the range.
+        </p>
+        <h3>One key color becomes thirteen tones</h3>
+        <p>A tonal palette consists of thirteen tones, including white and black. A tone value of 100 is equivalent to the idea of light at its maximum and results in white. Every tone value between 0 and 100 expresses the amount of light present in the color.</p>
+    </section>
+
+    <section class="desktop-container mobile-landscape-padding-horizontal margin-vertical--x-large">
+        <div class="grid gap neutral-95 padding mobile-landscape-padding--x-large mobile-landscape-shape">
+            @foreach(var color in _colors)
+            {
+                <div class="grid align-items--center">
+                    <div class="desktop-span--2 flex-row align-items--center padding-vertical desktop-padding-horizontal gap">
+                        <i class="icon @color state--hover state--active padding--x-small shape--round">&nbsp;</i>
+                        <small class="typography--truncate">@string.Concat(".", color, "-*")</small>
+                    </div>
+                    <div class="grid desktop-span--10">
+                        <div class="grid tablet-span--5">
+                            @for(var i = 0; i < 5; i++)
+                            {
+                                var tone = i * 10;
+                            
+                                <div class="mobile-landscape-span--2 text-align--center padding @string.Concat(color, "-", tone) state--hover state--active">@(tone)</div>
+                                if(tone == 0)
+                                {
+                                    <div class="mobile-landscape-span--2 text-align--center padding @string.Concat(color, "-", 5) state--hover state--active">5</div>
+                                }
+                            }
+                        </div>
+                        <div class="grid tablet-span--2">
+                            <div class="text-align--center padding @string.Concat(color, "-", 50) state--hover state--active">50</div>
+                        </div>
+                        <div class="grid tablet-span--5">
+                            @for(var i = 6; i < 11; i++)
+                            {
+                                var tone = i * 10;
+                            
+                                if(i == 10)
+                                {
+                                    <div class="mobile-landscape-span--2 text-align--center padding @string.Concat(color, "-", 95) state--hover state--active">95</div>
+                                }
+
+                                <div class="mobile-landscape-span--2 text-align--center padding @string.Concat(color, "-", tone) state--hover state--active">@(tone)</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }       
+        </div>
+    </section>
+    <section class="desktop-container padding-horizontal margin-vertical typography-block">
+        <p>
+            The tonal value of each color is expressed with the number associated with that role, e.g. primary-40 is the primary key color at a tone value of 40. 
+        </p>
+    </section>
+</div>
+@code {
+    string[] _colors = new string[] { "primary", "secondary", "tertiary", "neutral", "neutral-variant", "error" };
+}

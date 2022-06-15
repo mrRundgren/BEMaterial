@@ -1,0 +1,51 @@
+﻿@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@implements IAsyncDisposable
+@code {
+    private IJSObjectReference? _module;
+
+    protected override void OnInitialized()
+    {
+        NavigationManager.LocationChanged += OnLocationChanged;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./js/AnchorNavigation.js");
+        }
+        await ScrollToId();
+    }
+
+    private async void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        await ScrollToId();
+    }
+
+    private async Task ScrollToId()
+    {
+        var uri = new Uri(NavigationManager.Uri, UriKind.Absolute);
+        var fragment = uri.Fragment;
+        if (fragment.StartsWith('#'))
+        {
+            var elementId = fragment.Substring(1);
+            var index = elementId.IndexOf(":~:", StringComparison.Ordinal);
+            if (index > 0)
+            {
+                elementId = elementId.Substring(0, index);
+            }
+
+            if (!string.IsNullOrEmpty(elementId) && _module is not null)
+            {
+                await _module.InvokeVoidAsync("ScrollToId", elementId);
+            }
+        }
+    }
+
+    async ValueTask IAsyncDisposable.DisposeAsync() {
+        if (_module is not null) {
+            await _module.DisposeAsync();
+        }
+    }
+}

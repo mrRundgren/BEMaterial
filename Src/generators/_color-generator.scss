@@ -1,0 +1,778 @@
+﻿@import "../system/color-system";
+@import "../system/unit-system";
+
+@mixin color-generator($prop1, $prop2: '', $className: '', $prefix: '', $mods: [0, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 100]) {
+    @each $name, $color in $system-colors {
+        $hue: hue($color);
+        $saturation: saturation($color);
+        $lightness: lightness($color);
+        $mod: (round(($lightness / 1%) / 10) * 10);
+
+        @if $prop2 == color {
+            .#{$prefix}#{$className}#{$name} {
+                #{$prop2}: contrast-color($name, $lightness);
+                #{$prop1}: color($name);
+
+                &.state {
+                    &--hover {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:hover {
+                            #{$prop1}: color($name, -#{$mod + 10});
+                        }
+                    }
+
+                    &--active {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:active {
+                            #{$prop1}: color($name, -#{$mod - 10});
+                        }
+                    }
+                }
+            }
+        }
+        @elseif $prop2 == border {
+            .#{$prefix}#{$className}#{$name} {
+                #{$prop2}: unit(xxx-small) solid;
+                #{$prop1}: color($name);
+            }
+
+            .#{$prefix}#{$className}top-#{$name} {
+                #{$prop2}-top: unit(xxx-small) solid;
+                #{$prop1}: color($name);
+            }
+
+            .#{$prefix}#{$className}right-#{$name} {
+                #{$prop2}-right: unit(xxx-small) solid;
+                #{$prop1}: color($name);
+            }
+
+            .#{$prefix}#{$className}bottom-#{$name} {
+                #{$prop2}-bottom: unit(xxx-small) solid;
+                #{$prop1}: color($name);
+            }
+
+            .#{$prefix}#{$className}left-#{$name} {
+                #{$prop2}-left: unit(xxx-small) solid;
+                #{$prop1}: color($name);
+            }
+
+            .#{$prefix}#{$className}left-#{$name}.state,
+            .#{$prefix}#{$className}left-#{$name}.state,
+            .#{$prefix}#{$className}left-#{$name}.state,
+            .#{$prefix}#{$className}left-#{$name}.state,
+            .#{$prefix}#{$className}#{$name}-state {
+                &--hover {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:hover {
+                        #{$prop1}: color($name, -#{$mod + 10});
+                    }
+                }
+
+                &--active {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:active {
+                        #{$prop1}: color($name, -#{$mod - 10});
+                    }
+                }
+
+                &--focus {
+                    &:focus-within {
+                        #{$prop1}: color($name, -#{$mod});
+                    }
+                }
+
+                &--focus-within {
+                    &:focus-within {
+                        #{$prop1}: color($name, -#{$mod});
+                    }
+                }
+            }
+        }
+        @else {
+            .#{$prefix}#{$className}#{$name} {
+                #{$prop1}: color($name);
+
+                &.state {
+                    &--hover {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:hover {
+                            #{$prop1}: color($name, -#{$mod + 10});
+                        }
+                    }
+
+                    &--active {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:active {
+                            #{$prop1}: color($name, -#{$mod - 10});
+                        }
+                    }
+
+                    &--focus {
+                        &:focus-within {
+                            #{$prop1}: color($name, -#{$mod});
+                        }
+                    }
+
+                    &--focus-within {
+                        &:focus-within {
+                            #{$prop1}: color($name, -#{$mod});
+                        }
+                    }
+                }
+            }
+
+            .#{$prefix}#{$className}#{$name}-state {
+                &--hover {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:hover {
+                        #{$prop1}: color($name, -#{$mod + 10});
+                    }
+                }
+
+                &--active {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:active {
+                        #{$prop1}: color($name, -#{$mod - 10});
+                    }
+                }
+
+                &--focus {
+                    &:focus-within {
+                        #{$prop1}: color($name, -#{$mod});
+                    }
+                }
+
+                &--focus-within {
+                    &:focus-within {
+                        #{$prop1}: color($name, -#{$mod});
+                    }
+                }
+            }
+        }
+
+        @each $mod in $mods {
+            @if $prop2 == color {
+                .#{$prefix}#{$className}#{$name}-#{$mod} {
+                    @if($mod < 40) {
+                        #{$prop2}: color($name, -80);
+                    }
+                    @elseif($mod > 60) {
+                        #{$prop2}: color($name, -20);
+                    }
+                    @else {
+                        #{$prop2}: contrast-color($name, $mod);
+                    }
+                }
+            }
+            @elseif $prop2 == border {
+                .#{$prefix}#{$className}#{$name}-#{$mod} {
+                    #{$prop2}: unit(xxx-small) solid;
+                    #{$prop1}: color($name, -#{$mod});
+                }
+
+                .#{$prefix}#{$className}top-#{$name}-#{$mod} {
+                    #{$prop2}-top: unit(xxx-small) solid;
+                    #{$prop1}: color($name, -#{$mod});
+                }
+
+                .#{$prefix}#{$className}right-#{$name}-#{$mod} {
+                    #{$prop2}-right: unit(xxx-small) solid;
+                    #{$prop1}: color($name, -#{$mod});
+                }
+
+                .#{$prefix}#{$className}bottom-#{$name}-#{$mod} {
+                    #{$prop2}-bottom: unit(xxx-small) solid;
+                    #{$prop1}: color($name, -#{$mod});
+                }
+
+                .#{$prefix}#{$className}left-#{$name}-#{$mod} {
+                    #{$prop2}-left: unit(xxx-small) solid;
+                    #{$prop1}: color($name, -#{$mod});
+                }
+            }
+            @else {
+                .#{$prefix}#{$className}#{$name}-#{$mod} {
+                    #{$prop1}: color($name, -#{$mod});
+                }
+            }
+
+            .#{$prefix}#{$className}#{$name}-#{$mod} {
+                #{$prop1}: color($name, -#{$mod});
+
+                &.state {
+                    $hover: 0;
+                    $active: 0;
+                    $focus: 0;
+
+                    @if $mod == 0 {
+                        $hover: 10;
+                        $active: 5;
+                        $focus: 20;
+                    }
+                    @elseif $mod == 5 {
+                        $hover: 10;
+                        $active: 0;
+                        $focus: 20;
+                    }
+                    @elseif $mod == 10 {
+                        $hover: 20;
+                        $active: 5;
+                        $focus: 30;
+                    }
+                    @elseif $mod == 90 {
+                        $hover: 95;
+                        $active: 80;
+                        $focus: 100;
+                    }
+                    @elseif $mod == 95 {
+                        $hover: 90;
+                        $active: 80;
+                        $focus: 100;
+                    }
+                    @elseif $mod == 100 {
+                        $hover: 95;
+                        $active: 90;
+                        $focus: 100;
+                    }
+                    @else {
+                        $hover: $mod + 10;
+                        $active: $mod - 10;
+                        $focus: $mod + 20;
+                    }
+
+                    &--hover {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:hover {
+                            #{$prop1}: color($name, -#{$hover});
+                        }
+                    }
+
+                    &--active {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:active {
+                            #{$prop1}: color($name, -#{$active});
+                        }
+                    }
+
+                    &--focus {
+                        &:focus-within {
+                            #{$prop1}: color($name, -#{$focus});
+                        }
+                    }
+
+                    &--focus-within {
+                        &:focus-within {
+                            #{$prop1}: color($name, -#{$focus});
+                        }
+                    }
+                }
+            }
+
+            .#{$prefix}#{$className}#{$name}-#{$mod}-state {
+
+                &--hover {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:hover {
+                        #{$prop1}: color($name, -#{$mod});
+                    }
+                }
+
+                &--active {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:active {
+                        #{$prop1}: color($name, -#{$mod});
+                    }
+                }
+
+                &--focus {
+                    &:focus-within {
+                        #{$prop1}: color($name, -#{$mod});
+                    }
+                }
+
+                &--focus-within {
+                    &:focus-within {
+                        #{$prop1}: color($name, -#{$mod});
+                    }
+                }
+            }
+        }
+    }
+
+    @if $prop1 == background-color {
+        @each $name, $color in $system-colors {
+            .#{$prefix}on-#{$name} {
+                #{$prop1}: color($name, -100);
+                #{$prop2}: color($name);
+
+                &.state {
+                    &--hover {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:hover {
+                            #{$prop1}: color($name, -95);
+                        }
+                    }
+
+                    &--active {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:active {
+                            #{$prop1}: color($name, -90);
+                        }
+                    }
+
+                    &--focus {
+                        &:focus-within {
+                            #{$prop1}: color($name, -100);
+                        }
+                    }
+
+                    &--focus-within {
+                        &:focus-within {
+                            #{$prop1}: color($name, -100);
+                        }
+                    }
+                }
+
+                &-container {
+                    #{$prop1}: color($name, -10);
+                    #{$prop2}: color($name, -90);
+
+                    &.state {
+                        &--hover {
+                            transition: #{$prop1} .125s ease-out;
+
+                            &:hover {
+                                #{$prop1}: color($name, -20);
+                            }
+                        }
+
+                        &--active {
+                            transition: #{$prop1} .125s ease-out;
+
+                            &:active {
+                                #{$prop1}: color($name, -5);
+                            }
+                        }
+
+                        &--focus {
+                            &:focus-within {
+                                #{$prop1}: color($name, -30);
+                            }
+                        }
+
+                        &--focus-within {
+                            &:focus-within {
+                                #{$prop1}: color($name, -30);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .#{$prefix}#{$name}-container {
+                #{$prop1}: color($name, -90);
+                #{$prop2}: color($name, -10);
+
+                &.state {
+                    &--hover {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:hover {
+                            #{$prop1}: color($name, -95);
+                        }
+                    }
+
+                    &--active {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:active {
+                            #{$prop1}: color($name, -80);
+                        }
+                    }
+
+                    &--focus {
+                        &:focus-within {
+                            #{$prop1}: color($name, -100);
+                        }
+                    }
+
+                    &--focus-within {
+                        &:focus-within {
+                            #{$prop1}: color($name, -100);
+                        }
+                    }
+                }
+            }
+        }
+
+        .#{$prefix}background {
+            #{$prop1}: color(neutral, -100);
+            #{$prop2}: color(neutral, -10);
+
+            &.state {
+                &--hover {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:hover {
+                        #{$prop1}: color(neutral, -95);
+                    }
+                }
+
+                &--active {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:active {
+                        #{$prop1}: color(neutral, -90);
+                    }
+                }
+
+                &--focus {
+                    &:focus-within {
+                        #{$prop1}: color(neutral, -100);
+                    }
+                }
+
+                &--focus-within {
+                    &:focus-within {
+                        #{$prop1}: color(neutral, -100);
+                    }
+                }
+            }
+        }
+
+        .#{$prefix}on-background {
+            #{$prop1}: color(neutral, #{'-0'});
+            #{$prop2}: color(neutral, -90);
+
+            &.state {
+                &--hover {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:hover {
+                        #{$prop1}: color(neutral, -10);
+                    }
+                }
+
+                &--active {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:active {
+                        #{$prop1}: color(neutral, -5);
+                    }
+                }
+
+
+                &--focus {
+                    &:focus-within {
+                        #{$prop1}: color(neutral, -20);
+                    }
+                }
+
+                &--focus-within {
+                    &:focus-within {
+                        #{$prop1}: color(neutral, -20);
+                    }
+                }
+            }
+        }
+
+        .#{$prefix}surface {
+            #{$prop1}: color(neutral, -90);
+            #{$prop2}: color(neutral, -20);
+
+            &.state {
+                &--hover {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:hover {
+                        #{$prop1}: color(neutral, -95);
+                    }
+                }
+
+                &--active {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:active {
+                        #{$prop1}: color(neutral, -80);
+                    }
+                }
+
+
+                &--focus {
+                    &:focus-within {
+                        #{$prop1}: color(neutral, -100);
+                    }
+                }
+
+                &--focus-within {
+                    &:focus-within {
+                        #{$prop1}: color(neutral, -100);
+                    }
+                }
+            }
+
+            &-variant {
+                #{$prop1}: color(neutral-variant, -90);
+                #{$prop2}: color(neutral-variant, -20);
+
+                &.state {
+                    &--hover {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:hover {
+                            #{$prop1}: color(neutral-variant, -95);
+                        }
+                    }
+
+                    &--active {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:active {
+                            #{$prop1}: color(neutral-variant, -80);
+                        }
+                    }
+
+
+                    &--focus {
+                        &:focus-within {
+                            #{$prop1}: color(neutral-variant, -100);
+                        }
+                    }
+
+                    &--focus-within {
+                        &:focus-within {
+                            #{$prop1}: color(neutral-variant, -100);
+                        }
+                    }
+                }
+            }
+        }
+
+        .#{$prefix}on-surface {
+            #{$prop1}: color(neutral, -20);
+            #{$prop2}: color(neutral, -90);
+
+            &.state {
+                &--hover {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:hover {
+                        #{$prop1}: color(neutral, -30);
+                    }
+                }
+
+                &--active {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:active {
+                        #{$prop1}: color(neutral, -10);
+                    }
+                }
+
+                &--focus {
+                    &:focus-within {
+                        #{$prop1}: color(neutral, -40);
+                    }
+                }
+
+                &--focus-within {
+                    &:focus-within {
+                        #{$prop1}: color(neutral, -40);
+                    }
+                }
+            }
+
+            &-variant {
+                #{$prop1}: color(neutral-variant, -20);
+                #{$prop2}: color(neutral-variant, -90);
+
+                &.state {
+                    &--hover {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:hover {
+                            #{$prop1}: color(neutral-variant, -30);
+                        }
+                    }
+
+                    &--active {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:active {
+                            #{$prop1}: color(neutral-variant, -10);
+                        }
+                    }
+
+
+                    &--focus {
+                        &:focus-within {
+                            #{$prop1}: color(neutral-variant, -40);
+                        }
+                    }
+
+                    &--focus-within {
+                        &:focus-within {
+                            #{$prop1}: color(neutral-variant, -40);
+                        }
+                    }
+                }
+            }
+        }
+
+        .#{$prefix}outline {
+            #{$prop1}: color(neutral, -50);
+            #{$prop2}: color(neutral, -90);
+
+            &.state {
+                &--hover {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:hover {
+                        #{$prop1}: color(neutral, -60);
+                    }
+                }
+
+                &--active {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:active {
+                        #{$prop1}: color(neutral, -40);
+                    }
+                }
+
+
+                &--focus {
+                    &:focus-within {
+                        #{$prop1}: color(neutral, -70);
+                    }
+                }
+
+                &--focus-within {
+                    &:focus-within {
+                        #{$prop1}: color(neutral, -70);
+                    }
+                }
+            }
+        }
+
+        .#{$prefix}error {
+            #{$prop1}: color(error);
+            #{$prop2}: color(error, -100);
+
+            &.state {
+                &--hover {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:hover {
+                        #{$prop1}: color(error, -60);
+                    }
+                }
+
+                &--active {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:active {
+                        #{$prop1}: color(error, -40);
+                    }
+                }
+
+                &--focus {
+                    &:focus-within {
+                        #{$prop1}: color(error, -50);
+                    }
+                }
+
+                &--focus-within {
+                    &:focus-within {
+                        #{$prop1}: color(error, -50);
+                    }
+                }
+            }
+
+            &-container {
+                #{$prop1}: color(error, -100);
+                #{$prop2}: color(error);
+
+                &.state {
+                    &--hover {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:hover {
+                            #{$prop1}: color(error, -95);
+                        }
+                    }
+
+                    &--active {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:active {
+                            #{$prop1}: color(error, -90);
+                        }
+                    }
+                }
+            }
+        }
+
+        .#{$prefix}on-error {
+            #{$prop1}: color(error, -90);
+            color: color(error, -20);
+
+            &.state {
+                &--hover {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:hover {
+                        #{$prop1}: color(error, -95);
+                    }
+                }
+
+                &--active {
+                    transition: #{$prop1} .125s ease-out;
+
+                    &:active {
+                        #{$prop1}: color(error, -80);
+                    }
+                }
+            }
+
+            &-container {
+                #{$prop1}: color(error, -20);
+                #{$prop2}: color(error, -90);
+
+                &.state {
+                    &--hover {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:hover {
+                            #{$prop1}: color(error, -30);
+                        }
+                    }
+
+                    &--active {
+                        transition: #{$prop1} .125s ease-out;
+
+                        &:active {
+                            #{$prop1}: color(error, -10);
+                        }
+                    }
+                }
+            }
+        }
+
+        @content;
+    }
+}

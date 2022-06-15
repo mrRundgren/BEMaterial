@@ -1,0 +1,29 @@
+﻿@mixin icon-defaults() {
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--icon-font-family) !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.5rem !important;
+    line-height: 1.5rem;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: 'liga';
+}
+
+@mixin icon($prefix: '') {
+    .#{$prefix}icon {
+        @include icon-defaults();
+        font-variation-settings: 'FILL' #{1}, 'wght' #{400}, 'GRAD' #{0}, 'opsz' #{48};
+
+        &--outlined {
+            @include icon-defaults();
+            font-variation-settings: 'FILL' #{0}, 'wght' #{400}, 'GRAD' #{0}, 'opsz' #{48};
+        }
+    }
+}

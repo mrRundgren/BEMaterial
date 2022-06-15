@@ -1,0 +1,14 @@
+﻿<div class="button avatar mobile-portrait--span-6 tablet--span-4 padding--none">
+	<div class="avatar">
+		<div class="avatar__image @Color.CssClass shape--round">&nbsp;</div>
+	</div>
+	<span class="button__text typography--truncate">@(string.IsNullOrWhiteSpace(Prefix) ?  Color.Name : $"{Prefix} {Color.Name}")</span>
+</div>
+
+@code {
+	[Parameter]
+	public BEMColor Color { get; set; } = null!;
+
+	[Parameter]
+	public string Prefix { get; set; } = "";
+}

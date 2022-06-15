@@ -1,0 +1,9 @@
+﻿@mixin visibility($prefix: '') {
+    .#{$prefix}hidden {
+        display: none;
+    }
+
+    .#{$prefix}visible {
+        display: revert;
+    }
+}

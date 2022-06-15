@@ -1,0 +1,25 @@
+﻿<PageTitle>@Title</PageTitle>
+
+<div class="padding">
+	@if(ShowBanner)
+	{
+		<div class="container--desktop container--fullscreen padding--x-large shape--large @ColorCssClass text-align--center">
+			<span class="typography__display typography--truncate">@Title</span>
+		</div>
+	}
+	@if(ChildContent != null)
+	{
+		@ChildContent	
+	}
+</div>
+
+@code {
+	[Parameter]
+	public string Title { get; set; } = "Untitled";
+	[Parameter]
+	public bool ShowBanner { get; set; } = true;
+	[Parameter]
+	public RenderFragment? ChildContent { get; set; } = null;
+	[Parameter]
+	public string ColorCssClass { get; set; } = "primary-container";
+}

@@ -1,0 +1,15 @@
+﻿@import "../system/breakpoint-system";
+
+@mixin container($prefix: '') {
+    .#{$prefix}container {
+        display: block;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+
+        @if $prefix != '' {
+            $tmp: str-slice(#{$prefix}, 1, -2);
+            max-width: breakpoint($tmp);
+        }
+    }
+}

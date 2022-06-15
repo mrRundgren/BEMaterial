@@ -1,0 +1,42 @@
+﻿@import "../system/typography-system";
+
+@mixin typography-generator($prefix: '') {
+    .#{$prefix}typography {
+        @each $name, $val, $unit in $system-typography {
+            &--#{$name} {
+                font-size: var(--typography-#{$name});
+                font-weight: var(--typography-#{$name}-weight);
+                margin: 0;
+            }
+        }
+
+        &-block {
+            display: block;
+
+            > :first-child {
+                margin-top: 0;
+            }
+        }
+
+        &--truncate {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        &--no-wrap {
+            white-space: nowrap;
+        }
+
+        &--bold {
+            font-weight: bold;
+        }
+
+        &--uppercase {
+            text-transform: uppercase;
+        }
+
+        @content;
+    }
+}

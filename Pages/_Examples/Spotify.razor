@@ -1,0 +1,359 @@
+﻿@page "/spotify-example"
+@layout SpotifyLayout
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Spotify UI Kit example</PageTitle>
+
+<section class="fullhd-container tablet-padding animation-opacity--from-opaque">
+    <div class="on-background tablet-shape--large padding tablet-padding--large">
+        <div class="grid gap">
+            <header class="grid gap mobile-portrait-flex-row align-items--center">
+                <div class="span--6 mobile-portrait-order--1 mobile-landscape-span--1">
+                    <i class="icon padding shape--round tertiary-50">interests</i>
+                </div>
+                <div class="span--6 mobile-portrait-order--3 text-align--right text-tertiary-50 typography--headline-medium">UI Kit</div>
+                <div class="mobile-portrait-order--2 mobile-portrait-flex--fill text-neutral-100 typography--headline-medium typography--truncate">Spotify UI Kit example</div>
+            </header>
+            <div class="grid desktop-gap--xx-large">
+                <div class="grid desktop-span--7 auto-rows">
+                    <section>
+                        <h5 class="text-tertiary-50 typography--uppercase">Color palette</h5>
+                        <div class="grid gap desktop-gap--large desktop-flex-row desktop-align-items--center margin-vertical--large">
+                            <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column align-items--center">
+                                <i class="icon tertiary-50 padding--large desktop-padding--x-large shape--round">&nbsp;</i>
+                                <small class="margin-top--small">Tertiary-50</small>
+                            </div>
+                            <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column align-items--center">
+                                <i class="icon neutral-100 padding--large desktop-padding--x-large shape--round">&nbsp;</i>
+                                <small class="margin-top--small">Neutral-100</small>
+                            </div>
+                            <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column align-items--center">
+                                <i class="icon neutral-5 padding--large desktop-padding--x-large shape--round">&nbsp;</i>
+                                <small class="margin-top--small">Neutral-5</small>
+                            </div>
+                            <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column align-items--center">
+                                <i class="icon neutral padding--large desktop-padding--x-large shape--round">&nbsp;</i>
+                                <small class="margin-top--small">Neutral</small>
+                            </div>
+                            <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column align-items--center">
+                                <i class="icon neutral-10 padding--large desktop-padding--x-large shape--round">&nbsp;</i>
+                                <small class="margin-top--small">Neutral-10</small>
+                            </div>
+                            <div class="span--6 mobile-portrait-span--4  tablet-span--2 flex-column align-items--center">
+                                <i class="icon on-surface padding--large desktop-padding--x-large shape--round">&nbsp;</i>
+                                <small class="margin-top--small">neutral-20</small>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="grid gap desktop-gap--xx-large align-items--start">
+                        <section class="grid gap--small desktop-span--4 margin-vertical--large">
+                            <h5 class="text-tertiary-50 typography--uppercase">Navigation</h5>
+                            <header class="neutral-10 grid gap--x-small align-items--center padding--x-small">
+                                <nav class="span--3">
+                                    <button class="button neutral-10 state--hover state--active icon shape--round">menu</button>
+                                </nav>
+                                <h1 class="span--6 text-align--center typography--title">Title</h1>
+                                <nav class="span--3 flex-row justify-content--end">
+                                    <button class="button neutral-10 state--hover state--active icon--outlined shape--round">settings</button>
+                                </nav>
+                            </header>
+                            <header class="neutral-10 grid gap--x-small gap--small align-items--center padding--x-small">
+                                <nav class="span--3">
+                                    <button class="button neutral-10 state--hover state--active icon shape--round">arrow_back</button>
+                                </nav>
+                                <h1 class="span--6 text-align--center typography--title">Title</h1>
+                                <nav class="span--3 flex-row justify-content--end">
+                                    <button class="button neutral-10 state--hover state--active icon--outlined shape--round">add</button>
+                                </nav>
+                            </header>
+                            <header class="neutral-10 grid gap--x-small gap--small align-items--center padding--x-small">
+                                <nav class="span--3">
+                                    <button class="button neutral-10 state--hover state--active icon shape--round">close</button>
+                                </nav>
+                                <h1 class="span--6 text-align--center typography--title">Title</h1>
+                                <nav class="span--3 flex-row justify-content--end">
+                                    <button class="button neutral-10 state--hover state--active icon--outlined shape--round">edit</button>
+                                </nav>
+                            </header>
+                            <header class="neutral-10 grid gap--x-small align-items--center padding--x-small">
+                                <nav class="span--3">
+                                    <button class="button neutral-10 state--hover state--active icon shape--round">arrow_back</button>
+                                </nav>
+                                <h1 class="span--6 text-align--center typography--title">Title</h1>
+                                <nav class="span--3 flex-row justify-content--end">
+                                    <button class="button neutral-10 state--hover state--active icon--outlined shape--round">more_horiz</button>
+                                </nav>
+                            </header>
+                            <header class="neutral-10 grid gap--x-small align-items--center padding--x-small">
+                                <div class="span--3">
+                                    <button class="button icon neutral-10 state--hover state--active shape--round">arrow_back</button>
+                                </div>
+                                <h1 class="span--6 text-align--center typography--title">Title</h1>
+                                <div class="flex-row gap--xx-small align-items--center">
+                                    <label for="search" class="flex--fill state--focus-within flex-row align-items--center shape--small padding--none padding-left--xx-small neutral-5 border-neutral-5">
+                                        <i class="icon padding--small">search</i>
+                                        <input id="search" type="search" placeholder="Search" class="input flex--fill padding--small typography--body-small" />
+                                        <button class="button icon--outlined">clear</button>
+                                    </label>
+                                </div>
+                            </header>
+                            <footer class="neutral-10 grid gap--x-small align-items--center padding--x-small">
+                                <nav class="grid align-items--start">
+                                    <div class="grid border-bottom-neutral gap--x-small padding--x-small align-items--center">
+                                        <nav class="span--2">
+                                            <button class="button--small icon neutral-10 shape--round text-tertiary-50 state--hover state--active">favorite</button>
+                                        </nav>
+                                        <div class="span--8 text-align--center typography--truncate">
+                                            <span class="typography--body-small typography--bold">Lorem Ipsum</span> - <span class="typography--body-small">dolor sit amen</span>
+                                            <div class="text-neutral typography--body-x-small">consectetur adipiscing</div>
+                                        </div>
+                                        <nav class="span--2 flex-row justify-content--end">
+                                            <button class="button--small neutral-10 shape--round state--hover state--active icon--outlined">play_circle</button>
+                                        </nav>
+                                    </div>
+                                    <a href="#" class="span--4 neutral-10 text-neutral  state--hover state--active button flex-column gap--xx-small align-items--center justify-content--center padding--small padding-top">
+                                        <i class="icon--outlined">home</i>
+                                        <div class="text-align--center typography--body-small">Home</div>
+                                    </a>
+                                    <a href="#" class="neutral-10 state--hover state--active span--4 button flex-column gap--xx-small align-items--center justify-content--center padding--small padding-top">
+                                        <i class="icon--outlined">search</i>
+                                        <div class="text-align--center typography--body-small">Search</div>
+                                    </a>
+                                    <a href="#" class="span--4 neutral-10 text-neutral  state--hover state--active button flex-column gap--xx-small align-items--center justify-content--center padding--small padding-top">
+                                        <i class="icon--outlined">more_vert</i>
+                                        <div class="text-align--center typography--body-small">More</div>
+                                    </a>
+                                </nav>
+                            </footer>
+                        </section>
+                        <section class="desktop-span--8 margin-vertical--large align-items--start">
+                            <div class="grid gap--small margin-bottom--large">
+                                <h5 class="text-tertiary-50 typography--uppercase">Modals</h5>
+                                <div class="span--6 state--hover state--active mobile-landscape-span--3 desktop-span--3 flex-column neutral-10 shape--small padding justify-content--center">
+                                    <div class="text-align--center">
+                                        <div class="padding-horizontal">
+                                            <img src="img/anonymous.jpg" alt="" class="image shape--round" />
+                                        </div>
+                                        <span class="typography-block typography--body-x-small margin-top--small margin-bottom--large typography--truncate">Fernando Cerbai</span>
+                                    </div>
+                                    <button class="button--small desktop-button-width--auto mobile-portrait-span--6 neutral-100 border-neutral-100 padding-horizontal shape--large justify-content--center typography--body-x-small">
+                                        <strong class="padding-horizontal typography-block typography--uppercase typography--truncate">Follow</strong>
+                                    </button>
+                                </div>
+                                <div class="span--6 state--hover state--active mobile-landscape-span--3 desktop-span--3 flex-column neutral-10 shape--small padding justify-content--center">
+                                    <div class="text-align--center">
+                                        <div class="padding-horizontal">
+                                            <img src="img/anonymous.jpg" alt="" class="image shape--round" />
+                                        </div>
+                                        <span class="typography-block typography--body-x-small margin-top--small margin-bottom--large typography--truncate">Paula Ruela</span>
+                                    </div>
+                                    <button class="button--small desktop-button-width--auto mobile-portrait-span--6 neutral-100 border-neutral-100 padding-horizontal shape--large justify-content--center typography--body-x-small">
+                                        <strong class="padding-horizontal typography-block typography--uppercase typography--truncate">Follow</strong>
+                                    </button>
+                                </div>
+                                <div class="span--6 state--hover state--active mobile-landscape-span--3 desktop-span--3 flex-column neutral-10 shape--small padding justify-content--center">
+                                    <div class="text-align--center">
+                                        <div class="padding-horizontal">
+                                            <img src="img/anonymous.jpg" alt="" class="image shape--round" />
+                                        </div>
+                                        <span class="typography-block typography--body-x-small margin-top--small margin-bottom--large typography--truncate">Simone Elzi</span>
+                                    </div>
+                                    <button class="button--small desktop-button-width--auto mobile-portrait-span--6 neutral-100 border-neutral-100 padding-horizontal shape--large justify-content--center typography--body-x-small">
+                                        <strong class="padding-horizontal typography-block typography--uppercase typography--truncate">Follow</strong>
+                                    </button>
+                                </div>
+                                <div class="span--6 state--hover state--active mobile-landscape-span--3 desktop-span--3 flex-column neutral-10 shape--small padding justify-content--center">
+                                    <div class="text-align--center">
+                                        <div class="padding-horizontal">
+                                            <img src="img/anonymous.jpg" alt="" class="image shape--round" />
+                                        </div>
+                                        <span class="typography-block typography--body-x-small margin-top--small margin-bottom--large typography--truncate">Chris Curtois</span>
+                                    </div>
+                                    <button class="button--small desktop-button-width--auto mobile-portrait-span--6 neutral-100 border-neutral-100 padding-horizontal shape--large justify-content--center typography--body-x-small">
+                                        <strong class="padding-horizontal typography-block typography--uppercase typography--truncate">Follow</strong>
+                                    </button>
+                                </div>
+                            </div>
+                            <h5 class="text-tertiary-50 typography--uppercase">Buttons</h5>
+                            <div class="grid gap tablet-flex-row align-items--center margin-vertical--large">
+                                <button class="button mobile-portrait-span--6 tertiary-50 state--hover state--active padding-horizontal shape--x-large justify-content--center">
+                                    <i class="icon">shuffle</i>
+                                    <strong class="padding-horizontal typography-block typography--uppercase typography--truncate">Shuffle play</strong>
+                                </button>
+                                <button class="button desktop-width--auto mobile-portrait-span--6 neutral-100 tertiary-50 state--hover state--active padding-horizontal shape--x-large justify-content--center">
+                                    <i class="icon">radio</i>
+                                    <strong class="padding-horizontal typography-block typography--uppercase typography--truncate">Play radio</strong>
+                                </button>
+                                <button class="button--small desktop-button-width--auto mobile-portrait-span--6 neutral-0 border-neutral-20 tertiary-50 state--hover state--active padding-horizontal shape--large justify-content--center typography--body-x-small">
+                                    <strong class="padding-horizontal typography-block typography--uppercase typography--truncate">Follow</strong>
+                                </button>
+                                <button class="button--small desktop-button-width--auto mobile-portrait-span--6 neutral-20 tertiary-50 state--hover state--active padding-horizontal shape--large justify-content--center typography--body-x-small">
+                                    <strong class="padding-horizontal typography-block typography--uppercase typography--truncate">Spotify</strong>
+                                </button>
+                            </div>
+                            <h5 class="text-tertiary-50 typography--uppercase">Inputs</h5>
+                            <div class="grid gap--small margin-vertical--large">
+                                <label for="search" class="state--focus-within tablet-span--6 flex-row align-items--center shape--x-small padding--none padding-left--xx-small neutral-100 border-neutral-100">
+                                    <i class="icon padding--small">search</i>
+                                    <input id="search" type="search" placeholder="Artists, songs or podcasts" class="input flex--fill padding--small typography--body-small" />
+                                    <button class="button icon--outlined">clear</button>
+                                </label>
+                                <label for="search" class="state--focus-within tablet-span--6 flex-row align-items--center shape--x-small padding--none padding-left--xx-small neutral-20 border-neutral-20">
+                                    <input id="search" type="search" placeholder="Type your message here..." class="input flex--fill padding--small typography--body-small" />
+                                    <button class="button icon--outlined">clear</button>
+                                </label>
+                                <label for="search" class="state--focus-within tablet-span--6 flex-row flex-row align-items--center shape--x-small padding--none padding-left--xx-small neutral-5 border-neutral-5">
+                                    <i class="icon padding--small">search</i>
+                                    <input id="search" type="search" placeholder="Search" class="input flex--fill padding--small typography--body-small" />
+                                    <button class="button icon--outlined">clear</button>
+                                </label>
+                                <label for="search" class="state--focus-within tablet-span--6 flex-row align-items--center shape--x-small padding--none padding-left--xx-small neutral-10 border-neutral-10">
+                                    <input id="search" type="search" placeholder="Type your message here..." class="input flex--fill padding--small typography--body-small" />
+                                    <button class="button icon--outlined">clear</button>
+                                </label>
+                            </div>
+                        </section>
+                    </section>
+                </div>
+                <div class="desktop-span--5 auto-rows">
+                    <section>
+                        <h5 class="text-tertiary-50">TYPOGRAPHY</h5>
+                        <p class="margin-vertical--x-small">
+                            <div class="typography--headline-small">The quick brown fox jumps over the lazy dog</div>
+                            <small class="typography--body-x-small text-neutral">Headline small</small>
+                        </p>
+                        <p class="margin-vertical--x-small">
+                            <div class="typography--title">The quick brown fox jumps over the lazy dog</div>
+                            <small class="typography--body-x-small text-neutral">Title</small>
+                        </p>
+                        <p>
+                            <div class="typography--body">The quick brown fox jumps over the lazy dog</div>
+                            <small class="typography--body-x-small text-neutral">Body</small>
+                        </p>
+                        <p>
+                            <div class="typography--body-small typography--bold">The quick brown fox jumps over the lazy dog</div>
+                            <small class="typography--body-x-small text-neutral">Body small, bold</small>
+                        </p>
+                        <p>
+                            <div class="typography--body-small">The quick brown fox jumps over the lazy dog</div>
+                            <small class="typography--body-x-small text-neutral">Body small</small>
+                        </p>
+                        <p>
+                            <div class="typography--body-x-small typography--bold">The quick brown fox jumps over the lazy dog</div>
+                            <small class="typography--body-x-small text-neutral">Body extra small, bold</small>
+                        </p>
+                        <p>
+                            <div class="typography--body-x-small">The quick brown fox jumps over the lazy dog</div>
+                            <small class="typography--body-x-small text-neutral">Body extra small</small>
+                        </p>
+                        <p class="text-align--center">
+                            <small class="typography-block typography--body-small">The quick brown fox jumps over the lazy dog</small>
+                            <small class="typography-block typography--body-small">The quick brown fox jumps over the lazy dog</small>
+                            <small class="typography-block typography--body-small">The quick brown fox jumps over the lazy dog</small>
+                            <small class="typography-block typography--body-small">This is an example paragraph</small>
+                        </p>
+                        <small class="typography--body-x-small typography-block text-neutral">Body small, aligned center, bold</small>
+                    </section>
+                    <section class="margin-vertical--large">
+                        <h5 class="text-tertiary-50 typography--uppercase margin-top--none">Icons</h5>
+                        <div class="grid row-gap--x-large margin-top--small justify-items--start">
+                            <i class="span--1 icon--outlined">home</i>
+                            <i class="span--1 icon--outlined">person</i>
+                            <i class="span--1 icon--outlined text-tertiary-50">favorite</i>
+                            <i class="span--1 icon--outlined">podcasts</i>
+                            <i class="span--1 icon--outlined">replay_10</i>
+                            <i class="span--1 icon--outlined">forward_10</i>
+                            <i class="span--1 icon--outlined">shuffle</i> 
+                            <i class="span--1 icon--outlined">repeat</i>
+                            <i class="span--1 icon--outlined">search</i>
+                            <i class="span--1 icon--outlined">close</i>
+                            <i class="span--1 icon--outlined">music_note</i>
+                            <i class="span--1 icon--outlined">settings</i>
+                            <i class="span--1 icon--outlined">mic</i>        
+                            <i class="span--1 icon--outlined">photo_camera</i>
+                            <i class="span--1 icon--outlined">volume_up</i>
+                            <i class="span--1 icon--outlined">volume_off</i>        
+                            <i class="span--1 icon--outlined">autorenew</i>          
+                            <i class="span--1 icon--outlined">edit</i>
+                            <i class="span--1 icon--outlined">push_pin</i>
+                            <i class="span--1 icon--outlined">add</i>
+                            <i class="span--1 icon--outlined">check</i>
+                            <i class="span--1 icon--outlined">expand_less</i>
+                            <i class="span--1 icon--outlined">expand_more</i> 
+                            <i class="span--1 icon--outlined">open_in_full</i>
+                            <i class="span--1 icon--outlined">open_in_full</i>
+                            <i class="span--1 icon--outlined">open_in_full</i>
+                            <i class="span--1 icon--outlined">menu</i>
+                            <i class="span--1 icon--outlined">trending_up</i>
+                            <i class="span--1 icon--outlined">arrow_upward</i>
+                            <i class="span--1 icon--outlined">arrow_forward</i>
+                            <i class="span--1 icon--outlined">arrow_downward</i>
+                            <i class="span--1 icon--outlined">arrow_back</i>
+                            <i class="span--1 icon--outlined">thumb_up</i>  
+                            <i class="span--1 icon--outlined">thumb_down</i>
+                            <i class="span--1 icon--outlined">album</i>
+                        </div>
+                    </section>
+                </div>
+                <section class="flex-row gap margin-vertical align-items--start" style="overflow-y: auto;">
+                    <a href="#" class="padding on-background state--hover state--active button flex-column align-items--center width--150px min-width--150px">
+                        <div class="padding-horizontal">
+                            <img src="/img/albums/album-1.webp" alt="" class="image" />
+                        </div>
+                        <small class="padding-horizontal text-align--center typography--body-x-small typography--bold">The Bee Gees: Odessa</small>
+                    </a>
+                    <a href="#" class="padding on-background state--hover state--active button flex-column align-items--center width--150px min-width--150px">
+                        <div class="padding-horizontal">
+                            <img src="/img/albums/album-2.webp" alt="" class="image" />
+                        </div>
+                        <small class="padding-horizontal text-align--center typography--body-x-small typography--bold">The Flamin’ Groovies: Supersnazz</small>
+                    </a>
+                    <a href="#" class="padding on-background state--hover state--active button flex-column align-items--center width--150px min-width--150px">
+                        <div class="padding-horizontal">
+                            <img src="/img/albums/album-3.webp" alt="" class="image" />
+                        </div>
+                        <small class="padding-horizontal text-align--center typography--body-x-small typography--bold">Jefferson Airplane: Long John Silver</small>
+                    </a>
+                    <a href="#" class="padding on-background state--hover state--active button flex-column align-items--center width--150px min-width--150px">
+                        <div class="padding-horizontal">
+                            <img src="/img/anonymous.jpg" alt="" class="image shape--round" />
+                        </div>
+                        <small class="padding-horizontal text-align--center typography--body-x-small typography--bold">Paula Ruela</small>
+                        <small class="padding-horizontal text-align--center text-neutral typography--body-x-small typography--uppercase">2.069.420 Followers</small>
+                    </a>
+                    <a href="#" class="padding on-background state--hover state--active button flex-column align-items--center width--150px min-width--150px">
+                        <div class="padding-horizontal">
+                            <img src="/img/albums/album-4.webp" alt="" class="image" />
+                        </div>
+                        <small class="padding-horizontal text-align--center typography--body-x-small typography--bold">Nick Lowe: Jesus of Cool/Pure Pop for Now People</small>
+                    </a>
+                    <a href="#" class="padding on-background state--hover state--active button flex-column align-items--center width--150px min-width--150px">
+                        <div class="padding-horizontal">
+                            <img src="/img/albums/album-5.webp" alt="" class="image" />
+                        </div>
+                        <small class="padding-horizontal text-align--center typography--body-x-small typography--bold">Parliament: Mothership Connection</small>
+                    </a>
+                    <a href="#" class="padding on-background state--hover state--active button flex-column align-items--center width--150px min-width--150px">
+                        <div class="padding-horizontal">
+                            <img src="/img/albums/album-6.webp" alt="" class="image" />
+                        </div>
+                        <small class="padding-horizontal text-align--center typography--body-x-small typography--bold">The Rolling Stones: Beggars Banquet</small>
+                    </a>
+                    <a href="#" class="padding on-background state--hover state--active button flex-column align-items--center width--150px min-width--150px">
+                        <div class="padding-horizontal">
+                            <img src="/img/albums/album-7.webp" alt="" class="image" />
+                        </div>
+                        <small class="padding-horizontal text-align--center typography--body-x-small typography--bold">The Cars: Candy-O</small>
+                    </a>
+                    <a href="#" class="padding on-background state--hover state--active button flex-column align-items--center width--150px min-width--150px">
+                        <div class="padding-horizontal">
+                            <img src="/img/anonymous.jpg" alt="" class="image shape--round" />
+                        </div>
+                        <small class="padding-horizontal text-align--center typography--body-x-small typography--bold">Chris Curtois</small>
+                        <small class="padding-horizontal text-align--center text-neutral typography--body-x-small typography--uppercase">176.432 Followers</small>
+                    </a>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>

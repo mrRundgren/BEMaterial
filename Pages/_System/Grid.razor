@@ -1,0 +1,134 @@
+﻿@page "/grid-system"
+@using System.Globalization
+<PageTitle>Grid</PageTitle>
+<div class="animation-opacity--from-opaque">
+    <section class="desktop-container padding desktop-margin-top--large typography-block">
+        <h2>Grid</h2>
+	    <p>
+            The system system is a fully responsive 12-column grid layout, highly reusable and customizable to fit most needs. a default grid is mobile-first enabled, and each child will automatically take up 12 columns.
+        </p>
+        <p>Naturally different blocks can be combined to provide for instance visibility to elements depending on viewport breakpoints.</p>
+    </section>
+    <section class="desktop-container mobile-landscape-padding-horizontal margin-vertical--x-large">
+        <div class="grid gap--x-small mobile-landscape-gap--small neutral-95 padding mobile-landscape-padding--x-large mobile-landscape-shape desktop-elevation--z6">
+            @for (var i = 0; i < 12; i++)
+            {
+            <div class="border-neutral-80 span--6 mobile-portrait-span--4 tablet-span--3 desktop-span--1 shape--x-small mobile-landscape-shape--small background padding tablet-padding--large flex-row align-items--center justify-content--center">
+                <small class="text-align--center mobile-portrait-hidden">6</small>
+                <small class="text-align--center hidden mobile-portrait-visible tablet-hidden">4</small>
+                <small class="text-align--center hidden tablet-visible desktop-hidden">3</small>
+                <small class="text-align--center hidden desktop-visible">1</small>
+            </div>
+            }        
+            <div class="border-neutral-80 background padding tablet-padding--large shape--x-small mobile-landscape-shape--small flex-row align-items--center justify-content--center">
+                <small class="text-align--center">No span (100%)</small>
+            </div>
+        </div>
+    </section>
+
+    <section class="desktop-container padding desktop-margin-vertical--large typography-block">
+        <h3>Alignment</h3>
+        <p>Using other blocks allows you to change alignment in the grid, which allows for great customization.</p>
+    </section>
+    <div class="surface">
+        <section class="desktop-container padding padding-bottom--x-large">
+            <div class="grid gap">
+                <h4>.align-content--*</h4>
+                <div class="mobile-portrait-span--6 tablet-span--3 background padding shape elevation-shadow--z1">
+                    <h5 class="typography--truncate">baseline</h5>
+                    <div class="grid gap--x-small padding surface shape--x-small min-height--30vh mobile-portrait-min-height--20vh align-content--baseline">
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="mobile-portrait-span--6 tablet-span--3 background padding shape elevation-shadow--z1">
+                    <h5 class="typography--truncate">stretch</h5>
+                    <div class="grid gap--x-small padding surface shape--x-small min-height--30vh mobile-portrait-min-height--20vh align-content--stretch">
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="mobile-portrait-span--6 tablet-span--3 background padding shape elevation-shadow--z1">
+                    <h5 class="typography--truncate">start</h5>
+                    <div class="grid gap--x-small padding surface shape--x-small min-height--30vh mobile-portrait-min-height--20vh align-content--start">
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="mobile-portrait-span--6 tablet-span--3 background padding shape elevation-shadow--z1">
+                    <h5 class="typography--truncate">center</h5>
+                    <div class="grid gap--x-small padding surface shape--x-small min-height--30vh mobile-portrait-min-height--20vh align-content--center">
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="mobile-portrait-span--6 tablet-span--3 background padding shape elevation-shadow--z1">
+                    <h5 class="typography--truncate">end</h5>
+                    <div class="grid gap--x-small padding surface shape--x-small min-height--30vh mobile-portrait-min-height--20vh align-content--end">
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="mobile-portrait-span--6 tablet-span--3 background padding shape elevation-shadow--z1">
+                    <h5 class="typography--truncate">space-between</h5>
+                    <div class="grid gap--x-small padding surface shape--x-small min-height--30vh mobile-portrait-min-height--20vh align-content--space-between">
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="mobile-portrait-span--6 tablet-span--3 background padding shape elevation-shadow--z1">
+                    <h5 class="typography--truncate">space-around</h5>
+                    <div class="grid gap--x-small padding surface shape--x-small min-height--30vh mobile-portrait-min-height--20vh align-content--space-around">
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="mobile-portrait-span--6 tablet-span--3 background padding shape elevation-shadow--z1">
+                    <h5 class="typography--truncate">space-evenly</h5>
+                    <div class="grid gap--x-small padding surface shape--x-small min-height--30vh mobile-portrait-min-height--20vh align-content--space-evenly">
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                        <div class="on-surface-variant shape--x-small padding--xx-small">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="desktop-container padding desktop-margin-vertical--large typography-block">
+        <h3>Responsiveness</h3>
+        <p>With the simple responsive modifiers, mobile-portrait, mobile-landscape, tablet and desktop, you can easily make your grid fit any resolution.</p>
+    </section>
+
+    <div class="surface">
+        <section class="desktop-container desktop-padding-vertical--xx-large tablet-padding">
+            <div class="grid gap--xxx-small tablet-gap">
+                @for (var i = 0; i < 20; i++)
+                {
+                <div class="grid tablet-span--3 tablet-elevation-shadow--z1 tablet-shape--x-small padding-vertical--small padding-horizontal background align-items--center">
+                    <div class="span--2 tablet-span--12 tablet-min-height--15vh tablet-shape--x-small tablet-text-align--center tablet-neutral-95 mobile-portrait-span--1">
+                        <i class="icon neutral-95 padding shape--round">&nbsp;</i>
+                    </div>
+                    <div class="grid align-items--center span--10 padding-left tablet-padding tablet-span--12 mobile-portrait-span--11 mobile-portrait-padding-horizontal--small tablet-padding-horizontal--none">
+                        <div class="span--8 desktop-span--12 desktop-order--1 typography--title typography--truncate">Title</div>
+                        <div class="span--4 desktop-span--12 desktop-order--3 desktop-margin-top--small typography--title desktop-typography--headline-large typography--truncate text-align--right desktop-text-align--left">$0</div>
+                        <div class="span--12 typography--body-small desktop-order--2 typography--truncate">Description</div>
+                    </div>
+                </div>   
+                }
+            </div>
+        </section>
+    </div>
+</div>
+
+
+@code {
+
+}

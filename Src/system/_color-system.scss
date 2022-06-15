@@ -1,0 +1,32 @@
+﻿$skf-colors: ( "primary": #0f58d6, "secondary": #2c95a0, "tertiary": #46962b, "neutral": #6c757d, "neutral-variant": #34404d, "error": #ea151f );
+$omega-point-colors: ("primary": #003349, "secondary": #f9bd30, "tertiary": #d7d2cb, "neutral": #6c757d, "neutral-variant": #34404d, "error": #ea151f);
+
+$system-colors: $skf-colors;
+
+@mixin color-variables($mods: [0, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 100]) {
+    @each $name, $color in $system-colors {
+        $hue: hue($color);
+        $saturation: saturation($color);
+
+        #{--}#{$name}: #{$color};
+
+        @each $mod in $mods {
+            #{--}#{$name}-#{$mod}: #{hsl($hue, $saturation, $mod)};
+        }
+    }
+
+    @content;
+}
+
+@function color($name, $lightness: '') {
+    @return var(--#{$name}#{$lightness});
+}
+
+@function contrast-color($name, $lightness) {
+    @if $lightness > 60 {
+        @return color($name, -0);
+    }
+    @else {
+        @return color($name, -100);
+    }
+}

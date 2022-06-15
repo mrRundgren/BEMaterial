@@ -1,0 +1,37 @@
+﻿@mixin grid($prefix: '') {
+    .grid {
+        @if $prefix == '' {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            -ms-grid-columns: unset;
+
+            &--equal-rows {
+                grid-auto-rows: 1fr;
+            }
+
+            &--no-columns {
+                grid-template-columns: unset;
+            }
+
+            > * {
+                grid-column: span 12;
+                order: initial;
+            }
+        }
+
+        @for $i from 1 through 12 {
+            > .#{$prefix}span--#{$i} {
+                grid-column: span #{$i};
+            }
+
+            > .#{$prefix}order--#{$i} {
+                order: #{$i};
+            }
+        }
+
+        > .#{$prefix}span--auto {
+            grid-column: auto;
+            min-width: 0;
+        }
+    }
+}

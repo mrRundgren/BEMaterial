@@ -1,0 +1,13 @@
+﻿@mixin align-generator($prop1, $className: $prop1, $prefix: '', $default: left, $modifiers: []) {
+    .#{$prefix}#{$className} {
+        #{$prop1}: #{$default};
+
+        @each $mod in $modifiers {
+            &--#{$mod} {
+                #{$prop1}: #{$mod};
+            }
+        }
+
+        @content;
+    }
+}

@@ -1,0 +1,60 @@
+﻿@mixin animation($prefix: '') {
+    .#{$prefix}animation {
+        &-from {
+            &--left {
+                animation: left-to-right;
+                animation-duration: 0.125s;
+                animation-iteration-count: 1;
+            }
+
+            &--right {
+                animation: right-to-left;
+                animation-duration: 0.125s;
+                animation-iteration-count: 1;
+            }
+        }
+
+        &-opacity {
+            &--from-opaque {
+                animation: opaque-to-visible;
+                animation-duration: 0.5s;
+                animation-iteration-count: 1;
+            }
+
+            &--to-opaque {
+                animation: opaque-to-visible;
+                animation-direction: reverse;
+                animation-duration: 0.5s;
+                animation-iteration-count: 1;
+            }
+        }
+    }
+}
+
+@keyframes opaque-to-visible {
+    from {
+        opacity: 0;
+
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes left-to-right {
+    from {
+        transform: translate(-100%, 0);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes right-to-left {
+    from {
+        transform: translate(100%, 0);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
