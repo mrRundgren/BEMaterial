@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "BEMaterial.dll": "sha256-1SxiQPaCuPAqkPWSZxTcmDOTNP7XSOQmAHYLcT0hq70=",
+      "BEMaterial.dll": "sha256-5hi9bO3UTMo9zHBDwAOOPQJeDhUG59dBosbDcXAaHGQ=",
       "BlazorPro.BlazorSize.dll": "sha256-T87pzU2XEyWSiFhUnmIlHPq2YuVLVeqJ0gYo8cwuHBY=",
       "Microsoft.AspNetCore.Components.dll": "sha256-RTlCQjIJxW7VEu1nFxmPT5lR0+ePZEBDx+e15y2+g8w=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-4uR\/ZmF\/RZ73Mo8mWlSwHKdQdxP8\/fE3yxM4H9rMitc=",
