@@ -132,12 +132,13 @@
 
 @include components() {
     @include container();
-    @include colors();
 
     @each $breakpoint, $value in $system-breakpoints {
         @include container(#{$breakpoint}-);
     }
 }
+
+@include colors();
 
 @each $breakpoint, $value in $system-breakpoints {
     @media screen and (min-width: #{$value}) {

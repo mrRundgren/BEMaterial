@@ -10,8 +10,8 @@
 
         @if $prop2 == color {
             .#{$prefix}#{$className}#{$name} {
-                #{$prop2}: contrast-color($name, $lightness);
                 #{$prop1}: color($name);
+                #{$prop2}: contrast-color($name, $mod);
 
                 &.state {
                     &--hover {
@@ -64,16 +64,12 @@
             .#{$prefix}#{$className}left-#{$name}.state,
             .#{$prefix}#{$className}#{$name}-state {
                 &--hover {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:hover {
                         #{$prop1}: color($name, -#{$mod + 10});
                     }
                 }
 
                 &--active {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:active {
                         #{$prop1}: color($name, -#{$mod - 10});
                     }
@@ -98,16 +94,12 @@
 
                 &.state {
                     &--hover {
-                        transition: #{$prop1} .125s ease-out;
-
                         &:hover {
                             #{$prop1}: color($name, -#{$mod + 10});
                         }
                     }
 
                     &--active {
-                        transition: #{$prop1} .125s ease-out;
-
                         &:active {
                             #{$prop1}: color($name, -#{$mod - 10});
                         }
@@ -129,16 +121,12 @@
 
             .#{$prefix}#{$className}#{$name}-state {
                 &--hover {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:hover {
                         #{$prop1}: color($name, -#{$mod + 10});
                     }
                 }
 
                 &--active {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:active {
                         #{$prop1}: color($name, -#{$mod - 10});
                     }
@@ -161,6 +149,8 @@
         @each $mod in $mods {
             @if $prop2 == color {
                 .#{$prefix}#{$className}#{$name}-#{$mod} {
+                    #{$prop1}: color($name, -#{$mod});
+
                     @if($mod < 40) {
                         #{$prop2}: color($name, -80);
                     }
@@ -205,8 +195,6 @@
             }
 
             .#{$prefix}#{$className}#{$name}-#{$mod} {
-                #{$prop1}: color($name, -#{$mod});
-
                 &.state {
                     $hover: 0;
                     $active: 0;
@@ -249,16 +237,12 @@
                     }
 
                     &--hover {
-                        transition: #{$prop1} .125s ease-out;
-
                         &:hover {
                             #{$prop1}: color($name, -#{$hover});
                         }
                     }
 
                     &--active {
-                        transition: #{$prop1} .125s ease-out;
-
                         &:active {
                             #{$prop1}: color($name, -#{$active});
                         }
@@ -279,18 +263,13 @@
             }
 
             .#{$prefix}#{$className}#{$name}-#{$mod}-state {
-
                 &--hover {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:hover {
                         #{$prop1}: color($name, -#{$mod});
                     }
                 }
 
                 &--active {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:active {
                         #{$prop1}: color($name, -#{$mod});
                     }
@@ -353,16 +332,12 @@
 
                     &.state {
                         &--hover {
-                            transition: #{$prop1} .125s ease-out;
-
                             &:hover {
                                 #{$prop1}: color($name, -20);
                             }
                         }
 
                         &--active {
-                            transition: #{$prop1} .125s ease-out;
-
                             &:active {
                                 #{$prop1}: color($name, -5);
                             }
@@ -389,16 +364,12 @@
 
                 &.state {
                     &--hover {
-                        transition: #{$prop1} .125s ease-out;
-
                         &:hover {
                             #{$prop1}: color($name, -95);
                         }
                     }
 
                     &--active {
-                        transition: #{$prop1} .125s ease-out;
-
                         &:active {
                             #{$prop1}: color($name, -80);
                         }
@@ -425,16 +396,12 @@
 
             &.state {
                 &--hover {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:hover {
                         #{$prop1}: color(neutral, -95);
                     }
                 }
 
                 &--active {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:active {
                         #{$prop1}: color(neutral, -90);
                     }
@@ -460,16 +427,12 @@
 
             &.state {
                 &--hover {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:hover {
                         #{$prop1}: color(neutral, -10);
                     }
                 }
 
                 &--active {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:active {
                         #{$prop1}: color(neutral, -5);
                     }
@@ -496,16 +459,12 @@
 
             &.state {
                 &--hover {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:hover {
                         #{$prop1}: color(neutral, -95);
                     }
                 }
 
                 &--active {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:active {
                         #{$prop1}: color(neutral, -80);
                     }
@@ -531,16 +490,12 @@
 
                 &.state {
                     &--hover {
-                        transition: #{$prop1} .125s ease-out;
-
                         &:hover {
                             #{$prop1}: color(neutral-variant, -95);
                         }
                     }
 
                     &--active {
-                        transition: #{$prop1} .125s ease-out;
-
                         &:active {
                             #{$prop1}: color(neutral-variant, -80);
                         }
@@ -568,16 +523,12 @@
 
             &.state {
                 &--hover {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:hover {
                         #{$prop1}: color(neutral, -30);
                     }
                 }
 
                 &--active {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:active {
                         #{$prop1}: color(neutral, -10);
                     }
@@ -602,16 +553,12 @@
 
                 &.state {
                     &--hover {
-                        transition: #{$prop1} .125s ease-out;
-
                         &:hover {
                             #{$prop1}: color(neutral-variant, -30);
                         }
                     }
 
                     &--active {
-                        transition: #{$prop1} .125s ease-out;
-
                         &:active {
                             #{$prop1}: color(neutral-variant, -10);
                         }
@@ -639,16 +586,12 @@
 
             &.state {
                 &--hover {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:hover {
                         #{$prop1}: color(neutral, -60);
                     }
                 }
 
                 &--active {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:active {
                         #{$prop1}: color(neutral, -40);
                     }
@@ -675,16 +618,12 @@
 
             &.state {
                 &--hover {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:hover {
                         #{$prop1}: color(error, -60);
                     }
                 }
 
                 &--active {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:active {
                         #{$prop1}: color(error, -40);
                     }
@@ -709,16 +648,12 @@
 
                 &.state {
                     &--hover {
-                        transition: #{$prop1} .125s ease-out;
-
                         &:hover {
                             #{$prop1}: color(error, -95);
                         }
                     }
 
                     &--active {
-                        transition: #{$prop1} .125s ease-out;
-
                         &:active {
                             #{$prop1}: color(error, -90);
                         }
@@ -733,16 +668,12 @@
 
             &.state {
                 &--hover {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:hover {
                         #{$prop1}: color(error, -95);
                     }
                 }
 
                 &--active {
-                    transition: #{$prop1} .125s ease-out;
-
                     &:active {
                         #{$prop1}: color(error, -80);
                     }
@@ -755,16 +686,12 @@
 
                 &.state {
                     &--hover {
-                        transition: #{$prop1} .125s ease-out;
-
                         &:hover {
                             #{$prop1}: color(error, -30);
                         }
                     }
 
                     &--active {
-                        transition: #{$prop1} .125s ease-out;
-
                         &:active {
                             #{$prop1}: color(error, -10);
                         }
