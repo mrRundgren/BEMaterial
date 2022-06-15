@@ -201,6 +201,14 @@ body small {
   overflow-y: hidden;
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 @keyframes opaque-to-visible {
   from {
     opacity: 0;
@@ -783,6 +791,13 @@ body small {
   animation-direction: reverse;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+}
+.animation--spin {
+  animation: spin;
+  animation-duration: 0.75s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  transform-origin: center center;
 }
 
 .input {
@@ -12210,6 +12225,13 @@ body small {
     animation-duration: 0.5s;
     animation-iteration-count: 1;
   }
+  .mobile-portrait-animation--spin {
+    animation: spin;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: center center;
+  }
 
   .mobile-portrait-input {
     all: unset;
@@ -13803,6 +13825,13 @@ body small {
     animation-duration: 0.5s;
     animation-iteration-count: 1;
   }
+  .mobile-landscape-animation--spin {
+    animation: spin;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: center center;
+  }
 
   .mobile-landscape-input {
     all: unset;
@@ -15391,6 +15420,13 @@ body small {
     animation-direction: reverse;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
+  }
+  .tablet-animation--spin {
+    animation: spin;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: center center;
   }
 
   .tablet-input {
@@ -16981,6 +17017,13 @@ body small {
     animation-duration: 0.5s;
     animation-iteration-count: 1;
   }
+  .desktop-animation--spin {
+    animation: spin;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: center center;
+  }
 
   .desktop-input {
     all: unset;
@@ -18570,6 +18613,13 @@ body small {
     animation-duration: 0.5s;
     animation-iteration-count: 1;
   }
+  .large-desktop-animation--spin {
+    animation: spin;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: center center;
+  }
 
   .large-desktop-input {
     all: unset;
@@ -20158,6 +20208,13 @@ body small {
     animation-direction: reverse;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
+  }
+  .fullhd-animation--spin {
+    animation: spin;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: center center;
   }
 
   .fullhd-input {
