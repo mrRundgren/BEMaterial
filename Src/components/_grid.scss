@@ -3,7 +3,6 @@
         @if $prefix == '' {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
-            -ms-grid-columns: unset;
 
             &--equal-rows {
                 grid-auto-rows: 1fr;

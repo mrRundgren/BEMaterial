@@ -46,7 +46,7 @@
         }
     }
 
-    @include unit-generator(padding, padding, $prefix, medium, [top, right, bottom, left]) {
+    @include unit-generator(padding, padding, $prefix, medium, (top, right, bottom, left)) {
         &-horizontal {
             padding-left: unit(medium);
             padding-right: unit(medium);
@@ -82,7 +82,7 @@
         }
     }
 
-    @include unit-generator(margin, margin, $prefix, medium, [top, right, bottom, left]) {
+    @include unit-generator(margin, margin, $prefix, medium, (top, right, bottom, left)) {
         &-horizontal {
             margin-left: unit(medium);
             margin-right: unit(medium);
@@ -122,21 +122,21 @@
     @include unit-generator(row-gap, row-gap, $prefix, medium);
     @include unit-generator(column-gap, column-gap, $prefix, medium);
 
-    @include align-generator(text-align, text-align, $prefix, left, [left, center, right]);
-    @include align-generator(align-items, align-items, $prefix, baseline, [baseline, start, center, end, revert, stretch]);
-    @include align-generator(align-content, align-content, $prefix, baseline, [baseline, start, center, end, revert, stretch, space-between, space-around, space-evenly]);
-    @include align-generator(justify-items, justify-items, $prefix, baseline, [baseline, start, center, end, revert, stretch]);
-    @include align-generator(justify-content, justify-content, $prefix, baseline, [baseline, start, center, end, revert, stretch, space-between, space-around, space-evenly]);
-    @include align-generator(grid-auto-rows, auto-rows, $prefix, max-content, [auto, max-content, min-content, revert]);
-    @include align-generator(grid-auto-columns, auto-columns, $prefix, max-content, [auto, max-content, min-content, revert]);
+    @include align-generator(text-align, text-align, $prefix, left, (left, center, right));
+    @include align-generator(align-items, align-items, $prefix, baseline, (baseline, start, center, end, revert, stretch));
+    @include align-generator(align-content, align-content, $prefix, baseline, (baseline, start, center, end, revert, stretch, space-between, space-around, space-evenly));
+    @include align-generator(justify-items, justify-items, $prefix, baseline, (baseline, start, center, end, revert, stretch));
+    @include align-generator(justify-content, justify-content, $prefix, start, (start, center, end, revert, stretch, space-between, space-around, space-evenly));
+    @include align-generator(grid-auto-rows, auto-rows, $prefix, max-content, (auto, max-content, min-content, revert));
+    @include align-generator(grid-auto-columns, auto-columns, $prefix, max-content, (auto, max-content, min-content, revert));
 
     @include size-generator(min-height, min-height, $prefix, vh);
     @include size-generator(max-height, max-height, $prefix, vh);
     @include size-generator(min-width, min-width, $prefix, vw);
     @include size-generator(max-width, max-width, $prefix, vw);
-    @include size-generator(width, width, $prefix, px, [100, 150, 200, 250, 300]);
-    @include size-generator(min-width, min-width, $prefix, px, [100, 150, 200, 250, 300]);
-    @include size-generator(height, height, $prefix, px, [100, 150, 200, 250, 300]);
+    @include size-generator(width, width, $prefix, px, (100, 150, 200, 250, 300));
+    @include size-generator(min-width, min-width, $prefix, px, (100, 150, 200, 250, 300));
+    @include size-generator(height, height, $prefix, px, (100, 150, 200, 250, 300));
 }
 
 @include components() {

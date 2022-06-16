@@ -18,7 +18,7 @@
       "loadPaths": "",
       "style": "expanded",
       "relativeUrls": true,
-      "sourceMap": false
+      "sourceMap": true
     },
     "nodesass": {
       "autoPrefix": "",
@@ -58,7 +58,7 @@
   },
   "minifiers": {
     "css": {
-      "enabled": true,
+      "enabled": false,
       "termSemicolons": true,
       "gzip": false
     },

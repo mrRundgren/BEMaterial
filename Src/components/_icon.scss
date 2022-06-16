@@ -19,11 +19,11 @@
 @mixin icon($prefix: '') {
     .#{$prefix}icon {
         @include icon-defaults();
-        font-variation-settings: 'FILL' #{1}, 'wght' #{400}, 'GRAD' #{0}, 'opsz' #{48};
+        font-variation-settings: 'FILL' #{'1'}, 'wght' #{'400'}, 'GRAD' #{'0'}, 'opsz' #{'48'};
 
         &--outlined {
             @include icon-defaults();
-            font-variation-settings: 'FILL' #{0}, 'wght' #{400}, 'GRAD' #{0}, 'opsz' #{48};
+            font-variation-settings: 'FILL' #{'0'}, 'wght' #{'400'}, 'GRAD' #{'0'}, 'opsz' #{'48'};
         }
     }
 }
