@@ -4,6 +4,14 @@
 <PageTitle>Spotify UI Kit example</PageTitle>
 
 <section class="fullhd-container tablet-padding animation-opacity--from-opaque">
+    <header class="grid gap--x-small align-items--center margin-bottom">
+        <nav class="span--3">
+            <button @onclick="@(async () => await JSRuntime.InvokeVoidAsync("history.back"))" class="button gap--small background state--hover state--active shape--large padding-horizontal--small">
+                <i class="icon">arrow_back</i>
+                <strong>Back</strong>
+            </button>
+        </nav>
+    </header>
     <div class="on-background tablet-shape--large padding tablet-padding--large">
         <div class="grid gap">
             <header class="grid gap mobile-portrait-flex-row align-items--center">
