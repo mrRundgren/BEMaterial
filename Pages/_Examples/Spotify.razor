@@ -3,7 +3,7 @@
 
 <PageTitle>Spotify UI Kit example</PageTitle>
 
-<section class="fullhd-container tablet-padding animation-opacity--from-opaque">
+<section class="neutral-10 fullhd-container tablet-padding animation-opacity--from-opaque">
     <header class="grid gap--x-small align-items--center padding--x-small tablet-margin-vertical">
         <nav class="span--3">
             <button @onclick="@(async () => await JSRuntime.InvokeVoidAsync("history.back"))" class="button gap--small background state--hover state--active shape--large padding-horizontal--small">
@@ -12,7 +12,7 @@
             </button>
         </nav>
     </header>
-    <div class="neutral-0 tablet-shape--large padding tablet-padding--large">
+    <div class="tablet-shape--large padding tablet-padding--large">
         <div class="grid gap">
             <header class="grid gap mobile-portrait-flex-row align-items--center">
                 <div class="span--6 mobile-portrait-order--1 mobile-landscape-span--1">
@@ -27,27 +27,27 @@
                         <h5 class="text-tertiary-50 typography--uppercase">Color palette</h5>
                         <div class="grid gap desktop-gap--large desktop-flex-row desktop-align-items--center margin-vertical--large">
                             <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column align-items--center">
-                                <i class="icon tertiary-50 padding--large desktop-padding--x-large shape--round">&nbsp;</i>
+                                <i class="icon tertiary-50 border border-neutral-variant padding--large desktop-padding--x-large shape--round">&nbsp;</i>
                                 <small class="margin-top--small">Tertiary-50</small>
                             </div>
                             <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column align-items--center">
-                                <i class="icon neutral-100 padding--large desktop-padding--x-large shape--round">&nbsp;</i>
+                                <i class="icon neutral-100 border border-neutral padding--large desktop-padding--x-large shape--round">&nbsp;</i>
                                 <small class="margin-top--small">Neutral-100</small>
                             </div>
                             <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column align-items--center">
-                                <i class="icon neutral-10 padding--large desktop-padding--x-large shape--round">&nbsp;</i>
+                                <i class="icon neutral-10 border border-neutral-variant padding--large desktop-padding--x-large shape--round">&nbsp;</i>
                                 <small class="margin-top--small">neutral-10</small>
                             </div>
                             <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column align-items--center">
-                                <i class="icon neutral padding--large desktop-padding--x-large shape--round">&nbsp;</i>
+                                <i class="icon neutral border border-neutral-variant padding--large desktop-padding--x-large shape--round">&nbsp;</i>
                                 <small class="margin-top--small">Neutral</small>
                             </div>
                             <div class="span--6 mobile-portrait-span--4 tablet-span--2 flex-column align-items--center">
-                                <i class="icon neutral-20 padding--large desktop-padding--x-large shape--round">&nbsp;</i>
+                                <i class="icon neutral-20 border border-neutral-variant padding--large desktop-padding--x-large shape--round">&nbsp;</i>
                                 <small class="margin-top--small">neutral-20</small>
                             </div>
                             <div class="span--6 mobile-portrait-span--4  tablet-span--2 flex-column align-items--center">
-                                <i class="icon neutral-30 padding--large desktop-padding--x-large shape--round">&nbsp;</i>
+                                <i class="icon neutral-30 border border-neutral-variant border border-neutral-50 padding--large desktop-padding--x-large shape--round">&nbsp;</i>
                                 <small class="margin-top--small">neutral-30</small>
                             </div>
                         </div>
@@ -97,9 +97,9 @@
                                 </div>
                                 <h1 class="span--6 text-align--center typography--title">Title</h1>
                                 <div class="flex-row gap--xx-small align-items--center">
-                                    <label for="search" class="flex--fill state--focus-within flex-row align-items--center shape--small padding--none padding-left--xx-small neutral-10 border-neutral-10">
-                                        <i class="icon padding--small">search</i>
-                                        <input id="search" type="search" placeholder="Search" class="input flex--fill padding--small typography--body-small" />
+                                    <label for="search" class="flex--fill state--focus-within flex-row align-items--center shape--small padding--none padding-left--xx-small neutral-10 border border-neutral-10">
+                                        <i class="icon padding--x-small">search</i>
+                                        <input id="search" type="search" placeholder="Search" class="input flex--fill padding--xx-small typography--body-small" />
                                         <button class="button icon--outlined">clear</button>
                                     </label>
                                 </div>
@@ -200,21 +200,21 @@
                             </div>
                             <h5 class="text-tertiary-50 typography--uppercase">Inputs</h5>
                             <div class="grid gap--small margin-vertical--large">
-                                <label for="search" class="state--focus-within tablet-span--6 flex-row align-items--center shape--x-small padding--none padding-left--xx-small neutral-100 border-neutral-100">
+                                <label for="search" class="state--focus-within tablet-span--6 flex-row align-items--center shape--x-small padding--none padding-left--xx-small neutral-100 border border-neutral-100">
                                     <i class="icon padding--small">search</i>
                                     <input id="search" type="search" placeholder="Artists, songs or podcasts" class="input flex--fill padding--small typography--body-small" />
                                     <button class="button icon--outlined">clear</button>
                                 </label>
-                                <label for="search" class="state--focus-within tablet-span--6 flex-row align-items--center shape--x-small padding--none padding-left--xx-small neutral-30 border-neutral-30">
+                                <label for="search" class="state--focus-within tablet-span--6 flex-row align-items--center shape--x-small padding--none padding-left--xx-small neutral-30 border border-neutral-30">
                                     <input id="search" type="search" placeholder="Type your message here..." class="input flex--fill padding--small typography--body-small" />
                                     <button class="button icon--outlined">clear</button>
                                 </label>
-                                <label for="search" class="state--focus-within tablet-span--6 flex-row flex-row align-items--center shape--x-small padding--none padding-left--xx-small neutral-10 border-neutral-10">
+                                <label for="search" class="state--focus-within tablet-span--6 flex-row flex-row align-items--center shape--x-small padding--none padding-left--xx-small neutral-10 border border-neutral-20">
                                     <i class="icon padding--small">search</i>
                                     <input id="search" type="search" placeholder="Search" class="input flex--fill padding--small typography--body-small" />
                                     <button class="button icon--outlined">clear</button>
                                 </label>
-                                <label for="search" class="state--focus-within tablet-span--6 flex-row align-items--center shape--x-small padding--none padding-left--xx-small neutral-20 border-neutral-20">
+                                <label for="search" class="state--focus-within tablet-span--6 flex-row align-items--center shape--x-small padding--none padding-left--xx-small neutral-20 border border-neutral-20">
                                     <input id="search" type="search" placeholder="Type your message here..." class="input flex--fill padding--small typography--body-small" />
                                     <button class="button icon--outlined">clear</button>
                                 </label>
