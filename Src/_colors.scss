@@ -1,9 +1,0 @@
-﻿@import "system/breakpoint-system";
-@import "generators/color-generator";
-
-@mixin colors($prefix: '') {
-    @content;
-    @include color-generator(background-color, color, '', #{$prefix});
-    @include color-generator(color, '', text-, #{$prefix});
-    @include color-generator(border-color, border, border-, #{$prefix});
-}

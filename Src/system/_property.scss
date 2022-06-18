@@ -1,0 +1,13 @@
+﻿@mixin property($prop, $mods: (), $prefix: '') {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
+    .#{$prefix}#{$prop} {
+        @each $mod in $mods {
+            &--#{$mod} {
+                #{$prop}: #{$prop};
+            }
+        }
+    }
+}

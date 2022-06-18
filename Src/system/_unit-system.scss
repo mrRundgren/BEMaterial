@@ -1,4 +1,4 @@
-﻿$system-units: ( "xxx-small": 1px, "xx-small": 0.125rem, "x-small": 0.25rem, "small": 0.75rem, "medium": 1rem, "large": 1.5rem, "x-large": 2.5rem, "xx-large": 4.5rem, "xxx-large": 6.25rem, "none": 0 );
+﻿$system-units: ( "1px": 1px, "xx-small": 0.125rem, "x-small": 0.25rem, "small": 0.75rem, "medium": 1rem, "large": 1.5rem, "x-large": 2.5rem, "xx-large": 4.5rem, "xxx-large": 6.25rem, "none": 0 );
 
 @function unit($name) {
     @return var(--unit-#{$name});

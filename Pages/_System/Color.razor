@@ -1,7 +1,65 @@
 ﻿@page "/color-system"
 @using System.Globalization
-<PageTitle>Color</PageTitle>
+<PageTitle>Colors</PageTitle>
+
 <div class="animation-opacity--from-opaque">
+    <section class="desktop-container typography-block padding">
+        <h4>Background color and accents</h4>
+        <div class="neutral-variant-90 shape padding grid gap user-select--none align-items--center">
+        @for(int i = 0; i < _colors.Length; i++)
+        {
+            <div class="tablet-span--3 align-items--center gap flex-row">
+                <div class="icon padding shape--round @_colors[i] state--hover state--active">&nbsp;</div>
+                <h5 class="text-@_colors[i] state--hover state--active">@_colors[i]</h5>
+            </div>
+            <div class="tablet-span--9 grid">
+                @for(var t = 0; t < 110; t = t + 10)
+                {
+                    <div class="mobile-landscape-span--@(t == 50 ? "2" : "1") @_colors[i]-@t state--hover state--active padding flex-row align-items--center justify-content--center">@t</div>
+                }
+            </div>
+        }
+        </div>
+    </section>
+    <section class="desktop-container typography-block padding margin-vertical">
+        <h4>Border color</h4>
+        <div class="neutral-variant-90 shape padding grid gap user-select--none align-items--center">
+        @for(int i = 0; i < _colors.Length; i++)
+        {
+            <div class="tablet-span--3 align-items--center gap flex-row">
+                <div class="icon padding shape--round neutral-100 border border-@_colors[i] state--hover state--active">&nbsp;</div>
+                <h5 class="text-@_colors[i] state--hover state--active">border-@_colors[i]</h5>
+            </div>
+            <div class="tablet-span--9 grid gap--x-small">
+                @for(var t = 0; t < 110; t = t + 10)
+                {
+                    <div class="mobile-landscape-span--@(t == 50 ? "2" : "1") shape border border-@_colors[i]-@t neutral-100 state--hover state--active padding--small flex-row align-items--center justify-content--center">@t</div>
+                }
+            </div>
+        }
+        </div>
+    </section>
+    <section class="desktop-container typography-block padding margin-vertical">
+        <h4>Text color</h4>
+        <div class="neutral-variant-90 shape padding grid gap user-select--none align-items--center">
+        @for(int i = 0; i < _colors.Length; i++)
+        {
+            <div class="tablet-span--3 align-items--center gap flex-row">
+                <div class="icon padding shape--round @_colors[i] state--hover state--active">&nbsp;</div>
+                <h5 class="text-@_colors[i] state--hover state--active">text-@_colors[i]</h5>
+            </div>
+            <div class="tablet-span--9 grid gap--x-small">
+                @for(var t = 0; t < 110; t = t + 10)
+                {
+                    <div class="mobile-landscape-span--@(t == 50 ? "2" : "1") shape text-@_colors[i]-@t state--hover state--active padding--small flex-row align-items--center justify-content--center">@t</div>
+                }
+            </div>
+        }
+        </div>
+    </section>
+</div>
+
+@*<div class="animation-opacity--from-opaque">
     <section class="desktop-container padding desktop-margin-top--large typography-block">
         <h2>Color</h2>
 	    <p>
@@ -243,7 +301,7 @@
         <div class="grid gap neutral-95 padding mobile-landscape-padding--x-large mobile-landscape-shape">
             <div class="primary-0--gradient padding shape--x-large">&nbsp;</div>
         </div>
-    </section>*@
+    </section>
     <section class="desktop-container padding-horizontal margin-vertical typography-block">
         <p>
             The 100 tone is always 100% white, the lightest tone in the range; the 0 tone is 100% black, the darkest tone in the range.
@@ -300,7 +358,7 @@
             The tonal value of each color is expressed with the number associated with that role, e.g. primary-40 is the primary key color at a tone value of 40. 
         </p>
     </section>
-</div>
+</div>*@
 @code {
     string[] _colors = new string[] { "primary", "secondary", "tertiary", "neutral", "neutral-variant", "error" };
 }

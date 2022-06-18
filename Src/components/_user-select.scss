@@ -1,4 +1,4 @@
-﻿@mixin user-select($prefix: '', $mods: [auto, contain, none, revert, text]) {
+﻿@mixin user-select($prefix: '', $mods: (auto, contain, none, revert, text)) {
     .#{$prefix}user-select {
         @each $mod in $mods {
             &--#{$mod} {

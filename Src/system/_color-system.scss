@@ -1,32 +1,197 @@
-﻿$skf-colors: ( "primary": #0f58d6, "secondary": #2c95a0, "tertiary": #46962b, "neutral": #6c757d, "neutral-variant": #34404d, "error": #ea151f );
-$omega-point-colors: ("primary": #003349, "secondary": #f9bd30, "tertiary": #d7d2cb, "neutral": #6c757d, "neutral-variant": #34404d, "error": #ea151f);
+﻿@use "sass:math";
 
-$system-colors: $skf-colors;
+$system-colors: ( "primary": #0f58d6, "secondary": #2c95a0, "tertiary": #46962b, "neutral": #6c757d, "neutral-variant": #34404d, "error": #ea151f );
+$system-color-tones: (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
 
-@mixin color-variables($mods: [0, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 100]) {
-    @each $name, $color in $system-colors {
-        $hue: hue($color);
-        $saturation: saturation($color);
+@function color-var($name, $lightness: '', $contrast: false) {
+    @if $contrast {
+        @if $lightness > 60 {
+            @return var(--#{$name}-0);
+        }
+        @else {
+            @return var(--#{$name}-100);
+        }
+    }
+    @else {
+        @if $lightness != '' {
+            $lightness: -#{$lightness};
+        }
 
-        #{--}#{$name}: #{$color};
+        @return var(--#{$name}#{$lightness});
+    }
+}
 
-        @each $mod in $mods {
-            #{--}#{$name}-#{$mod}: #{hsl($hue, $saturation, $mod)};
+@function key-by-index($map, $index) {
+    $keys: map-keys($map);
+    @return nth($keys, $index);
+}
+
+@function val-by-index($map, $index) {
+    $keys: map-keys($map);
+    @return map-get($map, key-by-index($keys, $index));
+}
+
+@mixin color-variables() {
+    @each $name, $hex in $system-colors {
+        $hue: hue($hex);
+        $saturation: saturation($hex);
+
+        --#{$name}: #{$hex};
+
+        @each $tone in $system-color-tones {
+            --#{$name}-#{$tone}: #{hsl($hue, $saturation, $tone * 1%)};
         }
     }
 
     @content;
 }
 
-@function color($name, $lightness: '') {
-    @return var(--#{$name}#{$lightness});
-}
+@mixin color-class($name, $hex, $props: (), $prefix: '', $tone: '') {
+    $suffix: '';
+    $lightness: math.round(math.div(math.div(lightness($hex), 1%), 10)) * 10;
 
-@function contrast-color($name, $lightness) {
-    @if $lightness > 60 {
-        @return color($name, -0);
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
+    @if $tone != '' {
+        $suffix: -#{$tone};
     }
     @else {
-        @return color($name, -100);
+        $tone: $lightness;
+    }
+
+    .#{$prefix}#{$name}#{$suffix} {
+        @each $prop, $val in $props {
+            #{$prop}: #{$val};
+        }
+
+        &.state {
+            $key: key-by-index($props, 1);
+            $hover: 0;
+            $active: 0;
+            $focus: 0;
+
+            @if $tone == 0 {
+                $hover: 10;
+                $active: 0;
+                $focus: 20;
+            }
+            @if $tone == 100 {
+                $hover: 90;
+                $active: 80;
+                $focus: 80;
+            }
+            @if $tone != 0 and $tone != 100 {
+                $hover: $tone + 10;
+                $active: $tone - 10;
+                $focus: $tone + 20;
+            }
+
+            &--hover {
+                &:hover {
+                    #{$key}: #{color-var($name, $hover)};
+                }
+            }
+
+            &--active {
+                &:active {
+                    #{$key}: #{color-var($name, $active)};
+                }
+            }
+
+            &--focus {
+                &:focus {
+                    #{$key}: #{color-var($name, $focus)};
+                }
+            }
+
+            &--focus-within {
+                &:focus-within {
+                    #{$key}: #{color-var($name, $focus)};
+                }
+            }
+        }
+    }
+}
+
+@mixin colors($prefix: '') {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
+    @each $name, $hex in $system-colors {
+        $prop1: color-var($name);
+        $prop2: color-var($name, lightness($hex), true);
+
+        @include color-class($name, $hex, (background-color: #{$prop1}, color: #{$prop2}), #{$prefix});
+
+        @each $tone in $system-color-tones {
+            $prop1: color-var($name, $tone);
+
+            @if $tone < 40 {
+                $prop2: color-var($name, 80);
+            }
+
+            @if $tone > 80 {
+                $prop2: color-var($name, 20);
+            }
+
+            @if $tone >= 40 and $tone <= 80 {
+                $prop2: color-var($name, $tone, true)
+            }
+
+            @include color-class($name, $hex, (background-color: #{$prop1}, color: #{$prop2}), #{$prefix}, $tone);
+        }
+    }
+
+    @each $name, $hex in $system-colors {
+        $prop1: color-var($name);
+        $prop2: color-var($name, lightness($hex), true);
+
+        @include color-class($name, $hex, (color: #{$prop1}), #{$prefix}text);
+
+        @each $tone in $system-color-tones {
+            $prop1: color-var($name, $tone);
+
+            @if $tone < 40 {
+                $prop2: color-var($name, 80);
+            }
+
+            @if $tone > 80 {
+                $prop2: color-var($name, 20);
+            }
+
+            @if $tone >= 40 and $tone <= 80 {
+                $prop2: color-var($name, $tone, true)
+            }
+
+            @include color-class($name, $hex, (color: #{$prop1}), #{$prefix}text, $tone);
+        }
+    }
+
+    @each $name, $hex in $system-colors {
+        $prop1: color-var($name);
+        $prop2: color-var($name, lightness($hex), true);
+
+        @include color-class($name, $hex, (border-color: #{$prop1}), #{$prefix}border);
+
+        @each $tone in $system-color-tones {
+            $prop1: color-var($name, $tone);
+
+            @if $tone < 40 {
+                $prop2: color-var($name, 80);
+            }
+
+            @if $tone > 80 {
+                $prop2: color-var($name, 20);
+            }
+
+            @if $tone >= 40 and $tone <= 80 {
+                $prop2: color-var($name, $tone, true)
+            }
+
+            @include color-class($name, $hex, (border-color: #{$prop1}), #{$prefix}border, $tone);
+        }
     }
 }

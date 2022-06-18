@@ -1,5 +1,5 @@
 ﻿@import "system/breakpoint-system";
-@import "colors";
+@import "system/color-system";
 @import "generators/typography-generator";
 @import "generators/unit-generator";
 @import "generators/align-generator";
@@ -158,5 +158,6 @@
         }
 
         @include components(#{$breakpoint}-);
+        @include colors($breakpoint);
     }
 }

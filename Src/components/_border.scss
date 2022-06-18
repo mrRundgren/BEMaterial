@@ -1,13 +1,35 @@
-﻿@mixin border($prefix: '', $mods: [top, right, bottom, left]) {
+﻿@import "../system/unit-system";
+
+@mixin border($prefix: '', $default: var(--unit-xx-small), $mods: (top, right, bottom, left)) {
     .#{$prefix}border {
+        border-width: #{$default};
+        border-style: solid;
+
+        @each $name, $unit in $system-units {
+            &--#{$name} {
+                border-width: #{$unit};
+                border-style: solid;
+            }
+        }
+
         &--none {
             border: none;
         }
 
         @each $mod in $mods {
             &-#{$mod} {
+                border-#{$mod}-width: #{$default};
+                border-#{$mod}-style: solid;
+
+                @each $name, $unit in $system-units {
+                    &--#{$name} {
+                        border-#{$mod}-width: #{$unit};
+                        border-#{$mod}-style: solid;
+                    }
+                }
+
                 &--none {
-                    border: none;
+                    border-#{$mod}: none;
                 }
             }
         }
