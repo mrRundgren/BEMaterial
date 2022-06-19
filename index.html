@@ -4,24 +4,23 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="theme-color" content="#29333d" />
+    <meta name="theme-color" content="#181a1b" />
     <title>BEMaterial</title>
     <base href="/BEMaterial/" />
     <link href="css/app.css" rel="stylesheet" prefetch />
-    <link href="css/color-system.css" rel="stylesheet" prefetch />
 </head>
 
 <body>
-    <div id="app" class="flex">
-        <div class="flex--fill flex-column align-items--center justify-content--center">
+    <div id="app" class="display--flex overflow--hidden">
+        <div class="flex--1 display--flex flex-direction--column align-items--center justify-content--center">
             <i class="icon--outlined shape--round padding animation--spin primary">hourglass_top</i>
             <strong class="margin-top typography--headline-small">Loading...</strong>
         </div>
     </div>
     <div id="blazor-error-ui" class="position-sticky--bottom padding" style="display:none;">
         <div class="mobile-landscape-container error elevation-shadow--z6 shape--small">
-            <header class="flex-row justify-content--end padding--x-small">
-                <h1 class="typography--body typography-block typography--truncate flex--fill padding--small">An unhandled error has occurred.</h1>
+            <header class="display--flex flex-direction--row justify-content--end padding--x-small">
+                <h1 class="typography--body typography-block typography--truncate flex--1 padding--small">An unhandled error has occurred.</h1>
                 <a href="" class="reload button icon error state--hover state--active shape--round">refresh</a>
                 <a class="dismiss button icon error state--hover state--active shape--round">close</a>
             </header>
