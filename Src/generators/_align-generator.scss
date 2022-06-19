@@ -1,4 +1,8 @@
 ﻿@mixin align-generator($prop1, $className: $prop1, $prefix: '', $default: left, $modifiers: []) {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
     .#{$prefix}#{$className} {
         #{$prop1}: #{$default};
 

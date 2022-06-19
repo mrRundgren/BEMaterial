@@ -1,4 +1,8 @@
 ﻿@mixin animation($prefix: '') {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
     .#{$prefix}animation {
         &-from {
             &--left {

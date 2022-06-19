@@ -37,4 +37,12 @@
     <UpToDateCheckInput Remove="Src\system\_property.scss" />
   </ItemGroup>
 
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Src\generators\_property-generator.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Src\generators\_typography.scss" />
+  </ItemGroup>
+
 </Project>

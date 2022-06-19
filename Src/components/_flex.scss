@@ -1,4 +1,8 @@
 ﻿@mixin flex($prefix: '') {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
     .#{$prefix}flex {
         display: flex;
         flex-direction: row;

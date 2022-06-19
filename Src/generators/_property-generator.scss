@@ -1,12 +1,12 @@
-﻿@mixin property($prop, $mods: (), $prefix: '') {
+﻿@mixin property-generator($prop, $class, $mods: (), $prefix: '') {
     @if $prefix != '' {
         $prefix: #{$prefix}-;
     }
 
-    .#{$prefix}#{$prop} {
+    .#{$prefix}#{$class} {
         @each $mod in $mods {
             &--#{$mod} {
-                #{$prop}: #{$prop};
+                #{$prop}: #{$mod};
             }
         }
     }

@@ -1,4 +1,8 @@
 ﻿@mixin visibility($prefix: '') {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
     .#{$prefix}hidden {
         display: none;
     }

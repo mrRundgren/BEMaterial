@@ -1,4 +1,7 @@
 ﻿@mixin overflow($prefix: '', $mods: [auto, clip, hidden, revert, scroll, visible]) {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
 
     .#{$prefix}overflow {
         @each $mod in $mods {

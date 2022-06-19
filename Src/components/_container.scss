@@ -1,6 +1,10 @@
 ﻿@import "../system/breakpoint-system";
 
 @mixin container($prefix: '') {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
     .#{$prefix}container {
         display: block;
         width: 100%;

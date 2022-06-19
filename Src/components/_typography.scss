@@ -1,6 +1,10 @@
 ﻿@import "../system/typography-system";
 
-@mixin typography-generator($prefix: '') {
+@mixin typography($prefix: '') {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
     .#{$prefix}typography {
         @each $name, $val, $unit in $system-typography {
             &--#{$name} {

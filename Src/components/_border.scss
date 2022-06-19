@@ -1,6 +1,10 @@
 ﻿@import "../system/unit-system";
 
 @mixin border($prefix: '', $default: var(--unit-xx-small), $mods: (top, right, bottom, left)) {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
     .#{$prefix}border {
         border-width: #{$default};
         border-style: solid;

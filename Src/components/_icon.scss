@@ -17,6 +17,10 @@
 }
 
 @mixin icon($prefix: '') {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
     .#{$prefix}icon {
         @include icon-defaults();
         font-variation-settings: 'FILL' #{'1'}, 'wght' #{'400'}, 'GRAD' #{'0'}, 'opsz' #{'48'};

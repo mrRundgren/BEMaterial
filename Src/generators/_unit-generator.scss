@@ -1,6 +1,10 @@
 ﻿@import "../system/unit-system";
 
 @mixin unit-generator($prop1, $className: '', $prefix: '', $default: medium, $modifiers: []) {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
     .#{$prefix}#{$className} {
         #{$prop1}: unit($default);
 

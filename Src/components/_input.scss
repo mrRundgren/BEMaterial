@@ -1,4 +1,8 @@
 ﻿@mixin input($prefix: '') {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
     .#{$prefix}input {
         all: unset;
         appearance: none;

@@ -1,4 +1,8 @@
 ﻿@mixin position($prefix: '') {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
     .#{$prefix}position {
         &-fixed {
             position: fixed;

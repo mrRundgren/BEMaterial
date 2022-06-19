@@ -1,4 +1,8 @@
 ﻿@mixin grid($prefix: '') {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
     .grid {
         @if $prefix == '' {
             display: grid;
