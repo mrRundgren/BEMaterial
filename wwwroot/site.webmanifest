@@ -1,7 +1,8 @@
 {
   "name": "BEM:aterial CSS Design System",
   "short_name": "BEM:aterial",
-  "start_url": "/BEMaterial/",
+  "id": "/BEMaterial",
+  "start_url": "/BEMaterial",
   "icons": [
     {
       "src": "img/favicon/android-chrome-192x192.png",
