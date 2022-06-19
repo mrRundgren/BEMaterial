@@ -1,22 +1,22 @@
 ﻿@inherits LayoutComponentBase
-<div class="flex-column background flex--fill animation-opacity--from-opaque">
+<div class="display--flex flex-direction--column background flex--1 animation-opacity--from-opaque">
 	<header class="position-sticky--top elevation--z4 neutral-20 padding-horizontal--x-small padding-vertical--small">
-		<div class="flex-row align-items--center">
-			@*<nav class="flex-row align-items--center margin-right">
+		<div class="display--flex flex-direction--row align-items--center">
+			@*<nav class="display--flex flex-direction--row align-items--center margin-right">
 				<button class="button icon--outlined shape--round neutral-20 state--hover state--active">menu</button>
 			</nav>*@
 			<a href="index" class="button--small gap--small neutral-20 tertiary-50 state--hover state--active padding--x-small shape--x-large justify-content--center">
 				<i class="icon--outlined shape--round padding--x-small secondary">integration_instructions</i>
 				<span class="padding-right typography--title typography-block typography--uppercase typography--truncate">BEM:aterial</span>
 			</a>
-			<nav class="flex--fill flex-row align-items--center justify-content--end">
+			<nav class="flex--1 display--flex flex-direction--row align-items--center justify-content--end">
 				<NavLink href="color-system" class="button icon--outlined shape--round neutral-20 state--hover state--active">palette</NavLink>
 				<NavLink href="typography-system" class="button icon--outlined shape--round neutral-20 state--hover state--active">format_size</NavLink>
 				<NavLink href="grid-system" class="button icon--outlined shape--round neutral-20 state--hover state--active">grid_view</NavLink>
 			</nav>
 		</div>
 	</header>
-	<main class="flex--fill">
+	<main class="flex--1">
 		@Body
 	</main>
 </div>

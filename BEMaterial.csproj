@@ -38,11 +38,39 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Src\generators\_property-generator.scss" />
+    <UpToDateCheckInput Remove="Src\generators\_typography.scss" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Src\generators\_typography.scss" />
+    <UpToDateCheckInput Remove="Src\system\_breakpoint.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Src\system\_color.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Src\system\_typography.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Src\system\_unit.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Src\generators\_align.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Src\generators\_property.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Src\generators\_size.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Src\generators\_unit.scss" />
   </ItemGroup>
 
 </Project>

@@ -1,23 +1,19 @@
-﻿@import "system/breakpoint-system";
-@import "system/color-system";
-@import "generators/unit-generator";
-@import "generators/align-generator";
-@import "generators/size-generator";
-@import "generators/property-generator";
+﻿@import "system/breakpoint";
+@import "system/color";
+@import "generators/align";
+@import "generators/property";
+@import "generators/size";
+@import "generators/unit";
 @import "components/typography";
 @import "components/elevation";
 @import "components/grid";
 @import "components/button";
 @import "components/icon";
 @import "components/image";
-@import "components/flex";
 @import "components/container";
-@import "components/visibility";
 @import "components/position";
 @import "components/animation";
 @import "components/input";
-@import "components/overflow";
-@import "components/user-select";
 @import "components/border";
 
 
@@ -29,18 +25,19 @@
     @include button($prefix);
     @include icon($prefix);
     @include image($prefix);
-    @include flex($prefix);
-    @include flex(#{$prefix}-inline-);
-    @include visibility($prefix);
     @include position($prefix);
     @include animation($prefix);
     @include input($prefix);
-    @include overflow($prefix);
-    @include user-select($prefix);
     @include border($prefix);
 
-    @include property-generator(cursor, (default, pointer, not-allowed), $prefix);
-    @include property-generator(display, (block, inline-block, inline, flex, inline-flex, grid, revert, none), $prefix);
+    @include property-generator(cursor, cursor, (default, pointer, not-allowed), $prefix);
+    @include property-generator(display, display, (block, inline-block, inline, flex, inline-flex, grid, revert, none), $prefix);
+    @include property-generator(flex-direction, flex-direction, (row, column, row-reverse, column-reverse), $prefix);
+    @include property-generator(flex, flex, (1), $prefix);
+    @include property-generator(overflow, overflow, (auto, clip, hidden, revert, scroll, visible), $prefix);
+    @include property-generator(overflow-y, overflow-y, (auto, clip, hidden, revert, scroll, visible), $prefix);
+    @include property-generator(overflow-x, overflow-x, (auto, clip, hidden, revert, scroll, visible), $prefix);
+    @include property-generator(user-select, user-select, (auto, contain, none, revert, text), $prefix);
 
     @include unit-generator(border-radius, shape, $prefix, medium) {
         &--round {
@@ -139,6 +136,8 @@
     @include size-generator(width, width, $prefix, px, (100, 150, 200, 250, 300));
     @include size-generator(min-width, min-width, $prefix, px, (100, 150, 200, 250, 300));
     @include size-generator(height, height, $prefix, px, (100, 150, 200, 250, 300));
+
+    @include colors($prefix);
 }
 
 @include components() {
@@ -149,8 +148,6 @@
     }
 }
 
-@include colors();
-
 @each $breakpoint, $value in $system-breakpoints {
     @media screen and (min-width: #{$value}) {
         @if $breakpoint == mobile-landscape {
@@ -160,6 +157,5 @@
         }
 
         @include components($breakpoint);
-        @include colors($breakpoint);
     }
 }

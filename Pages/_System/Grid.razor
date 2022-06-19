@@ -13,14 +13,14 @@
         <div class="grid gap--x-small mobile-landscape-gap--small neutral-90 padding mobile-landscape-padding--x-large mobile-landscape-shape desktop-elevation--z6">
             @for (var i = 0; i < 12; i++)
             {
-            <div class="border border-neutral-80 span--6 mobile-portrait-span--4 tablet-span--3 desktop-span--1 shape--x-small mobile-landscape-shape--small neutral-100 padding tablet-padding--large flex-row align-items--center justify-content--center">
-                <small class="text-align--center mobile-portrait-hidden">6</small>
-                <small class="text-align--center hidden mobile-portrait-visible tablet-hidden">4</small>
-                <small class="text-align--center hidden tablet-visible desktop-hidden">3</small>
-                <small class="text-align--center hidden desktop-visible">1</small>
+            <div class="border border-neutral-80 span--6 mobile-portrait-span--4 tablet-span--3 desktop-span--1 shape--x-small mobile-landscape-shape--small neutral-100 padding tablet-padding--large display--flex flex-direction--row align-items--center justify-content--center">
+                <small class="text-align--center mobile-portrait-display--none">6</small>
+                <small class="text-align--center display--none mobile-portrait-display--revert tablet-display--none">4</small>
+                <small class="text-align--center display--none tablet-display--revert desktop-display--none">3</small>
+                <small class="text-align--center display--none desktop-display--revert">1</small>
             </div>
             }        
-            <div class="border border-neutral-80 neutral-100 padding tablet-padding--large shape--x-small mobile-landscape-shape--small flex-row align-items--center justify-content--center">
+            <div class="border border-neutral-80 neutral-100 padding tablet-padding--large shape--x-small mobile-landscape-shape--small display--flex flex-direction--row align-items--center justify-content--center">
                 <small class="text-align--center">No span (100%)</small>
             </div>
         </div>
@@ -113,7 +113,7 @@
                 @for (var i = 0; i < 20; i++)
                 {
                 <div class="grid border-bottom border-neutral-90 tablet-border-bottom--none user-select--none cursor--default state--hover state--active tablet-span--3 tablet-elevation-shadow--z1 tablet-shape--x-small padding-vertical--small padding-right padding-left--small tablet-padding-horizontal neutral-100 align-items--center">
-                    <div class="span--2 tablet-span--12 padding--x-small tablet-padding--none flex-row tablet-shape--x-small tablet-text-align--center tablet-neutral-95 mobile-portrait-span--1">
+                    <div class="span--2 tablet-span--12 padding--x-small tablet-padding--none display--flex flex-direction--row tablet-shape--x-small tablet-text-align--center tablet-neutral-95 mobile-portrait-span--1">
                         <img src="img/anonymous.jpg" alt="" class="image shape--round tablet-shape--small">
                     </div>
                     <div class="grid align-items--center span--10 padding-left tablet-padding tablet-span--12 mobile-portrait-span--11 mobile-portrait-padding-horizontal--small tablet-padding-horizontal--none">

@@ -1,4 +1,4 @@
-﻿@import "../system/breakpoint-system";
+﻿@import "../system/breakpoint";
 
 @mixin container($prefix: '') {
     @if $prefix != '' {

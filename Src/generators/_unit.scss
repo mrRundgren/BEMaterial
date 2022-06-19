@@ -1,4 +1,4 @@
-﻿@import "../system/unit-system";
+﻿@import "../system/unit";
 
 @mixin unit-generator($prop1, $className: '', $prefix: '', $default: medium, $modifiers: []) {
     @if $prefix != '' {

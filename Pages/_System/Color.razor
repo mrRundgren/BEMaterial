@@ -13,14 +13,14 @@
         <div class="grid gap neutral-90 padding mobile-landscape-padding--x-large mobile-landscape-shape">
         @for(int i = 0; i < _colors.Length; i++)
         {
-            <div class="tablet-span--3 align-items--center gap shape--xxx-large flex-row">
+            <div class="tablet-span--3 align-items--center gap shape--xxx-large display--flex flex-direction--row">
                 <div class="icon padding shape--round @_colors[i] state--hover state--active">&nbsp;</div>
                 <h5 class="text-@_colors[i] state--hover state--active">@_colors[i]</h5>
             </div>
             <div class="tablet-span--9 grid">
                 @for(var t = 0; t < 110; t = t + 10)
                 {
-                    <div class="mobile-landscape-span--@(t == 50 ? "2" : "1") @_colors[i]-@t state--hover state--active padding flex-row align-items--center justify-content--center">@t</div>
+                    <div class="mobile-landscape-span--@(t == 50 ? "2" : "1") @_colors[i]-@t state--hover state--active padding display--flex flex-direction--row align-items--center justify-content--center">@t</div>
                 }
             </div>
         }

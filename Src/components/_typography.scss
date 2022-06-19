@@ -1,4 +1,4 @@
-﻿@import "../system/typography-system";
+﻿@import "../system/typography";
 
 @mixin typography($prefix: '') {
     @if $prefix != '' {

@@ -1,4 +1,4 @@
-﻿@import "../system/unit-system";
+﻿@import "../system/unit";
 
 @mixin border($prefix: '', $default: var(--unit-xx-small), $mods: (top, right, bottom, left)) {
     @if $prefix != '' {

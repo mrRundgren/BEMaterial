@@ -1,7 +1,7 @@
-﻿@import "system/typography-system";
-@import "system/unit-system";
-@import "system/color-system";
-@import "system/breakpoint-system";
+﻿@import "system/typography";
+@import "system/unit";
+@import "system/color";
+@import "system/breakpoint";
 @import "normalization";
 
 
@@ -16,10 +16,6 @@
     #app {
         width: 100%;
         min-height: 100vh;
-
-        main {
-            overflow-y: hidden;
-        }
     }
 
     @import "components";
