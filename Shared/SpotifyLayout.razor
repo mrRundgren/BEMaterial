@@ -1,41 +1,41 @@
 ﻿@inherits LayoutComponentBase
 @inject IJSRuntime JSRuntime
-<div class="neutral-10 display--flex flex-direction--column background flex--1 max-width--100vw user-select--none">
-	<header class="position-sticky--top elevation--z4 neutral-20 grid gap--x-small align-items--center padding-horizontal--x-small padding-vertical--small">
+<div class="neutral-10 max-height--100vh overflow-y--auto display--flex flex-direction--column background flex--1 max-width--100vw user-select--none">
+	<header class="position-sticky--top elevation--z4 neutral-10 grid gap--x-small align-items--center padding-horizontal--x-small padding-vertical--small">
 		<nav class="span--3">
-			<button @onclick="@(async () => await JSRuntime.InvokeVoidAsync("history.back"))" class="button icon shape--round neutral-20 state--hover state--active">arrow_back</button>
+			<button class="button icon shape--round neutral-10 state--active" @onclick="@(async () => await JSRuntime.InvokeVoidAsync("history.back"))">arrow_back</button>
 		</nav>
         <h1 class="span--6 text-align--center typography--title" tabindex="-1">Spotify demo</h1>
 	</header>
 	<main class="flex--1 padding-bottom--x-large user-select--none">
 		@Body
 	</main>
-	<footer class="grid align-items--center elevation--z4">
+	<footer class="position-sticky--bottom grid align-items--center elevation--z4">
         <nav class="grid align-items--start">
             <div class="padding--x-small">
-                <div class="neutral-20 grid gap--x-small padding--x-small shape--x-small align-items--center">
-                    <nav class="span--2">
-                        <button class="button icon neutral-20 shape--round text-tertiary-50 state--hover state--active">favorite</button>
-                    </nav>
-                    <div class="span--8 text-align--center typography--truncate">
-                        <span class="typography--body-small typography--bold">Lorem Ipsum</span> - <span class="typography--body-small">dolor sit amen</span>
-                        <div class="text-neutral typography--body-x-small">consectetur adipiscing</div>
+                <div class="neutral-20 display--flex gap flex-direction--row padding--x-small shape--x-small align-items--center">
+                    <img src="img/albums/album-5.webp" alt="" class="image shape--x-small width--50px" />
+                    <div class="typography--truncate flex--1">
+                        <strong class="typography--body-small typography--bold">Parliment</strong>
+                        <div class="text-neutral typography--body-x-small">Mothership Connection</div>
                     </div>
-                    <nav class="span--2 display--flex flex-direction--row justify-content--end">
-                        <button class="button neutral-20 shape--round state--hover state--active icon--outlined">play_circle</button>
+                    <nav class="display--flex flex-direction--row justify-content--end">
+                        <button class="button--small icon neutral-20 shape--round state--active">devices</button>
+                        <button class="button--small icon neutral-20 shape--round text-tertiary-50 state--active">favorite</button>
+                        <button class="button--small neutral-20 shape--round state--active icon">play_arrow</button>
                     </nav>
                 </div>
             </div>
-            <div class="grid opacity--075 neutral-20">
-                <a class="span--4 neutral-20 state--hover state--active button display--flex flex-direction--column gap--xx-small align-items--center justify-content--center padding--small padding-top">
-                    <i class="icon--outlined">home</i>
+            <div class="grid opacity--075 neutral-10 padding-horizontal padding-bottom--x-small gap">
+                <a class="shape span--4 neutral-10 text-neutral-100 state--active button display--flex flex-direction--column gap--xx-small align-items--center justify-content--center padding--small padding-top">
+                    <i class="icon">home</i>
                     <div class="text-align--center typography--body-small">Home</div>
                 </a>
-                <a class="neutral-20 text-neutral-100 state--hover state--active span--4 button display--flex flex-direction--column gap--xx-small align-items--center justify-content--center padding--small padding-top">
+                <a class="shape neutral-10 text-neutral-60 state--active span--4 button display--flex flex-direction--column gap--xx-small align-items--center justify-content--center padding--small padding-top">
                     <i class="icon--outlined">search</i>
                     <div class="text-align--center typography--body-small">Search</div>
                 </a>
-                <a class="span--4 neutral-20 state--hover state--active button display--flex flex-direction--column gap--xx-small align-items--center justify-content--center padding--small padding-top">
+                <a class="shape span--4 neutral-10 text-neutral-60 state--active button display--flex flex-direction--column gap--xx-small align-items--center justify-content--center padding--small padding-top">
                     <i class="icon--outlined">more_vert</i>
                     <div class="text-align--center typography--body-small">More</div>
                 </a>
