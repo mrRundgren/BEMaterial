@@ -12,6 +12,12 @@
                 font-weight: var(--typography-#{$name}-weight);
                 margin: 0;
             }
+
+            &-line-height {
+                &--#{$name} {
+                    line-height: var(--typography-#{$name});
+                }
+            }
         }
 
         &-block {

@@ -73,4 +73,11 @@
     <UpToDateCheckInput Remove="Src\generators\_unit.scss" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\site.webmanifest">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
