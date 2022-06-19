@@ -25,12 +25,12 @@
                     <img src="img/albums/album-5.webp" alt="" class="image shape--x-small width--50px" />
                     <div class="typography--truncate flex--1">
                         <strong class="typography--body-small typography--bold">Parliment</strong>
-                        <div class="text-neutral typography--body-x-small">Mothership Connection</div>
+                        <marquee class="typography-block text-neutral typography--body-x-small padding-right--xx-large">Mothership Connection</marquee>
                     </div>
                     <nav class="display--flex flex-direction--row justify-content--end">
-                        <button class="button--small icon neutral-20 shape--round state--active padding--x-small">devices</button>
-                        <button @onclick="() => _favoriteState = !_favoriteState" class="button--small padding--x-small @(_favoriteState ? "icon text-tertiary-50" : "icon--outlined") neutral-20 shape--round state--active">favorite</button>
-                        <button @onclick="() => _playState = !_playState" class="button--small padding--x-small neutral-20 shape--round state--active icon"> @(_playState ? "pause" : "play_arrow")</button>
+                        <button class="button--small icon neutral-20 shape--round state--active padding--small">devices</button>
+                        <button @onclick="() => _favoriteState = !_favoriteState" class="button--small padding--small @(_favoriteState ? "icon text-tertiary-50" : "icon--outlined") neutral-20 shape--round state--active">favorite</button>
+                        <button @onclick="() => _playState = !_playState" class="button--small padding--small neutral-20 shape--round state--active icon"> @(_playState ? "pause" : "play_arrow")</button>
                     </nav>
                 </div>
             </div>
