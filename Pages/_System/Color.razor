@@ -2,18 +2,18 @@
 @using System.Globalization
 <PageTitle>Colors</PageTitle>
 
-<div class="animation-opacity--from-opaque">
+<div class="animation-opacity--from-opaque user-select--none">
     <section class="desktop-container padding desktop-margin-top--large typography-block">
         <h2>Color</h2>
 	    <p>
             The color system handles the variability of dynamically changing color schemes that arise as user inputs change. The logic of tonal relationships and shifts in hue and chroma provide a foundation for flexible color application. Color schemes can be considered a cohesive group of relative tones, rather than a fixed group of constant values.
         </p>
     </section>
-    <section class="desktop-container mobile-landscape-padding-horizontal margin-vertical--x-large">
+    <section class="desktop-container mobile-landscape-padding-horizontal margin-top--x-large">
         <div class="grid gap neutral-90 padding mobile-landscape-padding--x-large mobile-landscape-shape">
         @for(int i = 0; i < _colors.Length; i++)
         {
-            <div class="tablet-span--3 align-items--center gap flex-row">
+            <div class="tablet-span--3 align-items--center gap shape--xxx-large flex-row">
                 <div class="icon padding shape--round @_colors[i] state--hover state--active">&nbsp;</div>
                 <h5 class="text-@_colors[i] state--hover state--active">@_colors[i]</h5>
             </div>
