@@ -38,6 +38,8 @@
     @include property-generator(overflow-y, overflow-y, (auto, clip, hidden, revert, scroll, visible), $prefix);
     @include property-generator(overflow-x, overflow-x, (auto, clip, hidden, revert, scroll, visible), $prefix);
     @include property-generator(user-select, user-select, (auto, contain, none, revert, text), $prefix);
+    @include property-generator(scroll-snap-type, scroll-snap-type, (none, 'x mandatory', 'y mandatory', 'both mandatory'), $prefix);
+    @include property-generator(scroll-snap-align, scroll-snap-align, (none, start, end, center), $prefix);
 
     @include unit-generator(border-radius, shape, $prefix, medium) {
         &--round {
