@@ -15,7 +15,7 @@
 
     .#{$prefix}#{$class} {
         @each $mod in $mods {
-            &--#{str-replace(#{$mod}, ' ', '-')} {
+            &--#{str-replace(str-replace(#{$mod}, ' ', '-'), '.', '')} {
                 #{$prop}: #{$mod};
             }
         }

@@ -40,6 +40,7 @@
     @include property-generator(user-select, user-select, (auto, contain, none, revert, text), $prefix);
     @include property-generator(scroll-snap-type, scroll-snap-type, (none, 'x mandatory', 'y mandatory', 'both mandatory'), $prefix);
     @include property-generator(scroll-snap-align, scroll-snap-align, (none, start, end, center), $prefix);
+    @include property-generator(opacity, opacity, (0, 0.125, 0.25, 0.5, 0.75, 0.875, 1), $prefix);
 
     @include unit-generator(border-radius, shape, $prefix, medium) {
         &--round {
@@ -171,9 +172,9 @@
     @include size-generator(max-height, max-height, $prefix, vh);
     @include size-generator(min-width, min-width, $prefix, vw);
     @include size-generator(max-width, max-width, $prefix, vw);
-    @include size-generator(width, width, $prefix, px, (100, 150, 200, 250, 300));
-    @include size-generator(min-width, min-width, $prefix, px, (100, 150, 200, 250, 300));
-    @include size-generator(height, height, $prefix, px, (100, 150, 200, 250, 300));
+    @include size-generator(width, width, $prefix, px, (25, 50, 100, 150, 200, 250, 300));
+    @include size-generator(min-width, min-width, $prefix, px, (25, 50, 100, 150, 200, 250, 300));
+    @include size-generator(height, height, $prefix, px, (25, 50, 100, 150, 200, 250, 300));
 
     @include colors($prefix);
 }
