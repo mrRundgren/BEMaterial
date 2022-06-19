@@ -6,5 +6,37 @@
     .#{$prefix}image {
         width: 100%;
         object-fit: cover;
+
+        &.state {
+            &--hover {
+                &:hover {
+                    opacity: 0.875;
+                }
+            }
+
+            &--active {
+                &:active {
+                    opacity: 0.75;
+                }
+            }
+        }
+    }
+
+    .state {
+        &--hover {
+            &:hover {
+                .#{$prefix}image {
+                    opacity: 0.875;
+                }
+            }
+        }
+
+        &--active {
+            &:active {
+                .#{$prefix}image {
+                    opacity: 0.75;
+                }
+            }
+        }
     }
 }
