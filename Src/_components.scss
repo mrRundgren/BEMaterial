@@ -38,7 +38,7 @@
     @include property-generator(overflow-y, overflow-y, (auto, clip, hidden, revert, scroll, visible), $prefix);
     @include property-generator(overflow-x, overflow-x, (auto, clip, hidden, revert, scroll, visible), $prefix);
     @include property-generator(user-select, user-select, (auto, contain, none, revert, text), $prefix);
-    @include property-generator(scroll-snap-type, scroll-snap-type, (none, 'x mandatory', 'y mandatory', 'both mandatory'), $prefix);
+    @include property-generator(scroll-snap-type, scroll-snap-type, (none, mandatory, proximity, 'x mandatory', 'y mandatory', 'x proximity', 'y proximity'), $prefix);
     @include property-generator(scroll-snap-align, scroll-snap-align, (none, start, end, center), $prefix);
     @include property-generator(opacity, opacity, (0, 0.125, 0.25, 0.5, 0.75, 0.875, 1), $prefix);
 

@@ -1,12 +1,20 @@
 ﻿@inherits LayoutComponentBase
 @inject IJSRuntime JSRuntime
 <div class="neutral-10 max-height--100vh overflow-y--auto display--flex flex-direction--column background flex--1 max-width--100vw user-select--none">
-	<header class="neutral-10 grid gap--x-small align-items--center padding-horizontal--x-small padding-vertical--small">
+	<header class="neutral-0 grid gap--x-small align-items--center padding-horizontal--x-small padding-vertical--small">
 		<nav class="span--3">
-			<button class="button icon shape--round neutral-10 state--active" @onclick="@(async () => await JSRuntime.InvokeVoidAsync("history.back"))">arrow_back</button>
+			<button class="button icon shape--round neutral-0 state--active" @onclick="@(async () => await JSRuntime.InvokeVoidAsync("history.back"))">arrow_back</button>
 		</nav>
         <h1 class="span--6 text-align--center typography--title" tabindex="-1">Spotify demo</h1>
 	</header>
+    <header class="neutral-10 display--flex flex-direction--row gap--x-small align-items--center padding-horizontal--x-small padding-vertical--small">
+        <h1 class="typography-block typography--truncate typography--headline-medium padding-horizontal--small" tabindex="-1">Good evening</h1>
+        <nav class="flex--1 display--flex align-items--center justify-content--end">
+			<button class="button icon--outlined shape--round neutral-10 state--active">notifications</button>
+            <button class="button icon--outlined shape--round neutral-10 state--active">history</button>
+            <button class="button icon--outlined shape--round neutral-10 state--active">settings</button>
+		</nav>
+    </header>
 	<main class="flex--1 padding-bottom--x-large user-select--none">
 		@Body
 	</main>
