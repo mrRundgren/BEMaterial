@@ -4,22 +4,25 @@
 <PageTitle>Spotify UI Kit example</PageTitle>
 
 <section class="neutral-10 fullhd-container tablet-padding animation-opacity--from-opaque">
-    <header class="grid gap--x-small align-items--center padding--x-small tablet-margin-vertical">
-        <nav class="span--3">
-            <button @onclick="@(async () => await JSRuntime.InvokeVoidAsync("history.back"))" class="button neutral-10 state--hover state--active shape--large padding-horizontal--small">
+    <header class="padding--x-small tablet-margin-vertical">
+        <nav class="span--3 display--flex flex-direction--row align-items--center">
+            <button class="button neutral-10 state--hover state--active shape--large padding-horizontal--small" @onclick="@(async () => await JSRuntime.InvokeVoidAsync("history.back"))">
                 <i class="icon">arrow_back</i>
                 <strong class="padding-horizontal--small">Back</strong>
             </button>
+            <nav class="flex--1 display--flex flex-direction--row align-items--center justify-content--end">
+                <a href="/spotify-demo" class="align-self--end button icon shape--round neutral-10 state--hover state--active">app_shortcut</a>
+            </nav>
         </nav>
     </header>
     <div class="tablet-shape--large padding tablet-padding--large">
         <div class="grid gap">
-            <header class="grid gap mobile-portrait-display--flex flex-direction--row align-items--center">
-                <div class="span--6 mobile-portrait-order--1 mobile-landscape-span--1">
+            <header class="gap display--flex flex-direction--row align-items--center">
+                <div>
                     <i class="icon padding shape--round tertiary-50">interests</i>
                 </div>
-                <div class="span--6 mobile-portrait-order--3 text-align--right text-tertiary-50 typography--headline-medium">UI Kit</div>
-                <div class="mobile-portrait-order--2 mobile-portrait-flex--1 text-neutral-100 typography--headline-medium typography--truncate">Spotify UI Kit example</div>
+                <div class="flex--1 text-neutral-100 typography--headline-medium typography--truncate">Spotify</div>
+                <div class="text-align--right text-tertiary-50 typography--headline-medium">UI Kit</div>
             </header>
             <div class="grid desktop-gap--xx-large">
                 <div class="grid desktop-span--7 auto-rows">
