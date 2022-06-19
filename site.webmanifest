@@ -1,6 +1,7 @@
 {
   "name": "BEM:aterial CSS Design System",
   "short_name": "BEM:aterial",
+  "start_url": "/",
   "icons": [
     {
       "src": "img/favicon/android-chrome-192x192.png",
