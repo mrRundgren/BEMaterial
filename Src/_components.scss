@@ -83,6 +83,42 @@
         }
     }
 
+    @include unit-generator(scroll-padding, scroll-padding, $prefix, medium, (top, right, bottom, left)) {
+        &-horizontal {
+            padding-left: unit(medium);
+            padding-right: unit(medium);
+
+            @each $name, $unit in $system-units {
+                &--#{$name} {
+                    padding-left: unit($name);
+                    padding-right: unit($name);
+                }
+            }
+
+            &--none {
+                padding-left: unit(none);
+                padding-right: unit(none);
+            }
+        }
+
+        &-vertical {
+            padding-top: unit(medium);
+            padding-bottom: unit(medium);
+
+            @each $name, $unit in $system-units {
+                &--#{$name} {
+                    padding-top: unit($name);
+                    padding-bottom: unit($name);
+                }
+            }
+
+            &--none {
+                padding-left: unit(none);
+                padding-right: unit(none);
+            }
+        }
+    }
+
     @include unit-generator(margin, margin, $prefix, medium, (top, right, bottom, left)) {
         &-horizontal {
             margin-left: unit(medium);
