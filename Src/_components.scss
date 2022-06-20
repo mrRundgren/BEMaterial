@@ -19,6 +19,7 @@
 
 @mixin components($prefix: '') {
     @content;
+    @include typography($prefix);
     @include elevation($prefix);
     @include grid($prefix);
     @include button($prefix);
@@ -28,7 +29,6 @@
     @include animation($prefix);
     @include input($prefix);
     @include border($prefix);
-    @include typography($prefix);
 
     @include property-generator(cursor, cursor, (default, pointer, not-allowed), $prefix);
     @include property-generator(display, display, (block, inline-block, inline, flex, inline-flex, grid, revert, none), $prefix);
