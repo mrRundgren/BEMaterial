@@ -46,6 +46,34 @@ $system-color-tones: (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
     @content;
 }
 
+@mixin state-class($key, $name, $hover, $active, $focus) {
+    &.state {
+        &--hover {
+            &:hover {
+                #{$key}: #{color-var($name, $hover)};
+            }
+        }
+
+        &--active {
+            &:active {
+                #{$key}: #{color-var($name, $active)};
+            }
+        }
+
+        &--focus {
+            &:focus {
+                #{$key}: #{color-var($name, $focus)};
+            }
+        }
+
+        &--focus-within {
+            &:focus-within {
+                #{$key}: #{color-var($name, $focus)};
+            }
+        }
+    }
+}
+
 @mixin color-class($name, $hex, $props: (), $prefix: '', $tone: '') {
     $suffix: '';
     $lightness: math.round(math.div(math.div(lightness($hex), 1%), 10)) * 10;
@@ -66,43 +94,29 @@ $system-color-tones: (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
             #{$prop}: #{$val};
         }
 
-        &.state {
-            $key: key-by-index($props, 1);
-            $hover: 0;
-            $active: 0;
-            $focus: min($tone + 20, 100);
+        $key: key-by-index($props, 1);
+        $hover: 0;
+        $active: 0;
+        $focus: min($tone + 20, 100);
 
-            @if $tone < 50 {
-                $hover: $tone + 10;
-                $active: max($tone - 10, 0);
-            }
-            @else {
-                $hover: $tone - 10;
-                $active: $tone - 20;
-            }
+        @if $tone < 50 {
+            $hover: $tone + 10;
+            $active: max($tone - 10, 0);
+        }
+        @else {
+            $hover: $tone - 10;
+            $active: $tone - 20;
+        }
 
-            &--hover {
-                &:hover {
-                    #{$key}: #{color-var($name, $hover)};
-                }
-            }
+        @include state-class($key, $name, $hover, $active, $focus);
 
-            &--active {
-                &:active {
-                    #{$key}: #{color-var($name, $active)};
-                }
+        &__gradient {
+            &--from-top {
+                background-image: linear-gradient(color-var($name, $tone), color-var($name, $tone), transparent);
             }
 
-            &--focus {
-                &:focus {
-                    #{$key}: #{color-var($name, $focus)};
-                }
-            }
-
-            &--focus-within {
-                &:focus-within {
-                    #{$key}: #{color-var($name, $focus)};
-                }
+            &--from-bottom {
+                background-image: linear-gradient(transparent, color-var($name, $tone), color-var($name, $tone));
             }
         }
     }

@@ -2,8 +2,8 @@
 @inject IJSRuntime JSRuntime
 
 <PageTitle>Spotify UI Kit example</PageTitle>
-
-<section class="neutral-10 fullhd-container tablet-padding animation-opacity--from-opaque">
+<section class="neutral-10">
+    <section class="fullhd-container tablet-padding animation-opacity--from-opaque">
     <header class="padding--x-small tablet-margin-vertical">
         <nav class="span--3 display--flex flex-direction--row align-items--center">
             <button class="button neutral-10 state--hover state--active shape--large padding-horizontal--small" @onclick="@(async () => await JSRuntime.InvokeVoidAsync("history.back"))">
@@ -11,7 +11,7 @@
                 <strong class="padding-horizontal--small">Back</strong>
             </button>
             <nav class="flex--1 display--flex flex-direction--row align-items--center justify-content--end">
-                <a href="/spotify-demo" class="align-self--end button icon shape--round neutral-10 state--hover state--active">app_shortcut</a>
+                <a href="spotify-demo" class="align-self--end button icon shape--round neutral-10 state--hover state--active">app_shortcut</a>
             </nav>
         </nav>
     </header>
@@ -367,3 +367,5 @@
         </div>
     </div>
 </section>
+</section>
+

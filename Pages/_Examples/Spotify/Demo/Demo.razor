@@ -1,0 +1,70 @@
+﻿@page "/spotify-demo"
+@layout SpotifyLayout
+@inject IJSRuntime JSRuntime
+@using BEMaterial.Pages._Examples.Spotify.Demo.Components
+
+<PageTitle>BEM:aterial</PageTitle>
+
+<section class="grid gap--small padding">
+    <button class="button shape--x-small overflow--hidden state--hover state--active span--6 neutral-30 min-height--0vh">
+        <img src="img/albums/album-3.webp" alt="" class="image width--50px" />
+        <small class="padding-horizontal--small typography--body-x-small typography--bold typography--truncate">Jefferson Airplane: Long John Silver</small>
+    </button>
+    <button class="button shape--x-small overflow--hidden state--hover state--active span--6 neutral-30 min-height--0vh">
+        <img src="img/albums/album-1.webp" alt="" class="image width--50px" />
+        <small class="padding-horizontal--small typography--body-x-small typography--bold typography--truncate">The Bee Gees: Odessa</small>
+    </button>
+    <button class="button shape--x-small overflow--hidden state--hover state--active span--6 neutral-30 min-height--0vh">
+        <img src="img/albums/album-4.webp" alt="" class="image width--50px" />
+        <small class="padding-horizontal--small typography--body-x-small typography--bold typography--truncate">Nick Lowe: Jesus of Cool/Pure Pop for Now People</small>
+    </button>
+    <button class="button shape--x-small overflow--hidden state--hover state--active span--6 neutral-30 min-height--0vh">
+        <img src="img/anonymous.jpg" alt="" class="image width--50px" />
+        <div class="display--flex flex-direction--column align-items--start padding-horizontal--small">
+            <small class="typography--body-x-small typography--bold">Chris Curtois</small>
+            <small class="text-neutral typography--body-x-small typography--uppercase typography--truncate">176.432 Followers</small>
+        </div>
+    </button>
+</section>
+<section class="typography-block padding">
+    <h4 class="typography--headline-small">New releases</h4>
+</section>
+<section class="display--flex flex-direction--row gap align-items--start overflow-x--auto padding scroll-snap-type--x-proximity scroll-padding">
+    <Image Title="The Bee Gees" Description="Odessa" ImageUrl="img/albums/album-1.webp" />
+    <Image Title="The Flamin’ Groovies" Description="Supersnazz" ImageUrl="img/albums/album-2.webp" />
+    <Image Title="Jefferson Airplane" Description="Long John Silver" ImageUrl="img/albums/album-3.webp" />
+    <Image Title="Paula Ruela" Description="2.069.420 Followers" ImageUrl="img/anonymous.jpg" Type="Image.ImageType.Person" />
+    <Image Title="Nick Lowe" Description="Jesus of Cool/Pure Pop for Now People" ImageUrl="img/albums/album-4.webp" />
+    <Image Title="Parliament" Description="Mothership Connection" ImageUrl="img/albums/album-5.webp" />
+    <Image Title="Chris Curtois" Description="176.432 Followers" ImageUrl="img/anonymous.jpg" Type="Image.ImageType.Person" />
+    <Image Title="The Rolling Stones" Description="Beggars Banquet" ImageUrl="img/albums/album-6.webp" />
+    <Image Title="The Cars" Description="Candy-O" ImageUrl="img/albums/album-7.webp" />
+</section>
+
+<section class="typography-block padding">
+    <h4 class="typography--headline-small">Recently played</h4>
+</section>
+<section class="display--flex flex-direction--row gap align-items--start overflow-x--auto padding scroll-snap-type--x-proximity scroll-padding">
+    <Image Title="Parliament" Description="Mothership Connection" ImageUrl="img/albums/album-5.webp" />
+    <Image Title="The Cars" Description="Candy-O" ImageUrl="img/albums/album-7.webp" />
+    <Image Title="The Flamin’ Groovies" Description="Supersnazz" ImageUrl="img/albums/album-2.webp" />
+    <Image Title="The Bee Gees" Description="Odessa" ImageUrl="img/albums/album-1.webp" />
+    <Image Title="Nick Lowe" Description="Jesus of Cool/Pure Pop for Now People" ImageUrl="img/albums/album-4.webp" />
+    <Image Title="The Rolling Stones" Description="Beggars Banquet" ImageUrl="img/albums/album-6.webp" />
+    <Image Title="Jefferson Airplane" Description="Long John Silver" ImageUrl="img/albums/album-3.webp" />
+</section>
+<section class="typography-block padding">
+    <h4 class="typography--headline-small">Albums</h4>
+</section>
+<section class="grid-template-columns--150px gap scroll-snap-type--y-mandatory padding">
+    <Image Title="Nick Lowe" Description="Jesus of Cool/Pure Pop for Now People" ImageUrl="img/albums/album-4.webp" />
+    <Image Title="Parliament" Description="Mothership Connection" ImageUrl="img/albums/album-5.webp" />
+    <Image Title="The Rolling Stones" Description="Beggars Banquet" ImageUrl="img/albums/album-6.webp" />
+    <Image Title="Jefferson Airplane" Description="Long John Silver" ImageUrl="img/albums/album-3.webp" />
+    <Image Title="The Bee Gees" Description="Odessa" ImageUrl="img/albums/album-1.webp" />
+    <Image Title="The Cars" Description="Candy-O" ImageUrl="img/albums/album-7.webp" />
+</section>
+
+@code {
+
+}

@@ -1,0 +1,31 @@
+﻿<a class="flex--1 scroll-snap-align--start shape--small neutral-1 button align-items--start display--flex flex-direction--column min-width--150px @(Type == ImageType.Person ? "align-items--center" : "")">
+    <div class="@(Type == ImageType.Person ? "padding" : "padding--none")">
+        <img src="@ImageUrl" alt="" class="image state--active @(Type == ImageType.Album ? "shape--small" : "shape--round")" />
+    </div>
+        @if(!string.IsNullOrWhiteSpace(Title) || !string.IsNullOrWhiteSpace(Description))
+        {
+            <div class="typography-block padding-horizontal--x-small @(Type == ImageType.Person ? "text-align--center" : "")">
+                @if(!string.IsNullOrWhiteSpace(Title))
+                {
+                    <small class="typography--body-x-small typography--bold typography--truncate">@Title</small>
+                }
+                @if(!string.IsNullOrWhiteSpace(Description))
+                {
+                    <small class="typography-block typography--body-x-small typography--truncate @(Type == ImageType.Album ? "" : "text-neutral typography--uppercase")">@Description</small>
+                }
+            </div>   
+        }
+</a>
+
+@code {
+    public enum ImageType {Album, Person};
+    [Parameter]
+    public ImageType Type { get; set; } = ImageType.Album;
+    [Parameter]
+    public string ImageUrl { get; set; } = "";
+    [Parameter]
+    public string Title { get; set; } = "";
+    [Parameter]
+    public string Description { get; set; } = "";
+
+}

@@ -1,4 +1,4 @@
-﻿@mixin grid($prefix: '') {
+﻿@mixin grid($prefix: '', $column-widths: (100px, 150px, 200px, 250px, 300px)) {
     @if $prefix != '' {
         $prefix: #{$prefix}-;
     }
@@ -35,6 +35,17 @@
         > .#{$prefix}span--auto {
             grid-column: auto;
             min-width: 0;
+        }
+
+        @content;
+    }
+
+    .grid-template-columns {
+        @each $var in $column-widths {
+            &--#{$var} {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(#{$var}, 1fr) );
+            }
         }
     }
 }
