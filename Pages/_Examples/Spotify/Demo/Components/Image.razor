@@ -1,4 +1,6 @@
-﻿<a class="scroll-snap-align--start shape--small neutral-1 button align-items--start display--flex flex-direction--column width--150px min-width--150px @(Type == ImageType.Person ? "align-items--center" : "")">
+﻿@using BEMaterial.Pages._Examples.Spotify.Demo.Models
+
+<a @onclick="Select" class="scroll-snap-align--start shape--small neutral-1 button align-items--start display--flex flex-direction--column width--150px min-width--150px @(Type == ImageType.Person ? "align-items--center" : "")">
     <div class="@(Type == ImageType.Person ? "padding" : "padding--none")">
         <img src="@ImageUrl" alt="" class="image state--active @(Type == ImageType.Album ? "shape--small" : "shape--round")" />
     </div>
@@ -18,7 +20,9 @@
 </a>
 
 @code {
-    public enum ImageType {Album, Person};
+    [CascadingParameter]
+    public SpotifyLayout UI { get; set; } = null!;
+
     [Parameter]
     public ImageType Type { get; set; } = ImageType.Album;
     [Parameter]
@@ -28,4 +32,14 @@
     [Parameter]
     public string Description { get; set; } = "";
 
+    public void Select()
+    {
+        UI.ChangeNowPlaying(new Models.Image
+        {
+            Description = this.Description,
+            ImageUrl = this.ImageUrl,
+            Title = this.Title,
+            Type = this.Type
+        });
+    }
 }
