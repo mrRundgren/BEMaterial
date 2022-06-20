@@ -1,16 +1,16 @@
 ﻿@if (UI?.NowPlaying != null)
 {
     <div class="padding-horizontal--small">
-        <div class="neutral-20 display--flex gap flex-direction--row padding--x-small shape--small align-items--center">
+        <div class="neutral-0 display--flex gap flex-direction--row padding--x-small shape--small align-items--center">
             <img src="@UI?.NowPlaying.ImageUrl" alt="" class="image shape--small width--50px" />
             <div class="typography--truncate flex--1">
                 <strong class="typography--body-small typography--bold">@UI?.NowPlaying.Title</strong>
                 <marquee class="typography-block text-neutral typography--body-x-small padding-right--xx-large">@UI?.NowPlaying.Description</marquee>
             </div>
             <nav class="display--flex flex-direction--row justify-content--end">
-                <button class="button--small icon neutral-20 shape--round state--active padding--small">devices</button>
-                <button @onclick="() => _favoriteState = !_favoriteState" class="button--small padding--small @(_favoriteState ? "icon text-tertiary-50" : "icon--outlined") neutral-20 shape--round state--active">favorite</button>
-                <button @onclick="() => _playState = !_playState" class="button--small padding--small neutral-20 shape--round state--active icon"> @(_playState ? "pause" : "play_arrow")</button>
+                <button class="button--small icon neutral-0 shape--round state--active padding--small">devices</button>
+                <button @onclick="() => _favoriteState = !_favoriteState" class="button--small padding--small @(_favoriteState ? "icon text-tertiary-50" : "icon--outlined") neutral-0 shape--round state--active">favorite</button>
+                <button @onclick="() => _playState = !_playState" class="button--small padding--small neutral-0 shape--round state--active icon"> @(_playState ? "pause" : "play_arrow")</button>
             </nav>
         </div>
     </div>
