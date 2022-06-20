@@ -111,12 +111,20 @@ $system-color-tones: (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
         @include state-class($key, $name, $hover, $active, $focus);
 
         &__gradient {
-            &--from-top {
-                background-image: linear-gradient(color-var($name, $tone), color-var($name, $tone), transparent);
+            &--to-bottom {
+                background-image: linear-gradient(color-var($name, $tone), transparent);
             }
 
-            &--from-bottom {
-                background-image: linear-gradient(transparent, color-var($name, $tone), color-var($name, $tone));
+            &--to-right {
+                background-image: linear-gradient(to right, color-var($name, $tone) transparent);
+            }
+
+            &--to-top {
+                background-image: linear-gradient(transparent, color-var($name, $tone));
+            }
+
+            &--to-left {
+                background-image: linear-gradient(to left, color-var($name, $tone), transparent);
             }
         }
     }
