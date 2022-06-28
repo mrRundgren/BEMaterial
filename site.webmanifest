@@ -1,5 +1,5 @@
 {
-  "name": "BEM:aterial CSS Design System",
+  "name": "BEM:aterial, a css Design System",
   "short_name": "BEM:aterial",
   "id": "/BEMaterial/",
   "start_url": "/BEMaterial/",
@@ -15,7 +15,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#181a1b",
-  "background_color": "#181a1b",
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
   "display": "standalone"
 }
