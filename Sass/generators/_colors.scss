@@ -12,6 +12,10 @@
             }
         }
 
+        &--inherit {
+            #{$prop}: inherit;
+        }
+
         &--transparent {
             #{$prop}: transparent;
         }
