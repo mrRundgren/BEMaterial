@@ -1,8 +1,177 @@
 ﻿@page "/color-system"
-@using System.Globalization
 <PageTitle>Colors</PageTitle>
 
-<div class="animation-opacity--from-opaque user-select--none">
+<div class="max-width--LG margin-left--auto margin-right--auto LG-padding-bottom">
+    <article class="padding">
+        <h2 class="typo-headline--LG">Color</h2>
+	    <p class="typo-body">
+            The color system handles the variability of dynamically changing color schemes that arise as user inputs change. The logic of tonal relationships and shifts in hue and chroma provide a foundation for flexible color application. Color schemes can be considered a cohesive group of relative tones, rather than a fixed group of constant values.
+        </p>
+        <h4 class="typo-headline--MD margin-top--none">Accent colors</h4>
+        <p>
+            The primary key color is used to derive roles for key components across the UI, such as the FAB, prominent buttons, active states, as well as the tint of elevated surfaces.
+        </p>
+        <p>
+            The secondary key color is used for less prominent components in the UI such as filter chips, while expanding the opportunity for color expression.
+        </p>
+        <p>
+            The tertiary key color is used to derive the roles of contrasting accents that can be used to balance primary and secondary colors or bring heightened attention to an element. The tertiary color role is left for teams to use at their discretion and is intended to support broader color expression in products.
+        </p>
+    </article>
+    <figure class="display--grid columns--12 gap margin--none LG-margin-left LG-margin-right padding-top--XL padding-bottom--XL padding LG-padding--XL background--neutral-variant-90 text--neutral-variant-30 LG-shape--SM typo-body--SM">
+        <div class="span display--grid columns--12 elevation-shadow--z1">
+            <div class="span--6 MD-span--3 background--primary text--primary-100">
+                <div class="padding">primary</div>
+                <div class="padding align--right">primary-100</div>
+            </div>
+            <div class="span--6 MD-span--3 background--primary-100 text--primary">
+                <div class="padding">primary-100</div>
+                <div class="padding align--right">primary</div>
+            </div>
+            <div class="span--6 MD-span--3 background--primary-80 text--primary-20">
+                <div class="padding">primary-80</div>
+                <div class="padding align--right">primary-20</div>
+            </div>
+            <div class="span--6 MD-span--3 background--primary-20 text--primary-80">
+                <div class="padding">primary-20</div>
+                <div class="padding align--right">primary-80</div>
+            </div>
+        </div>
+        <div class="span display--grid columns--12 elevation-shadow--z1">
+            <div class="span--6 MD-span--3 background--secondary text--secondary-100">
+                <div class="padding">secondary</div>
+                <div class="padding align--right">secondary-100</div>
+            </div>
+            <div class="span--6 MD-span--3 background--secondary-100 text--secondary">
+                <div class="padding">secondary-100</div>
+                <div class="padding align--right">secondary</div>
+            </div>
+            <div class="span--6 MD-span--3 background--secondary-80 text--secondary-20">
+                <div class="padding">secondary-80</div>
+                <div class="padding align--right">secondary-20</div>
+            </div>
+            <div class="span--6 MD-span--3 background--secondary-20 text--secondary-80">
+                <div class="padding">secondary-20</div>
+                <div class="padding align--right">secondary-80</div>
+            </div>
+        </div>
+        <div class="span display--grid columns--12 elevation-shadow--z1">
+            <div class="span--6 MD-span--3 background--tertiary text--tertiary-100">
+                <div class="padding">tertiary</div>
+                <div class="padding align--right">tertiary-100</div>
+            </div>
+            <div class="span--6 MD-span--3 background--tertiary-100 text--tertiary">
+                <div class="padding">tertiary-100</div>
+                <div class="padding align--right">tertiary</div>
+            </div>
+            <div class="span--6 MD-span--3 background--tertiary-80 text--tertiary-20">
+                <div class="padding">tertiary-80</div>
+                <div class="padding align--right">tertiary-20</div>
+            </div>
+            <div class="span--6 MD-span--3 background--tertiary-20 text--tertiary-80">
+                <div class="padding">tertiary-20</div>
+                <div class="padding align--right">tertiary-80</div>
+            </div>
+        </div>
+    </figure>
+    <article class="padding">
+        <h4 class="typo-headline--MD">Neutral colors</h4>
+        <p>
+            The neutral key color is used to derive the roles of surface and background, as well as high emphasis text and icons.
+        </p>
+        <p>
+            The neutral variant key color is used to derive medium emphasis text and icons, surface variants, and component outlines. 
+        </p>
+    </article>
+    <figure class="display--grid columns--12 gap margin--none LG-margin-left LG-margin-right padding-top--XL padding-bottom--XL padding LG-padding--XL background--neutral-variant-90 text--neutral-variant-30 LG-shape--SM typo-body--SM">
+        <div class="span display--grid columns--12 elevation-shadow--z1">
+            <div class="span--6 background--neutral-100 text--neutral-10">
+                <div class="padding">neutral-100</div>
+                <div class="padding align--right">neutral-10</div>
+            </div>
+            <div class="span--6 background--neutral-10 text--neutral-100">
+                <div class="padding">neutral-10</div>
+                <div class="padding align--right">neutral--100</div>
+            </div>
+            <div class="span--6 MD-span--3 background--neutral-variant-90 text--neutral-variant-30">
+                <div class="padding">neutral-variant-90</div>
+                <div class="padding align--right">neutral-variant-30</div>
+            </div>
+            <div class="span--6 MD-span--3 background--neutral-variant-30 text--neutral-variant-90">
+                <div class="padding">neutral-variant-30</div>
+                <div class="padding align--right">neutral-variant-90</div>
+            </div>
+            <div class="span MD-span--6 background--neutral-variant-50 text--neutral-variant-80">
+                <div class="padding">neutral-variant-50</div>
+                <div class="padding align--right">neutral-variant-80</div>
+            </div>
+        </div>
+    </figure>
+    <article class="padding">
+        <h4 class="typo-headline--MD">Additional colors</h4>
+        <h5 class="typo-headline--SM margin-top--none">Error colors</h5>
+        <p>
+            In addition to the accent and neutral key color, the color system includes a semantic color role for error, again in the form of the error role itself, plus an error-100, error-80, and error-20 role. 
+        </p>
+    </article>
+    <figure class="display--grid columns--12 gap margin--none LG-margin-left LG-margin-right padding-top--XL padding-bottom--XL padding LG-padding--XL background--neutral-variant-90 text--neutral-variant-30 LG-shape--SM typo-body--SM">
+        <div class="span display--grid columns--12 elevation-shadow--z1">
+            <div class="span--6 MD-span--3 background--error text--error-100">
+                <div class="padding">error</div>
+                <div class="padding align--right">error-100</div>
+            </div>
+            <div class="span--6 MD-span--3 background--error-100 text--error">
+                <div class="padding">error-100</div>
+                <div class="padding align--right">error</div>
+            </div>
+            <div class="span--6 MD-span--3 background--error-80 text--error-20">
+                <div class="padding">error-80</div>
+                <div class="padding align--right">error-20</div>
+            </div>
+            <div class="span--6 MD-span--3 background--error-20 text--error-80">
+                <div class="padding">error-20</div>
+                <div class="padding align--right">error-80</div>
+            </div>
+        </div>
+    </figure>
+    <section>
+        <article class="padding">
+            <h3 class="typo-headline--MD">Tonal palettes</h3>
+        </article>
+        <figure class="display--grid columns--12 gap margin--none LG-margin-left LG-margin-right padding-top--XL padding-bottom--XL padding--LG LG-padding--XL background--neutral-variant-90 text--neutral-variant-30 shape">
+            <div class="span--3 align-items--start">
+                <span class="padding--XS padding-left padding-right background--neutral-0 text--neutral-100 shape--max elevation-shadow--z1">0</span>
+            </div>
+            <div class="span--6 typo-title align--center">Tonal palettes</div>
+            <div class="span--3 align--right">
+                <span class="padding--XS background--neutral-100 text--neutral-0 shape--max elevation-shadow--z1">100</span>
+            </div>
+            <div class="span padding background--neutral-100 gradient-270deg--neutral-0 shape--max elevation-shadow--z1">&nbsp;</div>
+        </figure>
+        <article class="padding">
+            <p>The 100 tone is always 100% white, the lightest tone in the range; the 0 tone is 100% black, the darkest tone in the range.</p>
+            <h4 class="typo-headline--SM">One key color becomes eleven tones</h4>
+            <p>A tonal palette consists of eleven tones, including white and black. A tone value of 100 is equivalent to the idea of light at its maximum and results in white. Every tone value between 0 and 100 expresses the amount of light present in the color.</p>
+        </article>
+        <figure class="display--grid columns--12 gap margin--none LG-margin-left LG-margin-right padding padding-top--XL padding-bottom--XL LG-padding--XL background--neutral-variant-90 text--neutral-variant-30 LG-shape--SM">
+            @for(int i = 0; i < _colors.Length; i++)
+            {
+                <div class="span XL-span--3 align-items--center display--flex direction--row">
+                    <div class="icon padding--XS shape--max background--@_colors[i] elevation-shadow--z1">&nbsp;</div>
+                    <h5 class="typo-title margin--none text--@_colors[i] padding-right padding-left--XS">@string.Concat(@_colors[i][0].ToString().ToUpper(), @_colors[i].Substring(1)).Replace("-", " ")</h5>
+                </div>
+                <div class="span XL-span--9 display--grid columns--12 elevation-shadow--z1">
+                    @for(var t = 0; t < 110; t = t + 10)
+                    {
+                        <div class="span @(t == 50 ? "MD-span--2" : "MD-span--1") background--@_colors[i]-@t text--@_colors[i]-@(t > 70 ? "30" : t < 30 ? "70" : "100") padding display--flex flex-direction--row align-items--center justify-content--center">@t</div>
+                    }
+                </div>
+            }
+        </figure>
+    </section>
+</div>
+
+@*<div class="animation-opacity--from-opaque user-select--none">
     <section class="desktop-container padding desktop-margin-top--large">
         <h2>Color</h2>
 	    <p>
@@ -26,7 +195,7 @@
         }
         </div>
     </section>
-</div>
+</div>*@
 @code {
     string[] _colors = new string[] { "primary", "secondary", "tertiary", "neutral", "neutral-variant", "error" };
 }

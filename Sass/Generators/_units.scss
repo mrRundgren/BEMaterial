@@ -1,0 +1,25 @@
+﻿@mixin units($className, $prop, $default, $mods, $units) {
+    .#{$className} {
+        #{$prop}: var(--unit-#{$default});
+
+        @each $unit, $val in $units {
+            &--#{$unit} {
+                #{$prop}: var(--unit-#{$unit});
+            }
+        }
+
+        @each $mod in $mods {
+            &-#{$mod} {
+                #{$prop}-#{$mod}: var(--unit-#{$default});
+
+                @each $unit, $val in $units {
+                    &--#{$unit} {
+                        #{$prop}-#{$mod}: var(--unit-#{$unit});
+                    }
+                }
+            }
+        }
+    }
+
+    @content;
+}

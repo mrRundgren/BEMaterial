@@ -1,0 +1,15 @@
+﻿@import "../functions/string";
+
+@mixin property($className, $prop, $default, $values) {
+    .#{$className} {
+        #{$prop}: #{$default};
+
+        @each $key, $val in $values {
+            &--#{$key} {
+                #{$prop}: #{$val};
+            }
+        }
+    }
+
+    @content;
+}

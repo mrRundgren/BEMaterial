@@ -1,0 +1,132 @@
+﻿@use "generators";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import "config";
+
+:root {
+    @include generators.variables($settings, $typography, $color, $tone, $unit);
+}
+
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+html {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    width: 100%;
+    min-height: 100vh;
+
+    #app {
+        max-width: 100%;
+    }
+}
+
+@mixin init($prefix: '') {
+    @if $prefix != '' {
+        $prefix: #{$prefix}-;
+    }
+
+    @include generators.typography(#{$prefix}typo, $typography);
+
+    @include generators.colors(#{$prefix}background, background-color, $color, $tone) {
+        @include generators.states(#{$prefix}background, background-color, $state, $color, $tone);
+    }
+
+    @include generators.colors(#{$prefix}text, color, $color, $tone) {
+        @include generators.states(#{$prefix}text, color, $state, $color, $tone);
+    }
+
+    @include generators.colors(#{$prefix}border, border-color, $color, $tone) {
+        @include generators.states(#{$prefix}border, border-color, $state, $color, $tone);
+    }
+
+    @include generators.gradients(#{$prefix}gradient, background-image, $color, (0, 100), 0deg, (0deg, 90deg, 180deg, 270deg));
+
+    @include generators.units(#{$prefix}padding, padding, MD, (top, right, bottom, left), $unit);
+    @include generators.units(#{$prefix}margin, margin, MD, (top, right, bottom, left), $unit);
+    @include generators.units(#{$prefix}gap, gap, MD, (), $unit);
+    @include generators.units(#{$prefix}shape, border-radius, MD, (), $unit);
+
+    @include generators.icons(#{$prefix}icon, var(--icon-font-family));
+    @include generators.elevation(#{$prefix}elevation);
+
+    @include generators.property(#{$prefix}border, border-width, thin, (thin: thin, medium: medium, thick: thick, none: 0));
+    @include generators.property(#{$prefix}border, border-style, solid, (solid: solid, dashed: dashed, dotted: dotted));
+    @include generators.property(#{$prefix}border-top, bordertop-width, thin, (thin: thin, medium: medium, thick: thick, none: 0));
+    @include generators.property(#{$prefix}border-top, border-top-style, solid, (solid: solid, dashed: dashed, dotted: dotted));
+    @include generators.property(#{$prefix}border-right, border-right-width, thin, (thin: thin, medium: medium, thick: thick, none: 0));
+    @include generators.property(#{$prefix}border-right, border-right-style, solid, (solid: solid, dashed: dashed, dotted: dotted));
+    @include generators.property(#{$prefix}border-bottom, border-bottom-width, thin, (thin: thin, medium: medium, thick: thick, none: 0));
+    @include generators.property(#{$prefix}border-bottom, border-bottom-style, solid, (solid: solid, dashed: dashed, dotted: dotted));
+    @include generators.property(#{$prefix}border-left, border-left-width, thin, (thin: thin, medium: medium, thick: thick, none: 0));
+    @include generators.property(#{$prefix}border-left, border-left-style, solid, (solid: solid, dashed: dashed, dotted: dotted));
+    @include generators.property(#{$prefix}display, display, block, (block: block, inline-block: inline-block, inline: inline, flex: flex, inline-flex: inline-flex, grid: grid, revert: revert, none: none));
+    @include generators.property(#{$prefix}direction, flex-direction, row, (row: row, column: column, row-reverse: row-reverse, column-reverse: column-reverse));
+    @include generators.property(#{$prefix}flex, flex, auto, (auto: auto, content: content, revert: revert, 1: 1, none: none));
+    @include generators.property(#{$prefix}columns, grid-template-columns, repeat(12, 1fr), (12: repeat(12, 1fr), auto-fit-250px: repeat(auto-fit, minmax(250px, 1fr))));
+    @include generators.property(#{$prefix}rows, grid-auto-rows, initial, (initial: initial, auto: auto, revert: revert, equal: 1fr));
+    @include generators.property(#{$prefix}auto-flow, grid-auto-flow, initial, (initial: initial, row: row, column: column, revert: revert, unset: unset));
+    @include generators.property(#{$prefix}span, grid-column, span 12, (1: 'span 1', 2: 'span 2', 3: 'span 3', 4: 'span 4', 5: 'span 5', 6: 'span 6', 7: 'span 7', 8: 'span 8', 9: 'span 9', 10: 'span 10', 11: 'span 11', 12: 'span 12'));
+    @include generators.property(#{$prefix}order, order, initial, (1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, initial: initial, revert: revert, unset: unset));
+    @include generators.property(#{$prefix}decoration, text-decoration, auto, (auto: auto, blink: blink, dashed: dashed, dotted: dotted, line-through: line-through, underline: underline, revert: revert, none: none));
+    @include generators.property(#{$prefix}align, text-align, left, (left: left, center: center, right: right));
+    @include generators.property(#{$prefix}align-items, align-items, baseline, (baseline: baseline, start: start, center: center, end: end, revert: revert, stretch: stretch));
+    @include generators.property(#{$prefix}align-content, align-content, start, (start: start, center: center, end: end, revert: revert, stretch: stretch, space-between: space-between, space-around: space-around, space-evenly: space-evenly));
+    @include generators.property(#{$prefix}align-self, align-self, baseline, (baseline: baseline, start: start, center: center, end: end, revert: revert, stretch: stretch));
+    @include generators.property(#{$prefix}justify-items, justify-items, baseline, (baseline: baseline, start: start, center: center, end: end, revert: revert, stretch: stretch));
+    @include generators.property(#{$prefix}justify-content, justify-content, start, (start: start, center: center, end: end, revert: revert, stretch: stretch, space-between: space-between, space-around: space-around, space-evenly: space-evenly));
+    @include generators.property(#{$prefix}justify-self, justify-self, baseline, (baseline: baseline, start: start, center: center, end: end, revert: revert, stretch: stretch));
+    @include generators.property(#{$prefix}overflow, overflow, visible, (visible: visible, hidden: hidden, auto: auto));
+    @include generators.property(#{$prefix}overflow-x, overflow-x, visible, (visible: visible, hidden: hidden, auto: auto));
+    @include generators.property(#{$prefix}overflow-y, overflow-y, visible, (visible: visible, hidden: hidden, auto: auto));
+    @include generators.property(#{$prefix}user-select, user-select, auto, (auto: auto, none: none));
+    @include generators.property(#{$prefix}max-width, max-width, auto, $breakpoint);
+    @include generators.property(#{$prefix}width, width, auto, (auto: auto, 100vw: 100vw, stretch: 100%));
+    @include generators.property(#{$prefix}min-height, min-height, auto, (auto: auto, 100vh: 100vh, stretch: 100%));
+    @include generators.property(#{$prefix}max-height, max-height, auto, (auto: auto, 100vh: 100vh, stretch: 100%));
+    @include generators.property(#{$prefix}height, height, auto, (auto: auto, 100vh: 100vh, stretch: 100%));
+    @include generators.property(#{$prefix}line-height, line-height, auto, (auto: auto, none: 0, normal: 1.5rem));
+    @include generators.property(#{$prefix}cursor, cursor, auto, (auto: auto, default: default, pointer: pointer));
+
+    @include generators.property(#{$prefix}position, position, relative, (relative: relative, absolute: absolute, fixed: fixed, sticky: sticky)) {
+        .#{$prefix}top--0 {
+            top: 0;
+            right: unset;
+            bottom: unset;
+            left: unset;
+        }
+
+        .#{$prefix}right--0 {
+            top: unset;
+            right: 0;
+            bottom: unset;
+            left: unset;
+        }
+
+        .#{$prefix}bottom--0 {
+            top: unset;
+            right: unset;
+            bottom: 0;
+            left: unset;
+        }
+
+        .#{$prefix}left--0 {
+            top: unset;
+            right: unset;
+            bottom: unset;
+            left: 0;
+        }
+    }
+}
+@include init();
+
+@each $bp, $val in $breakpoint {
+    @media screen and (min-width: #{$val}) {
+        @include init($bp);
+    }
+}

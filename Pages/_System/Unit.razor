@@ -1,0 +1,22 @@
+﻿@page "/unit-system"
+<PageTitle>Units</PageTitle>
+
+<div class="max-width--LG margin-left--auto margin-right--auto padding-bottom">
+    <section class="padding">
+        <h2 class="typo-headline--LG margin--none">Unit</h2>
+    </section>
+    <section class="user-select--none display--flex direction--row align-items--end gap padding LG-padding--XL background--neutral-90 LG-shape">
+        @foreach(var unit in _units)
+        {
+            <div class="span--1 display--flex direction--column align-items--center">
+                <div class="span--1 display--flex justify-content--start">
+                    <div class="background--primary line-height--none padding-left--XS padding-bottom--@unit">&nbsp;</div>
+                </div>
+                <strong class="span--1">@unit</strong>
+            </div>
+        }
+    </section>
+</div>
+@code {
+    IEnumerable<string> _units = (new string[] { "min", "XXXS", "XXS", "XS", "SM", "MD", "LG", "XL", "XXL", "XXXL", "max" });
+}
