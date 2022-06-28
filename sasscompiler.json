@@ -3,7 +3,7 @@
   "TargetFolder": "wwwroot/css",
   "Arguments": "--style=compressed",
   "GenerateScopedCss": false,
-  //"ScopedCssFolders": [ "Views", "Pages", "Shared", "Components" ],
+  "ScopedCssFolders": [ "Views", "Pages", "Shared", "Components" ],
 
   // You can override specific options based on the build configuration
   "Configurations": {

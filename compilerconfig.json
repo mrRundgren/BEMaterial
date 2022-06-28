@@ -1,10 +1,6 @@
 ﻿[
   {
     "outputFile": "wwwroot/css/app.css",
-    "inputFile": "Src/app.scss"
-  },
-  {
-    "outputFile": "wwwroot/css/BEMaterial.css",
-    "inputFile": "Sass/BEMaterial.scss"
+    "inputFile": "Sass/app.scss"
   }
 ]
