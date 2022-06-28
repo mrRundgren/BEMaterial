@@ -1,18 +1,22 @@
 ﻿@inherits LayoutComponentBase
 @inject NavigationManager NavManager
+@inject IIntersectionObserverService ObserverService
 @implements IDisposable
-
-<header class="display--grid columns--12 padding--XXS padding-top--SM padding-bottom--SM position--sticky top--0 background--primary text--primary-100 elevation--z5">
-	<div class="span--7 display--flex direction--row align-items--center">
-		<button @onclick="() => _drawerOpen = !_drawerOpen" class="icon cursor--pointer user-select--none background--transparent border--none text--inherit padding--SM shape--max background__active--primary-40">@(_drawerOpen ? "menu_open" : "menu")</button>
-		<a href="index" class="user-select--none decoration--none text--inherit typo--truncate">
-			<span class="typo-headline--SM padding-left--XS">BEM:aterial</span>
-		</a>
+<IntersectionObserve>
+	<div class="display--flex direction--column flex--1">
+		<header class="@(context.IsIntersecting ? "elevation-shadow--z2": "elevation-shadow--z0") display--grid columns--12 padding--XXS padding-top--SM padding-bottom--SM position--sticky top--0 background--primary text--primary-100 elevation--z5">
+			<div class="span--7 display--flex direction--row align-items--center">
+				<button @onclick="() => _drawerOpen = !_drawerOpen" class="icon cursor--pointer user-select--none background--transparent border--none text--inherit padding--SM shape--max background__active--primary-40">@(_drawerOpen ? "menu_open" : "menu")</button>
+				<a href="index" class="user-select--none decoration--none text--inherit typo--truncate">
+					<span class="typo-headline--SM padding-left--XS">BEM:aterial</span>
+				</a>
+			</div>
+		</header>
+		<main @ref="context.Ref.Current">
+			@Body
+		</main>
 	</div>
-</header>
-<main>
-	@Body
-</main>
+</IntersectionObserve>
 
 @if(_drawerOpen)
 {
@@ -32,6 +36,7 @@
 <AnchorNavigation />
 
 @code {
+	private ElementReference _observer;
 	private bool _drawerOpen { get; set; } = false;
 
 	protected override void OnInitialized()
