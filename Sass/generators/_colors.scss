@@ -1,0 +1,51 @@
+﻿@mixin colors($className, $prop, $colors, $tones) {
+    .#{$className} {
+        @each $name, $hex in $colors {
+            &--#{$name} {
+                #{$prop}: var(--color-#{$name});
+
+                @each $tone in $tones {
+                    &-#{$tone} {
+                        #{$prop}: var(--color-#{$name}-#{$tone});
+                    }
+                }
+            }
+        }
+
+        &--transparent {
+            #{$prop}: transparent;
+        }
+
+        &--modal {
+            #{$prop}: var(--modal);
+        }
+
+        &--none {
+            #{$prop}: unset;
+        }
+    }
+
+    @content;
+}
+
+@mixin gradients($className, $prop, $colors, $tones, $default, $mods) {
+    .#{$className} {
+        @each $name, $hex in $colors {
+            @each $mod in $mods {
+                &-#{$mod} {
+                    &--#{$name} {
+                        #{$prop}: linear-gradient($mod, transparent, var(--color-#{$name}));
+
+                        @each $tone in $tones {
+                            &-#{$tone} {
+                                #{$prop}: linear-gradient($mod, transparent, var(--color-#{$name}-#{$tone}));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @content;
+}

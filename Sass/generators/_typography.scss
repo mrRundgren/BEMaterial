@@ -1,0 +1,11 @@
+﻿@mixin typography($className, $typography) {
+    @each $name, $props in $typography {
+        .#{$className}-#{$name} {
+            @each $prop, $val in $props {
+                #{$prop}: #{$val};
+            }
+        }
+    }
+
+    @content;
+}
