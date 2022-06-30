@@ -4,7 +4,7 @@
 @implements IDisposable
 
 <div class="display--flex direction--column flex--1">
-	<header class="display--grid columns--12 padding--XXS padding-top--SM padding-bottom--SM position--sticky top--0 background--primary text--primary-100 elevation--z5">
+	<header class="elevation-shadow--z2 display--grid columns--12 padding--XXS padding-top--SM padding-bottom--SM position--sticky top--0 background--primary text--primary-100 elevation--z5">
 		<div class="span--7 display--flex direction--row align-items--center">
 			<button @onclick="OnDrawerToggle" class="icon cursor--pointer user-select--none background--transparent border--none text--inherit padding--SM shape--max background__active--primary-40">@(_drawerOpen ? "menu_open" : "menu")</button>
 			<a href="index" class="user-select--none decoration--none text--inherit typo--truncate">
@@ -21,12 +21,20 @@
 {
 	<aside @onclick="OnDrawerClose" class="@_modalAnimation position--fixed padding padding-top--max top--0 height--100vh width--stretch background--modal elevation--z4">
 		<div @onclick:stopPropagation="true" class="@_drawerAnimation padding--XS gap--XXS max-width--XS height--stretch overflow-y--auto background--neutral-100 elevation-shadow--z16 shape display--grid columns--12 align-content--start">
+			<div class="span align--center padding border-bottom border--neutral-80">
+				<i class="icon-outlined--LG margin-top--LG margin-bottom--LG padding--LG background--primary text--primary-90 shape--max">integration_instructions</i>
+			</div>
+			<NavLink href="index" class="display--flex direction--row gap align-items--center span user-select--none decoration--none text--primary-0 padding--SM shape--XS LG-background__hover--neutral-90 background__active--primary-80 LG-background__active--neutral-80 text__active--primary LG-text__active--neutral-0 typo--truncate" ActiveClass="background__selected--primary-90 text__selected--primary">
+				<i class="icon-outlined">home</i>
+				<span class="typo-body">Start</span>
+			</NavLink>
+			<h5 class="span typo-title padding--SM margin--none border-bottom border--neutral-80">System</h5>
 			<NavLink href="color-system" class="display--flex direction--row gap align-items--center span user-select--none decoration--none text--primary-0 padding--SM shape--XS LG-background__hover--neutral-90 background__active--primary-80 LG-background__active--neutral-80 text__active--primary LG-text__active--neutral-0 typo--truncate" ActiveClass="background__selected--primary-90 text__selected--primary">
-				<i class="icon--outlined">palette</i>
+				<i class="icon-outlined">palette</i>
 				<span class="typo-body">Color</span>
 			</NavLink>
 			<NavLink href="typography-system" class="display--flex direction--row gap align-items--center span user-select--none decoration--none text--primary-0 padding--SM shape--XS LG-background__hover--neutral-90 background__active--primary-80 LG-background__active--neutral-80 text__active--primary LG-text__active--neutral-0 typo--truncate" ActiveClass="background__selected--primary-90 text__selected--primary">
-				<i class="icon--outlined">format_size</i>
+				<i class="icon-outlined">format_size</i>
 				<span class="typo-body">Typography</span>
 			</NavLink>
 		</div>
