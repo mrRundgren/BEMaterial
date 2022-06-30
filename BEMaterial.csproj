@@ -36,4 +36,8 @@
     <UpToDateCheckInput Remove="Src\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Sass\generators\_animation.scss" />
+  </ItemGroup>
+
 </Project>

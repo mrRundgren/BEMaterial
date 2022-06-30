@@ -6,6 +6,7 @@
 @import "generators/icons";
 @import "generators/property";
 @import "generators/elevation";
+@import "generators/animation";
 @import "generators/variables";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
@@ -61,6 +62,7 @@ html {
 
     @include icons(#{$prefix}icon, var(--icon-font-family));
     @include elevation(#{$prefix}elevation);
+    @include animation(#{$prefix}animation);
 
     @include property(#{$prefix}border, border-width, thin, (thin: thin, medium: medium, thick: thick, none: 0));
     @include property(#{$prefix}border, border-style, solid, (solid: solid, dashed: dashed, dotted: dotted));

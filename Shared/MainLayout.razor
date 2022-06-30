@@ -21,7 +21,7 @@
 @if(_drawerOpen)
 {
 	<aside @onclick="() => _drawerOpen = false" class="position--fixed padding padding-top--max top--0 height--100vh width--stretch background--modal elevation--z4">
-		<div @onclick:stopPropagation="true" class="padding--XS gap--XXS max-width--XS height--stretch overflow-y--auto background--neutral-100 elevation-shadow--z16 shape display--grid columns--12 align-content--start">
+		<div @onclick:stopPropagation="true" class="animation-from--left padding--XS gap--XXS max-width--XS height--stretch overflow-y--auto background--neutral-100 elevation-shadow--z16 shape display--grid columns--12 align-content--start">
 			<NavLink href="color-system" class="display--flex direction--row gap align-items--center span user-select--none decoration--none text--primary-0 padding--SM shape--XS LG-background__hover--neutral-90 background__active--primary-80 LG-background__active--neutral-80 text__active--primary LG-text__active--neutral-0 typo--truncate" ActiveClass="background__selected--primary-90 text__selected--primary">
 				<i class="icon--outlined">palette</i>
 				<span class="typo-body">Color</span>

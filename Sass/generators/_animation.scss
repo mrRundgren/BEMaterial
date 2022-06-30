@@ -1,5 +1,5 @@
-﻿@mixin animation($prefix: '') {
-    .#{$prefix}animation {
+﻿@mixin animation($className) {
+    .#{$className} {
         &-from {
             &--left {
                 animation: left-to-right;
@@ -12,16 +12,16 @@
                 animation-duration: 0.125s;
                 animation-iteration-count: 1;
             }
-        }
 
-        &-opacity {
-            &--from-opaque {
+            &--opaque {
                 animation: opaque-to-visible;
                 animation-duration: 0.5s;
                 animation-iteration-count: 1;
             }
+        }
 
-            &--to-opaque {
+        &-to {
+            &--opaque {
                 animation: opaque-to-visible;
                 animation-direction: reverse;
                 animation-duration: 0.5s;
@@ -52,8 +52,8 @@
 @keyframes opaque-to-visible {
     from {
         opacity: 0;
-
     }
+
     to {
         opacity: 1;
     }
@@ -63,6 +63,7 @@
     from {
         transform: translate(-100%, 0);
     }
+
     to {
         transform: translate(0, 0);
     }
@@ -72,6 +73,7 @@
     from {
         transform: translate(100%, 0);
     }
+
     to {
         transform: translate(0, 0);
     }
