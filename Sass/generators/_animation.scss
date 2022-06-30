@@ -21,10 +21,37 @@
         }
 
         &-to {
+            &--left {
+                animation: left-to-right--reverse;
+                animation-duration: 0.125s;
+                animation-iteration-count: 1;
+            }
+
+            &--right {
+                animation: right-to-left;
+                animation-direction: reverse;
+                animation-duration: 0.125s;
+                animation-iteration-count: 1;
+            }
+
             &--opaque {
                 animation: opaque-to-visible;
                 animation-direction: reverse;
                 animation-duration: 0.5s;
+                animation-iteration-count: 1;
+            }
+        }
+
+        &-modal {
+            &--on {
+                animation: modal--on;
+                animation-duration: 0.125s;
+                animation-iteration-count: 1;
+            }
+
+            &--off {
+                animation: modal--off;
+                animation-duration: 0.125s;
                 animation-iteration-count: 1;
             }
         }
@@ -69,6 +96,16 @@
     }
 }
 
+@keyframes left-to-right--reverse {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-100%, 0);
+    }
+}
+
 @keyframes right-to-left {
     from {
         transform: translate(100%, 0);
@@ -76,5 +113,25 @@
 
     to {
         transform: translate(0, 0);
+    }
+}
+
+@keyframes modal--on {
+    from {
+        background-color: var(--modal-off);
+    }
+
+    to {
+        background-color: var(--modal-on);
+    }
+}
+
+@keyframes modal--off {
+    from {
+        background-color: var(--modal-on);
+    }
+
+    to {
+        background-color: var(--modal-off);
     }
 }
