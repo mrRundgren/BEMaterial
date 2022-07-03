@@ -1,4 +1,4 @@
-﻿@mixin colors($className, $prop, $colors, $tones) {
+﻿@mixin color($className, $prop, $colors, $tones) {
     .#{$className} {
         @each $name, $hex in $colors {
             &--#{$name} {
@@ -32,7 +32,7 @@
     @content;
 }
 
-@mixin states($className, $prop, $states, $colors, $tones) {
+@mixin state($className, $prop, $states, $colors, $tones) {
     @each $name, $hex in $colors {
         @each $state in $states {
             .#{$className}__#{$state}--#{$name} {
@@ -63,7 +63,7 @@
     }
 }
 
-@mixin gradients($className, $prop, $colors, $tones, $default, $mods) {
+@mixin gradient($className, $prop, $colors, $tones, $default, $mods) {
     .#{$className} {
         @each $name, $hex in $colors {
             @each $mod in $mods {

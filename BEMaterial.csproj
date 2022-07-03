@@ -41,10 +41,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Sass\system\_colors.scss" />
-  </ItemGroup>
-
-  <ItemGroup>
     <UpToDateCheckInput Remove="Sass\system\_typography.scss" />
   </ItemGroup>
 
@@ -53,11 +49,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Sass\system\_icons.scss" />
+    <UpToDateCheckInput Remove="Sass\generators\_unit.scss" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Sass\system\_variables.scss" />
+    <UpToDateCheckInput Remove="Sass\system\_color.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Sass\system\_icon.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Sass\system\_variable.scss" />
   </ItemGroup>
 
 </Project>

@@ -1,18 +1,18 @@
 ﻿@import "config";
+@import "system/variable";
 @import "system/typography";
-@import "system/colors";
-@import "system/icons";
+@import "system/color";
+@import "system/icon";
 @import "system/elevation";
 @import "system/animation";
-@import "system/variables";
-@import "generators/units";
+@import "generators/unit";
 @import "generators/property";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
 :root {
-    @include variables($settings, $typography, $color, $tone, $unit, $breakpoint);
+    @include variable($settings, $typography, $color, $tone, $unit, $breakpoint);
 }
 
 *, *::after, *::before {
@@ -56,26 +56,26 @@ html {
 
     @include typography(#{$prefix}typo, $typography);
 
-    @include colors(#{$prefix}background, background-color, $color, $tone) {
-        @include states(#{$prefix}background, background-color, $state, $color, $tone);
+    @include color(#{$prefix}background, background-color, $color, $tone) {
+        @include state(#{$prefix}background, background-color, $state, $color, $tone);
     }
 
-    @include colors(#{$prefix}text, color, $color, $tone) {
-        @include states(#{$prefix}text, color, $state, $color, $tone);
+    @include color(#{$prefix}text, color, $color, $tone) {
+        @include state(#{$prefix}text, color, $state, $color, $tone);
     }
 
-    @include colors(#{$prefix}border, border-color, $color, $tone) {
-        @include states(#{$prefix}border, border-color, $state, $color, $tone);
+    @include color(#{$prefix}border, border-color, $color, $tone) {
+        @include state(#{$prefix}border, border-color, $state, $color, $tone);
     }
 
-    @include gradients(#{$prefix}gradient, background-image, $color, (0, 100), 0deg, (0deg, 90deg, 180deg, 270deg));
+    @include gradient(#{$prefix}gradient, background-image, $color, (0, 100), 0deg, (0deg, 90deg, 180deg, 270deg));
 
-    @include units(#{$prefix}padding, padding, MD, (top, right, bottom, left), $unit);
-    @include units(#{$prefix}margin, margin, MD, (top, right, bottom, left), $unit);
-    @include units(#{$prefix}gap, gap, MD, (), $unit);
-    @include units(#{$prefix}shape, border-radius, MD, (), $unit);
+    @include unit(#{$prefix}padding, padding, MD, (top, right, bottom, left), $unit);
+    @include unit(#{$prefix}margin, margin, MD, (top, right, bottom, left), $unit);
+    @include unit(#{$prefix}gap, gap, MD, (), $unit);
+    @include unit(#{$prefix}shape, border-radius, MD, (), $unit);
 
-    @include icons(#{$prefix}icon, var(--icon-font-family));
+    @include icon(#{$prefix}icon, var(--icon-font-family));
     @include elevation(#{$prefix}elevation);
     @include animation(#{$prefix}animation);
 

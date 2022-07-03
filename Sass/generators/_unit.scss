@@ -1,4 +1,4 @@
-﻿@mixin units($className, $prop, $default, $mods, $units) {
+﻿@mixin unit($className, $prop, $default, $mods, $units) {
     .#{$className} {
         #{$prop}: var(--unit-#{$default});
 
