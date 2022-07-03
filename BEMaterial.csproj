@@ -40,4 +40,24 @@
     <UpToDateCheckInput Remove="Sass\generators\_animation.scss" />
   </ItemGroup>
 
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Sass\system\_colors.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Sass\system\_typography.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Sass\system\_elevation.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Sass\system\_icons.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Sass\system\_variables.scss" />
+  </ItemGroup>
+
 </Project>
