@@ -20,15 +20,29 @@
     -webkit-tap-highlight-color: transparent;
     outline: none;
 }
+
 html {
     font-family: var(--font-family);
     font-size: var(--font-size);
     line-height: var(--line-height);
     width: 100%;
     min-height: 100vh;
+    display: flex;
 
-    #app {
-        max-width: 100%;
+    > body {
+        margin: 0;
+        background-color: var(--color-neutral-30);
+        flex: 1;
+        display: flex;
+
+        #app,
+        .app {
+            max-width: 100%;
+            background-color: var(--color-neutral-100);
+            color: var(--color-neutral-30);
+            flex: 1;
+            display: flex;
+        }
     }
 }
 
@@ -75,7 +89,7 @@ html {
     @include property(#{$prefix}display, display, block, (block: block, inline-block: inline-block, inline: inline, flex: flex, inline-flex: inline-flex, grid: grid, revert: revert, none: none));
     @include property(#{$prefix}direction, flex-direction, row, (row: row, column: column, row-reverse: row-reverse, column-reverse: column-reverse));
     @include property(#{$prefix}flex, flex, auto, (auto: auto, content: content, revert: revert, 1: 1, none: none));
-    @include property(#{$prefix}columns, grid-template-columns, repeat(12, 1fr), (12: repeat(12, 1fr), auto-fit-250px: repeat(auto-fit, minmax(250px, 1fr))));
+    @include property(#{$prefix}columns, grid-template-columns, repeat(12, 1fr), (12: repeat(12, 1fr), layout: 300px 1fr, auto-fit-250px: repeat(auto-fit, minmax(250px, 1fr))));
     @include property(#{$prefix}rows, grid-auto-rows, initial, (initial: initial, auto: auto, revert: revert, equal: 1fr));
     @include property(#{$prefix}auto-flow, grid-auto-flow, initial, (initial: initial, row: row, column: column, revert: revert, unset: unset));
     @include property(#{$prefix}span, grid-column, span 12, (1: 'span 1', 2: 'span 2', 3: 'span 3', 4: 'span 4', 5: 'span 5', 6: 'span 6', 7: 'span 7', 8: 'span 8', 9: 'span 9', 10: 'span 10', 11: 'span 11', 12: 'span 12'));
@@ -89,20 +103,42 @@ html {
     @include property(#{$prefix}justify-content, justify-content, start, (start: start, center: center, end: end, revert: revert, stretch: stretch, space-between: space-between, space-around: space-around, space-evenly: space-evenly));
     @include property(#{$prefix}justify-self, justify-self, baseline, (baseline: baseline, start: start, center: center, end: end, revert: revert, stretch: stretch));
     @include property(#{$prefix}overflow, overflow, visible, (visible: visible, hidden: hidden, auto: auto));
-    @include property(#{$prefix}overflow-x, overflow-x, visible, (visible: visible, hidden: hidden, auto: auto));
-    @include property(#{$prefix}overflow-y, overflow-y, visible, (visible: visible, hidden: hidden, auto: auto));
+    @include property(#{$prefix}overflow-x, overflow-x, visible, (visible: visible, hidden: hidden, auto: auto, scroll: scroll));
+    @include property(#{$prefix}overflow-y, overflow-y, visible, (visible: visible, hidden: hidden, auto: auto, scroll: scroll));
     @include property(#{$prefix}user-select, user-select, auto, (auto: auto, none: none));
     @include property(#{$prefix}max-width, max-width, auto, $breakpoint);
     @include property(#{$prefix}width, width, auto, (auto: auto, 100vw: 100vw, stretch: 100%));
     @include property(#{$prefix}min-height, min-height, auto, (auto: auto, 100vh: 100vh, stretch: 100%));
     @include property(#{$prefix}max-height, max-height, auto, (auto: auto, 100vh: 100vh, stretch: 100%));
-    @include property(#{$prefix}height, height, auto, (auto: auto, 100vh: 100vh, stretch: 100%));
+
+    @include property(#{$prefix}height, height, auto, (auto: auto, 100vh: 100vh, stretch: 100%)) {
+        .#{$prefix}height {
+            &--appbar {
+                height: calc(100vh - var(--unit-XXXL));
+            }
+        }
+    }
+
     @include property(#{$prefix}line-height, line-height, auto, (auto: auto, none: 0, normal: 1.5rem));
     @include property(#{$prefix}cursor, cursor, auto, (auto: auto, default: default, pointer: pointer));
 
     @include property(#{$prefix}position, position, relative, (relative: relative, absolute: absolute, fixed: fixed, sticky: sticky)) {
         .#{$prefix}top--0 {
             top: 0;
+            right: unset;
+            bottom: unset;
+            left: unset;
+        }
+
+        .#{$prefix}top--XXXL {
+            top: var(--unit-XXXL);
+            right: unset;
+            bottom: unset;
+            left: unset;
+        }
+
+        .#{$prefix}top--max {
+            top: var(--unit-max);
             right: unset;
             bottom: unset;
             left: unset;
