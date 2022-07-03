@@ -1,5 +1,6 @@
 ﻿@inherits LayoutComponentBase
 @inject NavigationManager NavManager
+@inject IResizeListener Listener
 @implements IDisposable
 <MediaQueryList>
 	<div class="display--flex direction--column flex--1 max-width--XXL">
@@ -51,6 +52,17 @@
 	private string _modalAnimation { get; set; } = "animation-modal--on XXL-animation--none";
 	private string _drawerAnimation { get; set; } = "animation-from--left";
 	private bool _isFullHD { get; set; }
+	private BrowserWindowSize _browser = new BrowserWindowSize();
+
+	protected override void OnAfterRender(bool firstRender)
+	{
+		base.OnAfterRender(firstRender);
+		if (firstRender)
+		{
+			NavManager.LocationChanged += OnLocationChanged;
+			Listener.OnResized += OnWindowResized;
+		}
+	}
 
 	private async Task OnDrawerToggle()
 	{
@@ -77,12 +89,6 @@
 		_drawerOpen = false;
 	}
 
-	protected override void OnInitialized()
-	{
-		NavManager.LocationChanged += OnLocationChanged;
-		base.OnInitialized();
-	}
-
 	private void OnLocationChanged(object? src, LocationChangedEventArgs e)
 	{
 		if(!_isFullHD)
@@ -92,9 +98,18 @@
 		StateHasChanged();
 	}
 
+	private async void OnWindowResized(object? _, BrowserWindowSize window)
+	{
+		_browser = window;
+		_isFullHD = await Listener.MatchMedia("(min-width: 1920px)");
+		_drawerOpen = _isFullHD;
+		StateHasChanged();
+    }
+
 	public void Dispose()
 	{
 		NavManager.LocationChanged -= OnLocationChanged;
+		Listener.OnResized -= OnWindowResized;
 	}
 }
 	
