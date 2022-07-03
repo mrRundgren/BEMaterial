@@ -1,4 +1,4 @@
-﻿@mixin variables($settings, $typography, $color, $tone, $unit) {
+﻿@mixin variables($settings, $typography, $color, $tone, $unit, $breakpoint) {
     @each $name, $props in $settings {
         @each $prop, $val in $props {
             --#{$name}: #{$prop};
@@ -24,6 +24,10 @@
 
     @each $name, $val in $unit {
         --unit-#{$name}: #{$val};
+    }
+
+    @each $name, $val in $breakpoint {
+        --breakpoint-#{$name}: #{$val};
     }
 
     @content;

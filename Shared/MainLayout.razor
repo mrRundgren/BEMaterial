@@ -2,7 +2,7 @@
 @inject NavigationManager NavManager
 @implements IDisposable
 
-<div class="display--flex direction--column flex--1">
+<div class="display--flex direction--column flex--1 max-width--XXL">
 	<header class="elevation-shadow--z2 display--grid columns--12 padding--XXS padding-top--SM padding-bottom--SM position--sticky top--0 background--primary text--primary-100 elevation--z5">
 		<div class="span display--flex direction--row align-items--center">
 			<button @onclick="OnDrawerToggle" class="icon cursor--pointer user-select--none background--transparent border--none text--inherit padding--SM shape--max background__active--primary-40">@(_drawerOpen ? "menu_open" : "menu")</button>
