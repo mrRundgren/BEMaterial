@@ -4,12 +4,17 @@
   "short_name": "BEM:aterial",
   "description": "A simple extendable CSS design system based on Material Design and BEM.",
   "id": "/BEMaterial/",
-  "start_url": "/BEMaterial/",
-  "scope": "/BEMaterial",
+  "start_url": "/BEMaterial/index",
+  "scope": "/BEMaterial/",
   "icons": [
     {
+      "src": "img/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
       "src": "img/favicon/android-chrome-512x512.png",
-      "sizes": "48x48 72x72 96x96 128x128 192x192 256x256 512x512",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
