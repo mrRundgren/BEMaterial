@@ -9,6 +9,7 @@ var CACHE_NAME = 'bematerial-cache';
 var urlsToCache = [
 	'index.html',
 	'manifest.json',
+	'img/favicon/android-chrome-192x192.png',
 	'img/favicon/android-chrome-512x512.png',
 	'img/favicon/apple-touch-icon.png',
 	'img/favicon/favicon.ico',
