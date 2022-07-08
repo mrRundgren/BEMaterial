@@ -15,7 +15,7 @@
 		<div class="flex--1 display--grid columns--12 gap XXL-columns--layout">
 			@if(_drawerOpen)
 			{
-				<aside @onclick="OnDrawerClose" class="span XXL-span--1 @_modalAnimation position--fixed XXL-position--sticky padding top--XXXL XXL-padding--none height--appbar width--stretch background--modal XXL-background--transparent elevation--z23 overflow-y--auto">
+				<aside @onclick="OnDrawerClose" class="span XXL-span--1 @_modalAnimation position--fixed XXL-position--sticky padding--SM top--XXXL XXL-padding--none height--appbar width--stretch background--modal XXL-background--transparent elevation--z23 overflow-y--auto">
 					<div @onclick:stopPropagation="true" class="@_drawerAnimation padding--XS padding-top--LG XXL-padding--none XXL-padding-top--LG gap--XXS SM-max-width--XXS height--stretch overflow-y--auto background--neutral-100 shape">
 						<div class="display--grid columns--12 gap--XS align-content--start padding--XS padding-top--none margin-bottom--LG border-bottom border--neutral-80">
 							<h5 class="span typo-title padding--SM margin--none">Start</h5>
