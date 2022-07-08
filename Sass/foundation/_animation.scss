@@ -59,13 +59,17 @@
         &--spin {
             animation: spin;
             animation-duration: 0.75s;
-            animation-iteration-count: infinite;
+            animation-iteration-count: 1;
             animation-timing-function: ease-in-out;
             transform-origin: center center;
         }
 
         &--none {
             animation: none;
+        }
+
+        &--countinous {
+            animation-iteration-count: infinite;
         }
     }
 }

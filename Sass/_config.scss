@@ -3,5 +3,40 @@ $typography: (display: (font-size: 4rem, line-height: 4.5rem, font-weight: 500),
 $color: ( primary: #0f58d6, secondary: #2c95a0, tertiary: #46962b, neutral: #6c757d, neutral-variant: #34404d, error: #ea151f );
 $tone: (0, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 100);
 $unit: (auto: auto, none: 0, min: 0.0625rem, XXXS: 0.125rem, XXS: 0.25rem, XS: 0.5rem, SM: 0.75rem, MD: 1rem, LG: 1.5rem, XL: 2.5rem, XXL: 3.5rem, XXXL: 4.5rem, max: 5.5rem);
-$breakpoint: (XS: 400px, SM: 576px, MD: 768px, LG: 992px, XL: 1200px, XXL: 1920px);
+$breakpoint: (XXS: 300px, XS: 400px, SM: 576px, MD: 768px, LG: 992px, XL: 1200px, XXL: 1920px);
 $state: (hover, active, focus, focus-within, selected);
+
+@mixin variable($settings, $typography, $color, $tone, $unit, $breakpoint) {
+    @each $name, $props in $settings {
+        @each $prop, $val in $props {
+            --#{$name}: #{$prop};
+        }
+    }
+
+    @each $name, $props in $typography {
+        @each $prop, $val in $props {
+            --typography-#{$name}-#{$prop}: #{$val};
+        }
+    }
+
+    @each $name, $hex in $color {
+        $hue: hue($hex);
+        $saturation: saturation($hex);
+
+        --color-#{$name}: #{$hex};
+
+        @each $val in $tone {
+            --color-#{$name}-#{$val}: #{hsl($hue, $saturation, $val * 1%)};
+        }
+    }
+
+    @each $name, $val in $unit {
+        --unit-#{$name}: #{$val};
+    }
+
+    @each $name, $val in $breakpoint {
+        --breakpoint-#{$name}: #{$val};
+    }
+
+    @content;
+}

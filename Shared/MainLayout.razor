@@ -4,7 +4,7 @@
 @implements IDisposable
 <MediaQueryList>
 	<div class="display--flex direction--column flex--1 max-width--XXL">
-		<header class="elevation-shadow--z2 display--grid columns--12 padding--XXS padding-top--SM padding-bottom--SM position--sticky top--0 background--primary text--primary-100 elevation--z5">
+		<header class="elevation-shadow--z2 display--grid columns--12 padding--XXS padding-top--SM padding-bottom--SM position--sticky top--0 background--primary text--primary-100 elevation--z24">
 			<div class="span display--flex direction--row align-items--center">
 				<button @onclick="OnDrawerToggle" class="icon cursor--pointer user-select--none background--transparent border--none text--inherit padding--SM shape--max background__active--primary-40">@(_drawerOpen ? "menu_open" : "menu")</button>
 				<a href="index" class="user-select--none decoration--none text--inherit typo--truncate">
@@ -15,8 +15,8 @@
 		<div class="flex--1 display--grid columns--12 gap XXL-columns--layout">
 			@if(_drawerOpen)
 			{
-				<aside @onclick="OnDrawerClose" class="span XXL-span--1 @_modalAnimation position--fixed XXL-position--sticky padding top--XXXL XXL-padding--none height--appbar width--stretch background--modal XXL-background--transparent elevation--z4 overflow-y--auto">
-					<div @onclick:stopPropagation="true" class="@_drawerAnimation padding--XS padding-top--LG XXL-padding--none XXL-padding-top--LG gap--XXS max-width--XS height--stretch overflow-y--auto background--neutral-100 shape">
+				<aside @onclick="OnDrawerClose" class="span XXL-span--1 @_modalAnimation position--fixed XXL-position--sticky padding top--XXXL XXL-padding--none height--appbar width--stretch background--modal XXL-background--transparent elevation--z23 overflow-y--auto">
+					<div @onclick:stopPropagation="true" class="@_drawerAnimation padding--XS padding-top--LG XXL-padding--none XXL-padding-top--LG gap--XXS SM-max-width--XXS height--stretch overflow-y--auto background--neutral-100 shape">
 						<div class="display--grid columns--12 gap--XS align-content--start padding--XS padding-top--none margin-bottom--LG border-bottom border--neutral-80">
 							<h5 class="span typo-title padding--SM margin--none">Start</h5>
 							<NavLink href="index" class="display--flex direction--row gap align-items--center span user-select--none decoration--none text--primary-0 padding--SM shape--XS LG-background__hover--neutral-90 background__active--primary-80 LG-background__active--neutral-80 text__active--primary LG-text__active--neutral-0 typo--truncate" ActiveClass="background__selected--primary-90 text__selected--primary">
@@ -26,13 +26,36 @@
 						</div>
 						<div class="display--grid columns--12 gap--XS align-content--start padding--XS padding-top--none margin-bottom--LG border-bottom border--neutral-80">
 							<h5 class="span typo-title padding--SM margin--none">Foundation</h5>
-							<NavLink href="color-system" class="display--flex direction--row gap align-items--center span user-select--none decoration--none text--primary-0 padding--SM shape--XS LG-background__hover--neutral-90 background__active--primary-80 LG-background__active--neutral-80 text__active--primary LG-text__active--neutral-0 typo--truncate" ActiveClass="background__selected--primary-90 text__selected--primary">
+							<NavLink href="foundation-animation" class="pointer-events--none text--neutral-50 display--flex direction--row gap align-items--center span user-select--none decoration--none text--primary-0 padding--SM shape--XS LG-background__hover--neutral-90 background__active--primary-80 LG-background__active--neutral-80 text__active--primary LG-text__active--neutral-0 typo--truncate" ActiveClass="background__selected--primary-90 text__selected--primary">
+								<i class="icon-outlined">animation</i>
+								<span class="typo-body">Animation</span>
+							</NavLink>
+							<NavLink href="foundation-colors" class="display--flex direction--row gap align-items--center span user-select--none decoration--none text--primary-0 padding--SM shape--XS LG-background__hover--neutral-90 background__active--primary-80 LG-background__active--neutral-80 text__active--primary LG-text__active--neutral-0 typo--truncate" ActiveClass="background__selected--primary-90 text__selected--primary">
 								<i class="icon-outlined">palette</i>
 								<span class="typo-body">Colors</span>
 							</NavLink>
-							<NavLink href="typography-system" class="display--flex direction--row gap align-items--center span user-select--none decoration--none text--primary-0 padding--SM shape--XS LG-background__hover--neutral-90 background__active--primary-80 LG-background__active--neutral-80 text__active--primary LG-text__active--neutral-0 typo--truncate" ActiveClass="background__selected--primary-90 text__selected--primary">
+							<NavLink href="foundation-elevation" class="display--flex direction--row gap align-items--center span user-select--none decoration--none text--primary-0 padding--SM shape--XS LG-background__hover--neutral-90 background__active--primary-80 LG-background__active--neutral-80 text__active--primary LG-text__active--neutral-0 typo--truncate" ActiveClass="background__selected--primary-90 text__selected--primary">
+								<i class="icon-outlined">layers</i>
+								<span class="typo-body">Elevation</span>
+							</NavLink>
+							<NavLink href="foundation-icons" class="pointer-events--none text--neutral-50 display--flex direction--row gap align-items--center span user-select--none decoration--none text--primary-0 padding--SM shape--XS LG-background__hover--neutral-90 background__active--primary-80 LG-background__active--neutral-80 text__active--primary LG-text__active--neutral-0 typo--truncate" ActiveClass="background__selected--primary-90 text__selected--primary">
+								<i class="icon-outlined">filter_vintage</i>
+								<span class="typo-body">Icons</span>
+							</NavLink>
+							<NavLink href="foundation-typography" class="display--flex direction--row gap align-items--center span user-select--none decoration--none text--primary-0 padding--SM shape--XS LG-background__hover--neutral-90 background__active--primary-80 LG-background__active--neutral-80 text__active--primary LG-text__active--neutral-0 typo--truncate" ActiveClass="background__selected--primary-90 text__selected--primary">
 								<i class="icon-outlined">format_size</i>
 								<span class="typo-body">Typography</span>
+							</NavLink>
+						</div>
+						<div class="display--grid columns--12 gap--XS align-content--start padding--XS padding-top--none margin-bottom--LG border-bottom border--neutral-80">
+							<h5 class="span typo-title padding--SM margin--none">Generators</h5>
+							<NavLink href="generators-property" class="pointer-events--none text--neutral-50 display--flex direction--row gap align-items--center span user-select--none decoration--none text--primary-0 padding--SM shape--XS LG-background__hover--neutral-90 background__active--primary-80 LG-background__active--neutral-80 text__active--primary LG-text__active--neutral-0 typo--truncate" ActiveClass="background__selected--primary-90 text__selected--primary">
+								<i class="icon-outlined">polyline</i>
+								<span class="typo-body">Property</span>
+							</NavLink>
+							<NavLink href="generators-unit" class="pointer-events--none text--neutral-50 display--flex direction--row gap align-items--center span user-select--none decoration--none text--primary-0 padding--SM shape--XS LG-background__hover--neutral-90 background__active--primary-80 LG-background__active--neutral-80 text__active--primary LG-text__active--neutral-0 typo--truncate" ActiveClass="background__selected--primary-90 text__selected--primary">
+								<i class="icon-outlined">straighten</i>
+								<span class="typo-body">Unit</span>
 							</NavLink>
 						</div>
 					</div>

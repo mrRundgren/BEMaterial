@@ -1,11 +1,11 @@
-﻿@page "/color-system"
-<PageTitle>Color</PageTitle>
+﻿@page "/foundation-colors"
+<PageTitle>Colors</PageTitle>
 
-<div class="max-width--LG margin-left--auto margin-right--auto LG-padding-bottom animation-from--opaque">
+<div class="max-width--LG margin-left--auto margin-right--auto LG-padding-bottom--XL animation-from--opaque">
     <article class="padding">
         <h2 class="typo-headline--LG">Colors</h2>
 	    <p class="typo-body">
-            The color system handles the variability of dynamically changing color schemes that arise as user inputs change. The logic of tonal relationships and shifts in hue and chroma provide a foundation for flexible color application. Color schemes can be considered a cohesive group of relative tones, rather than a fixed group of constant values.
+            The color foundation handles the variability of dynamically changing color schemes that arise as user inputs change. The logic of tonal relationships and shifts in hue and chroma provide a foundation for flexible color application. Color schemes can be considered a cohesive group of relative tones, rather than a fixed group of constant values.
         </p>
         <h4 class="typo-headline--MD margin-top--none">Accent colors</h4>
         <p>
@@ -161,41 +161,15 @@
                     <h5 class="typo-title margin--none text--@_colors[i] padding-right padding-left--XS">@string.Concat(@_colors[i][0].ToString().ToUpper(), @_colors[i].Substring(1)).Replace("-", " ")</h5>
                 </div>
                 <div class="span XL-span--9 display--grid columns--12 elevation-shadow--z1">
-                    @for(var t = 0; t < 110; t = t + 10)
-                    {
-                        <div class="span @(t == 50 ? "MD-span--2" : "MD-span--1") background--@_colors[i]-@t text--@_colors[i]-@(t > 70 ? "30" : t < 30 ? "70" : "100") padding display--flex flex-direction--row align-items--center justify-content--center">@t</div>
+                    @foreach (var tone in _tones) {
+                        <div class="span @(tone == 50 ? "MD-span--2" : "MD-span--1") background--@_colors[i]-@tone text--@_colors[i]-@(tone > 70 ? "30" : tone < 30 ? "70" : "100") padding display--flex flex-direction--row align-items--center justify-content--center">@tone</div>
                     }
                 </div>
             }
         </figure>
     </section>
 </div>
-
-@*<div class="animation-opacity--from-opaque user-select--none">
-    <section class="desktop-container padding desktop-margin-top--large">
-        <h2>Color</h2>
-	    <p>
-            The color system handles the variability of dynamically changing color schemes that arise as user inputs change. The logic of tonal relationships and shifts in hue and chroma provide a foundation for flexible color application. Color schemes can be considered a cohesive group of relative tones, rather than a fixed group of constant values.
-        </p>
-    </section>
-    <section class="desktop-container mobile-landscape-padding-horizontal margin-top--x-large">
-        <div class="grid gap neutral-90 padding mobile-landscape-padding--x-large mobile-landscape-shape">
-        @for(int i = 0; i < _colors.Length; i++)
-        {
-            <div class="tablet-span--3 align-items--center gap shape--xxx-large display--flex flex-direction--row">
-                <div class="icon padding shape--round @_colors[i] state--hover state--active">&nbsp;</div>
-                <h5 class="text-@_colors[i] state--hover state--active">@_colors[i]</h5>
-            </div>
-            <div class="tablet-span--9 grid">
-                @for(var t = 0; t < 110; t = t + 10)
-                {
-                    <div class="mobile-landscape-span--@(t == 50 ? "2" : "1") @_colors[i]-@t state--hover state--active padding display--flex flex-direction--row align-items--center justify-content--center">@t</div>
-                }
-            </div>
-        }
-        </div>
-    </section>
-</div>*@
 @code {
     string[] _colors = new string[] { "primary", "secondary", "tertiary", "neutral", "neutral-variant", "error" };
+    int[] _tones = new int[] { 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
 }

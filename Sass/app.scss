@@ -1,10 +1,9 @@
 ﻿@import "config";
-@import "system/variable";
-@import "system/typography";
-@import "system/color";
-@import "system/icon";
-@import "system/elevation";
-@import "system/animation";
+@import "foundation/animation";
+@import "foundation/color";
+@import "foundation/elevation";
+@import "foundation/icon";
+@import "foundation/typography";
 @import "generators/unit";
 @import "generators/property";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
@@ -113,6 +112,7 @@ html {
     @include property(#{$prefix}width, width, auto, (auto: auto, 100vw: 100vw, stretch: 100%));
     @include property(#{$prefix}min-height, min-height, auto, (auto: auto, 100vh: 100vh, stretch: 100%));
     @include property(#{$prefix}max-height, max-height, auto, (auto: auto, 100vh: 100vh, stretch: 100%));
+    @include property(#{$prefix}pointer-events, pointer-events, auto, (auto: auto, none: none));
 
     @include property(#{$prefix}height, height, auto, (auto: auto, 100vh: 100vh, stretch: 100%)) {
         .#{$prefix}height {

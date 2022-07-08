@@ -41,11 +41,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Sass\system\_typography.scss" />
+    <UpToDateCheckInput Remove="Sass\foundation\_typography.scss" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Sass\system\_elevation.scss" />
+    <UpToDateCheckInput Remove="Sass\foundation\_elevation.scss" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,15 +53,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Sass\system\_color.scss" />
+    <UpToDateCheckInput Remove="Sass\foundation\_color.scss" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Sass\system\_icon.scss" />
+    <UpToDateCheckInput Remove="Sass\foundation\_icon.scss" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Sass\system\_variable.scss" />
+    <UpToDateCheckInput Remove="Sass\foundation\_variable.scss" />
   </ItemGroup>
 
 </Project>

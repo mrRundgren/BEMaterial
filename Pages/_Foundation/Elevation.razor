@@ -1,0 +1,19 @@
+﻿@page "/foundation-elevation"
+@using System.Collections;
+<PageTitle>Elevation</PageTitle>
+
+<div class="max-width--LG margin-left--auto margin-right--auto LG-padding-bottom--XL animation-from--opaque">
+	<article class="padding">
+		<h2 class="typo-headline--LG">Elevation</h2>
+		<p class="typo-body">
+			Elevation is the relative depth, or distance, between two surfaces along the z-axis.
+		</p>
+	</article>
+	<div class="display--grid columns--12 gap--XL margin--none LG-margin-left LG-margin-right padding padding-top--XL padding-bottom--XL LG-padding--XL background--neutral-90 LG-shape--SM">
+		<div class="span elevation-shadow--z0 elevation--z0 background--neutral-100 text--neutral-20 padding--XL align--center">z0</div>
+		@for(int i = 1; i < 25; i++)
+		{
+			<div class="span LG-span--3 elevation-shadow--z@(i) elevation--z0 background--neutral-100 text--neutral-20 padding--XL align--center">z@(i)</div>
+		}
+	</div>
+</div>
