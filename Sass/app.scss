@@ -113,6 +113,7 @@ html {
     @include property(#{$prefix}min-height, min-height, auto, (auto: auto, 100vh: 100vh, stretch: 100%));
     @include property(#{$prefix}max-height, max-height, auto, (auto: auto, 100vh: 100vh, stretch: 100%));
     @include property(#{$prefix}pointer-events, pointer-events, auto, (auto: auto, none: none));
+    @include property(#{$prefix}flex-wrap, flex-wrap, nowrap, (wrap: wrap, wrap-reverse: wrap-reverse));
 
     @include property(#{$prefix}height, height, auto, (auto: auto, 100vh: 100vh, stretch: 100%)) {
         .#{$prefix}height {

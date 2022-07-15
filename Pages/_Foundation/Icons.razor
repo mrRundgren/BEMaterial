@@ -1,0 +1,56 @@
+﻿@page "/foundation-icons"
+@using System.Collections;
+@inject HttpClient client
+
+<PageTitle>Icons</PageTitle>
+
+<div class="max-width--LG margin-left--auto margin-right--auto LG-padding-bottom--XL animation-from--opaque">
+	<article class="padding">
+		<h2 class="typo-headline--LG">Icons</h2>
+		<p class="typo-body">
+			Some text
+		</p>
+	</article>
+	<div class="padding">
+		<label for="search" class="display--flex shape--max background--neutral-90">
+			<input id="search" name="search" type="search" @oninput="Search" @bind-value="_searchStr" class="flex--1 border--none background--transparent padding display--block" />
+		</label>
+	</div>
+	<figure class="display--flex direction--row justify-items--start justify-content--space-evenly flex-wrap--wrap gap margin--none LG-margin-left LG-margin-right padding padding-top--XL padding-bottom--XL LG-padding--XL LG-shape--SM">
+		@foreach (var icon in (!string.IsNullOrWhiteSpace(_searchStr) ? _searchResult : _availibleIcons))
+		{
+			<div class="border border--transparent background__hover--neutral-90 shape--XS cursor--pointer padding--LG overflow--hidden justify-content--center display--flex direction--column">
+				<i class="icon-outlined icon-outlined--LG">@icon.Name</i>
+			</div>
+		}
+	</figure>
+</div>
+
+@code {
+	private string _searchStr { get; set; } = "";
+	private IEnumerable<Icon> _availibleIcons { get; set; } = new List<Icon>();
+	private IEnumerable<Icon> _searchResult { get; set; } = new List<Icon>();
+
+	protected override async Task OnInitializedAsync()
+	{
+		_availibleIcons = await client.GetFromJsonAsync<IEnumerable<Icon>>("icons.json") ?? new List<Icon>();
+		await base.OnInitializedAsync();
+	}
+
+	private void Search()
+	{
+		if(!string.IsNullOrEmpty(_searchStr))
+		{
+			_searchResult = _availibleIcons.Where(_ => _.Name.ToLowerInvariant().Contains(_searchStr.ToLowerInvariant()));
+		}
+		else
+		{
+			_searchResult = new List<Icon>();
+		}
+	}
+
+	internal class Icon
+	{		
+		public string Name { get; set; } = "";
+	}
+}

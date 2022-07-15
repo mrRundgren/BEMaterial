@@ -1,0 +1,46 @@
+﻿@page "/foundation-animation"
+@using System.Collections
+<PageTitle>Animation</PageTitle>
+
+<div class="max-width--LG margin-left--auto margin-right--auto LG-padding-bottom--XL animation-from--opaque">
+	<article class="padding">
+		<h2 class="typo-headline--LG">Animation</h2>
+		<p class="typo-body">
+			Animation should be responsive and natural. Use these easing curves and duration patterns to create smooth and consistent motion.
+		</p>
+	</article>
+	<figure class="overflow--hidden display--grid columns--12 gap margin--none LG-margin-left LG-margin-right padding-top--XL padding-bottom--XL padding LG-padding--XL background--neutral-variant-90 text--neutral-variant-30 LG-shape--SM typo-body--SM">
+		@if(_animation.Value != "")
+		{
+			<i class="display--inline-block icon @_animation.Value background--primary text--primary-100 padding shape--max">animation</i>	
+		}
+	</figure>
+	<EditForm Model="_animation" class="display--grid columns--12 gap margin--none LG-margin-left LG-margin-right margin-top--XL padding-top--XL padding-bottom--XL padding LG-padding--XL background--neutral-variant-90 text--neutral-variant-30 LG-shape--SM typo-body--SM">
+		<InputRadioGroup @bind-Value="_animation.Value">
+			@foreach(string anim in _animations)
+			{
+				<label for="@anim" class="span display--block user-select--none cursor--pointer typo--truncate padding shape--XXS background__active--neutral-80">
+					<InputRadio id="@anim" Value="@anim" class="display--none" />
+					<span>@anim</span>
+				</label>
+			}
+		</InputRadioGroup>
+	</EditForm>
+</div>
+
+@code {
+	private List<string> _animations { get; set; } = new List<string> { "animation-from--left", "animation-to--left", "animation-from--right", "animation-to--right", "animation-from--opaque", "animation-to--opaque", "animation--spin" };
+	private BEMAnimation _animation { get; set; } = new();
+	
+	private async Task Animate(string animation) {
+		_animation.Value = animation;
+		await Task.Delay(1000);
+		_animation.Value = "";
+		StateHasChanged();
+	}
+
+	protected class BEMAnimation
+	{
+		public string Value { get; set; } = "";
+	}
+}
